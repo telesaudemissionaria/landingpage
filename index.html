@@ -90,18 +90,28 @@
             font-weight: 700;
             color: var(--color-text-dark);
             text-decoration: none;
+            flex-shrink: 0; /* Impede que o título encolha */
         }
-        .site-header nav ul { list-style: none; display: flex; }
+        .site-header nav {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .site-header nav ul { list-style: none; display: flex; align-items: center; }
         .site-header nav ul li a {
             font-weight: 600;
-            font-size: 15px;
+            font-size: 14px; /* Tamanho base do menu */
             color: var(--color-text-dark);
-            padding: 0 18px;
+            padding: 0 15px; /* Padding base do menu */
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            white-space: nowrap; /* Impede que o texto do menu quebre linha */
         }
         .site-header nav ul li a:hover { color: var(--color-primary-red); text-decoration: none; }
 
+        .header-actions {
+             flex-shrink: 0; /* Impede que o botão encolha */
+        }
         .header-actions .btn {
             font-size: 15px;
             font-weight: 700;
@@ -355,6 +365,12 @@
         .footer-bottom a:hover { color: var(--color-text-light); }
 
         /* Responsividade */
+        @media (max-width: 1200px) { /* Ajuste para caber o novo menu mais longo */
+             .site-header nav ul li a {
+                padding: 0 10px; /* Menos padding */
+                font-size: 13px; /* Fonte menor */
+            }
+        }
         @media (max-width: 992px) {
             h1 { font-size: 2.5em; }
             h2 { font-size: 1.8em; }
@@ -382,13 +398,14 @@
 
     <header class="site-header">
         <div class="container">
-            <!-- Logo removido, título no lugar -->
             <a href="#hero" class="logo-title">Telessaúde Missionária</a>
             <nav>
                 <ul>
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#servicos">Serviços</a></li>
                     <li><a href="#ajudar">Como Ajudar</a></li>
+                    <!-- LINK ATUALIZADO AQUI -->
+                    <li><a href="https://telesaudemissionaria.github.io/tele_lab/" target="_blank" title="Interpreta exames laboratoriais, oferecendo insights precisos, sem substituir diagnósticos médicos">TELELAB - Analisador de Exames</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
@@ -495,7 +512,6 @@
                 <div class="work-item">
                     <h3>Consultas Médicas Online</h3>
                     <p>Nossas equipes de voluntários tratam uma ampla gama de necessidades médicas, desde orientação sobre doenças comuns até apoio em condições crônicas e emergências (dentro das limitações da telessaúde).</p>
-                    <!-- Botão "Como Funciona" removido -->
                 </div>
                 <div class="work-item">
                     <h3>Apoio Emocional e Espiritual</h3>
@@ -511,7 +527,6 @@
                     <p>Encontre sua comunidade! Selecione sua região ou grupo de interesse para acessar via WhatsApp.</p>
                 </header>
 
-                <!-- Grupos Regionais sem links de acesso direto -->
                 <h3 class="group-section-title">Grupos Regionais</h3>
                 <div class="region-grid">
                     <div class="region-card">
@@ -536,7 +551,6 @@
                     </div>
                 </div>
 
-                <!-- Grupos Gerais mantidos com links -->
                 <h3 class="group-section-title">Grupos Gerais</h3>
                 <div class="general-groups-grid">
                     <div class="general-group-card">
@@ -547,7 +561,6 @@
                     <div class="general-group-card">
                         <h3>💡 HEALTHTECH</h3>
                         <p>Discussão sobre inovações em tecnologia para a telessaúde missionária.</p>
-                        <!-- Link do Healthtech atualizado -->
                         <a href="https://chat.whatsapp.com/FpQ07VxvHYgFP8uG6bxyT5" class="btn-whatsapp" target="_blank">Acessar Grupo</a>
                     </div>
                 </div>
@@ -689,3 +702,4 @@
 
 </body>
 </html>
+                  
