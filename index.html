@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Meta Descrição para SEO -->
     <meta name="description" content="A Telessaúde Missionária conecta missionários a voluntários da saúde para cuidado médico, emocional e espiritual. Conheça nosso trabalho e saiba como ajudar.">
+    <!-- Meta Tags Open Graph para compartilhamento social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://telesaudemissionaria.github.io/tele_saude/">
+    <meta property="og:title" content="Telessaúde Missionária: Cuidado e Esperança">
+    <meta property="og:description" content="Conectamos missionários a voluntários da saúde para cuidado médico, emocional e espiritual.">
+    <meta property="og:image" content="https://telesaudemissionaria.github.io/tele_saude/assets/og-image.jpg"> <!-- Sugestão: Crie e hospede uma imagem representativa -->
+
     <title>Telessaúde Missionária: Cuidado e Esperança</title>
     <!-- <link rel="icon" href="favicon.ico"> -->
     
@@ -13,6 +20,8 @@
         :root {
             --color-primary-red: #D10000;
             --color-primary-red-hover: #A80000;
+            --color-secondary-blue: #0056a8; /* Nova cor para destaque */
+            --color-secondary-blue-hover: #00417f;
             --color-text-dark: #1A1A1A;
             --color-text-medium: #555555;
             --color-text-light: #FFFFFF;
@@ -84,13 +93,13 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
         .site-header .container { display: flex; justify-content: space-between; align-items: center; }
-        /* Título no lugar do logo */
+        
         .site-header .logo-title {
             font-size: 1.4em;
             font-weight: 700;
             color: var(--color-text-dark);
             text-decoration: none;
-            flex-shrink: 0; /* Impede que o título encolha */
+            flex-shrink: 0;
         }
         .site-header nav {
             width: 100%;
@@ -100,35 +109,54 @@
         .site-header nav ul { list-style: none; display: flex; align-items: center; }
         .site-header nav ul li a {
             font-weight: 600;
-            font-size: 14px; /* Tamanho base do menu */
+            font-size: 14px;
             color: var(--color-text-dark);
-            padding: 0 15px; /* Padding base do menu */
+            padding: 0 15px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            white-space: nowrap; /* Impede que o texto do menu quebre linha */
+            white-space: nowrap;
         }
         .site-header nav ul li a:hover { color: var(--color-primary-red); text-decoration: none; }
 
         .header-actions {
-             flex-shrink: 0; /* Impede que o botão encolha */
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         .header-actions .btn {
-            font-size: 15px;
             font-weight: 700;
-            padding: 12px 25px;
+            padding: 10px 20px;
             text-transform: uppercase;
-            border-radius: 0;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            border: 2px solid transparent;
+            white-space: nowrap;
+        }
+        .header-actions .btn:hover {
+            text-decoration: none;
         }
         .btn-donate {
             background-color: var(--color-primary-red);
             color: var(--color-text-light);
-            border: none;
+            border-color: var(--color-primary-red);
         }
-        .btn-donate:hover { background-color: var(--color-primary-red-hover); text-decoration: none; }
+        .btn-donate:hover { background-color: var(--color-primary-red-hover); border-color: var(--color-primary-red-hover); }
 
-        /* Hero Section (sem imagem) */
+        .btn-telelab {
+            background-color: transparent;
+            color: var(--color-secondary-blue);
+            border-color: var(--color-secondary-blue);
+        }
+        .btn-telelab:hover {
+            background-color: var(--color-secondary-blue);
+            color: var(--color-text-light);
+        }
+
+        /* Hero Section */
         #hero {
-            background-color: var(--color-text-dark); /* Fundo sólido escuro */
+            background-color: var(--color-text-dark);
             padding: 120px 20px;
             text-align: left;
             color: var(--color-text-light);
@@ -152,7 +180,7 @@
             color: var(--color-text-light);
             padding: 14px 30px;
             text-decoration: none;
-            border-radius: 0;
+            border-radius: 4px;
             font-weight: 700;
             font-size: 1.1em;
             margin-top: 10px;
@@ -174,9 +202,9 @@
         section:last-of-type { border-bottom: none; }
         section.alternate-bg { background-color: var(--color-background-light-gray); }
         .section-title {
-             text-align: center;
-             margin-bottom: 60px;
-             position: relative;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
         }
         .section-title::after {
             content: '';
@@ -196,16 +224,17 @@
         .impact-stats .stat-number { font-size: 2.2em; font-weight: 700; color: var(--color-text-dark); line-height: 1; }
         .impact-stats .stat-label { font-size: 1em; color: var(--color-text-medium); }
         .btn-outlined {
-             display: inline-block;
-             background: transparent;
-             color: var(--color-text-dark);
-             padding: 12px 28px;
-             border: 2px solid var(--color-text-dark);
-             font-weight: 700;
-             transition: background-color 0.3s, color 0.3s;
-             text-transform: uppercase;
-             font-size: 0.9em; letter-spacing: 1px;
-         }
+            display: inline-block;
+            background: transparent;
+            color: var(--color-text-dark);
+            padding: 12px 28px;
+            border: 2px solid var(--color-text-dark);
+            font-weight: 700;
+            transition: background-color 0.3s, color 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9em; letter-spacing: 1px;
+            border-radius: 4px;
+        }
         .btn-outlined:hover { background-color: var(--color-text-dark); color: var(--color-text-light); text-decoration: none; }
         
         /* Seção de Testemunhos */
@@ -230,13 +259,11 @@
             text-align: right;
             font-style: italic;
         }
-        /* Cores de fundo para cada card */
         .testimonial-card.color-1 { background-color: var(--testimonial-bg-1); }
         .testimonial-card.color-2 { background-color: var(--testimonial-bg-2); }
         .testimonial-card.color-3 { background-color: var(--testimonial-bg-3); }
         .testimonial-card.color-4 { background-color: var(--testimonial-bg-4); }
         .testimonial-card.color-5 { background-color: var(--testimonial-bg-5); }
-
 
         /* Princípios Section */
         .principles-section { text-align: center; max-width: 700px; margin: 0 auto; }
@@ -244,18 +271,58 @@
         .principles-section li { font-size: 1.2em; margin-bottom: 10px; font-weight: 600; color: var(--color-text-dark); }
         .principles-section li strong { color: var(--color-primary-red); font-weight: 700;}
 
-        /* O Trabalho / Serviços (sem imagem) */
+        /* O Trabalho / Serviços */
         .work-item { margin-bottom: 40px; text-align: center; }
         .work-item:last-child { margin-bottom: 0; }
         .work-item h3 { color: var(--color-primary-red); }
         .work-item p { max-width: 600px; margin-left: auto; margin-right: auto; }
-
-        /* Como Ajudar Section (sem imagens) */
-        .help-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .help-card { background-color: var(--color-background-white); border: 1px solid var(--color-border-light); padding: 30px; border-radius: 4px; text-align: center; }
-        .help-card h4 { color: var(--color-primary-red); margin-bottom: 15px; }
-        .help-card .btn { display: inline-block; text-align: center; margin-top: 20px; }
-
+        
+        /* ========= ALTERAÇÃO (INÍCIO): Seção Telelaboratório ========= */
+        #telelaboratorio {
+            background-color: var(--color-background-white);
+        }
+        .telelab-box {
+            background-color: #f7faff; /* Fundo azul bem claro para destaque */
+            border: 1px solid #d4e3ff;
+            border-radius: 5px;
+            padding: 40px;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .telelab-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            color: var(--color-secondary-blue);
+        }
+        .telelab-box h3 {
+            color: var(--color-text-dark);
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        .telelab-box p {
+            font-size: 1.1em;
+            color: var(--color-text-medium);
+            margin-bottom: 30px;
+        }
+        .btn-telelab-section {
+            display: inline-block;
+            background-color: var(--color-secondary-blue);
+            color: var(--color-text-light);
+            padding: 14px 35px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 1em;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+        .btn-telelab-section:hover {
+            background-color: var(--color-secondary-blue-hover);
+            text-decoration: none;
+        }
+        /* ========= ALTERAÇÃO (FIM) ========= */
 
         /* Seção de Acesso aos Grupos WhatsApp */
         #acesso-grupos-whatsapp { background-color: var(--color-background-light-gray); }
@@ -267,12 +334,11 @@
             position: relative;
             display: inline-block;
         }
-         #acesso-grupos-whatsapp .group-header h2::after{
-             content: ''; display: block; width: 50px; height: 4px;
-             background-color: var(--color-primary-red); margin: 10px auto 0;
-         }
+        #acesso-grupos-whatsapp .group-header h2::after{
+            content: ''; display: block; width: 50px; height: 4px;
+            background-color: var(--color-primary-red); margin: 10px auto 0;
+        }
         #acesso-grupos-whatsapp .group-header p { font-size: 1.1em; color: var(--color-text-medium); }
-
         .group-section-title {
             font-size: 1.6em; color: var(--color-text-dark); text-align: center;
             margin-top: 40px; margin-bottom: 25px; padding-bottom: 10px;
@@ -292,7 +358,6 @@
         .region-card:hover, .general-group-card:hover {
             transform: translateY(-4px); box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
-        /* Ajuste para o card regional sem botão */
         .region-card { justify-content: center; text-align: center; }
         .region-card h3 { margin-bottom: 8px;}
         .general-group-card h3 {
@@ -311,6 +376,12 @@
         }
         .btn-whatsapp:hover { background-color: var(--color-whatsapp-btn-hover); }
 
+        /* Como Ajudar Section */
+        .help-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .help-card { background-color: var(--color-background-white); border: 1px solid var(--color-border-light); padding: 30px; border-radius: 4px; text-align: center; }
+        .help-card h4 { color: var(--color-primary-red); margin-bottom: 15px; }
+        .help-card .btn { display: inline-block; text-align: center; margin-top: 20px; }
+
         /* FAQ Section */
         #faq { background-color: var(--color-background-white); }
         #faq .faq-accordion { max-width: 800px; margin: 0 auto; }
@@ -321,15 +392,14 @@
             font-weight: 600; color: var(--color-text-dark); font-size: 1.2em;
         }
         #faq .faq-question .icon {
-             font-size: 1.2em; color: var(--color-primary-red); transition: transform 0.3s ease-in-out; font-weight: bold;
+            font-size: 1.2em; color: var(--color-primary-red); transition: transform 0.3s ease-in-out; font-weight: bold;
         }
         #faq .faq-answer {
-             max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; padding: 0.4s ease-out; padding: 0;
+            max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; padding: 0.4s ease-out; padding: 0;
         }
         #faq .faq-answer p { font-size: 1em; color: var(--color-text-medium); padding-bottom: 20px; }
         #faq .faq-item.active .faq-question .icon { transform: rotate(45deg); }
         #faq .faq-item.active .faq-answer { max-height: 400px; }
-
 
         /* Footer */
         .site-footer {
@@ -365,31 +435,45 @@
         .footer-bottom a:hover { color: var(--color-text-light); }
 
         /* Responsividade */
-        @media (max-width: 1200px) { /* Ajuste para caber o novo menu mais longo */
-             .site-header nav ul li a {
-                padding: 0 10px; /* Menos padding */
-                font-size: 13px; /* Fonte menor */
+        @media (max-width: 1200px) {
+            .site-header nav ul li a {
+                padding: 0 10px;
+                font-size: 13px;
             }
         }
         @media (max-width: 992px) {
             h1 { font-size: 2.5em; }
             h2 { font-size: 1.8em; }
-            .site-header nav { display: none; } /* TODO: Adicionar menu hamburguer */
+            .site-header nav { display: none; }
             .intro-impact-section { flex-direction: column; }
             .testimonial-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 767px) {
-             body { font-size: 15px; }
-             h1 { font-size: 2.1em; }
-             h2 { font-size: 1.6em; }
-             section { padding: 60px 0; }
-             #hero { padding: 100px 15px; text-align: center;}
-             #hero .hero-content { max-width: 100%; }
-             .impact-stats .stat-item { flex-direction: column; text-align: center; }
-             .impact-stats .stat-icon { margin-right: 0; margin-bottom: 5px;}
-             .region-grid, .general-groups-grid { grid-template-columns: 1fr; }
-             .footer-grid { grid-template-columns: 1fr; text-align: center; }
-             .footer-social-icons { margin-bottom: 20px; }
+            body { font-size: 15px; }
+            h1 { font-size: 2.1em; }
+            h2 { font-size: 1.6em; }
+            section { padding: 60px 0; }
+            #hero { padding: 100px 15px; text-align: center;}
+            #hero .hero-content { max-width: 100%; }
+            .impact-stats .stat-item { flex-direction: column; text-align: center; }
+            .impact-stats .stat-icon { margin-right: 0; margin-bottom: 5px;}
+            .region-grid, .general-groups-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .footer-social-icons { margin-bottom: 20px; }
+            
+            .header-actions {
+                gap: 5px;
+            }
+            .header-actions .btn {
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+            .site-header .logo-title {
+                font-size: 1.2em;
+            }
+             .telelab-box {
+                padding: 30px 20px;
+            }
         }
 
     </style>
@@ -404,13 +488,12 @@
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#servicos">Serviços</a></li>
                     <li><a href="#ajudar">Como Ajudar</a></li>
-                    <!-- LINK ATUALIZADO AQUI -->
-                    <li><a href="https://telesaudemissionaria.github.io/tele_lab/" target="_blank" title="Interpreta exames laboratoriais, oferecendo insights precisos, sem substituir diagnósticos médicos">TELELAB - Analisador de Exames</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
-                 <a href="http://link.mercadopago.com.br/telesaudemissionaria" target="_blank" class="btn btn-donate">DOAR</a>
+                <a href="https://telesaudemissionaria.github.io/tele_lab/" target="_blank" class="btn btn-telelab" title="Interpreta exames laboratoriais, oferecendo insights precisos, sem substituir diagnósticos médicos">TELELAB</a>
+                <a href="http://link.mercadopago.com.br/telesaudemissionaria" target="_blank" class="btn btn-donate">DOAR</a>
             </div>
         </div>
     </header>
@@ -428,81 +511,80 @@
 
         <section id="sobre" class="intro-impact-section alternate-bg">
             <div class="container">
-                 <div class="intro-impact-section">
-                     <div class="intro-text">
-                         <h2>Cuidado Independente e Imparcial Levado Aonde é Mais Necessário</h2>
-                         <p>A Telessaúde Missionária, formada por voluntários, cuida de missionários e suas famílias impactados por desafios de saúde em locais remotos, conflitos, ou exclusão do sistema de saúde, inspirados pelo amor cristão.</p>
-                         <p>Oferecemos um suporte vital para que possam continuar seu chamado com saúde e paz.</p>
-                         <a href="#principios" class="btn-outlined">Nossos Princípios</a>
-                     </div>
-                     <div class="impact-stats">
-                         <div class="stat-item">
-                             <span class="stat-icon">🌍</span>
-                             <div>
-                                 <div class="stat-number">5+</div>
-                                 <div class="stat-label">Continentes Alcançados</div>
-                             </div>
-                         </div>
-                         <div class="stat-item">
-                              <span class="stat-icon">🧑‍⚕️</span>
-                             <div>
-                                 <div class="stat-number">100+</div>
-                                 <div class="stat-label">Profissionais Voluntários</div>
-                             </div>
-                         </div>
-                         <div class="stat-item">
-                              <span class="stat-icon">❤️</span>
-                             <div>
-                                 <div class="stat-number">100%</div>
-                                 <div class="stat-label">Foco no Cuidado Missionário</div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
+                <div class="intro-impact-section">
+                    <div class="intro-text">
+                        <h2>Cuidado Independente e Imparcial Levado Aonde é Mais Necessário</h2>
+                        <p>A Telessaúde Missionária, formada por voluntários, cuida de missionários e suas famílias impactados por desafios de saúde em locais remotos, conflitos, ou exclusão do sistema de saúde, inspirados pelo amor cristão.</p>
+                        <p>Oferecemos um suporte vital para que possam continuar seu chamado com saúde e paz.</p>
+                        <a href="#principios" class="btn-outlined">Nossos Princípios</a>
+                    </div>
+                    <div class="impact-stats">
+                        <div class="stat-item">
+                            <span class="stat-icon">🌍</span>
+                            <div>
+                                <div class="stat-number">5+</div>
+                                <div class="stat-label">Continentes Alcançados</div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon">🧑‍⚕️</span>
+                            <div>
+                                <div class="stat-number">100+</div>
+                                <div class="stat-label">Profissionais Voluntários</div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-icon">❤️</span>
+                            <div>
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Foco no Cuidado Missionário</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Seção de Testemunhos Atualizada -->
         <section id="testemunhos">
-             <div class="container">
-                 <h2 class="section-title">Histórias de Cuidado e Impacto</h2>
-                 <div class="testimonial-grid">
-                     <div class="testimonial-card color-1">
-                         <p>"Ao enfrentarem uma virose na família e receberem um antibiótico forte na farmácia local, buscaram orientação. Com apoio da equipe, receberam indicação de um tratamento mais seguro e, em poucos dias, houve uma recuperação significativa."</p>
-                         <p class="author">- Leste da África</p>
-                     </div>
-                      <div class="testimonial-card color-2">
-                         <p>"Uma missionária agradeceu o atendimento recebido, que trouxe tranquilidade e explicações claras sobre sua saúde em um contexto de acesso restrito à assistência médica. Destacou o impacto positivo da telessaúde em sua vida."</p>
-                         <p class="author">- Peru</p>
-                     </div>
-                      <div class="testimonial-card color-3">
-                         <p>"Após quase dois anos sofrendo com dores nos ombros e sem tratamento disponível, recebi atendimento online e presencial. Fiquei livre das dores e recuperei os movimentos. Agradeço emocionado pela iniciativa."</p>
-                         <p class="author">- Morro do Chapéu, Brasil</p>
-                     </div>
-                      <div class="testimonial-card color-4">
-                         <p>"No sertão, buscamos orientação para nossa filha recém-nascida. Recebemos não apenas atendimento de qualidade, mas também oração e cuidado espiritual. Sentimos de imediato o agir de Deus. Tem sido uma fonte de bênção."</p>
-                         <p class="author">- Sertão Nordestino, Brasil</p>
-                     </div>
-                      <div class="testimonial-card color-5">
-                         <p>"Eu enfrentava problemas respiratórios há meses, sem diagnóstico preciso nos hospitais locais. Com o suporte da telessaúde, recebi o diagnóstico correto e tratamento eficaz, sentindo-me rapidamente melhor."</p>
-                         <p class="author">- Guiné-Bissau, África</p>
-                     </div>
-                 </div>
-             </div>
+            <div class="container">
+                <h2 class="section-title">Histórias de Cuidado e Impacto</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card color-1">
+                        <p>"Ao enfrentarem uma virose na família e receberem um antibiótico forte na farmácia local, buscaram orientação. Com apoio da equipe, receberam indicação de um tratamento mais seguro e, em poucos dias, houve uma recuperação significativa."</p>
+                        <p class="author">- Leste da África</p>
+                    </div>
+                    <div class="testimonial-card color-2">
+                        <p>"Uma missionária agradeceu o atendimento recebido, que trouxe tranquilidade e explicações claras sobre sua saúde em um contexto de acesso restrito à assistência médica. Destacou o impacto positivo da telessaúde em sua vida."</p>
+                        <p class="author">- Peru</p>
+                    </div>
+                    <div class="testimonial-card color-3">
+                        <p>"Após quase dois anos sofrendo com dores nos ombros e sem tratamento disponível, recebi atendimento online e presencial. Fiquei livre das dores e recuperei os movimentos. Agradeço emocionado pela iniciativa."</p>
+                        <p class="author">- Morro do Chapéu, Brasil</p>
+                    </div>
+                    <div class="testimonial-card color-4">
+                        <p>"No sertão, buscamos orientação para nossa filha recém-nascida. Recebemos não apenas atendimento de qualidade, mas também oração e cuidado espiritual. Sentimos de imediato o agir de Deus. Tem sido uma fonte de bênção."</p>
+                        <p class="author">- Sertão Nordestino, Brasil</p>
+                    </div>
+                    <div class="testimonial-card color-5">
+                        <p>"Eu enfrentava problemas respiratórios há meses, sem diagnóstico preciso nos hospitais locais. Com o suporte da telessaúde, recebi o diagnóstico correto e tratamento eficaz, sentindo-me rapidamente melhor."</p>
+                        <p class="author">- Guiné-Bissau, África</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
 
         <section id="principios" class="principles-section alternate-bg">
-             <div class="container">
-                 <h2 class="section-title">Os Princípios Que Nos Movem</h2>
-                 <ul>
+            <div class="container">
+                <h2 class="section-title">Os Princípios Que Nos Movem</h2>
+                <ul>
                     <li>Somos guiados pela <strong>ética médica universal</strong> e pelos <strong>princípios cristãos</strong> de cuidado.</li>
                     <li>Somos comprometidos em <strong>testemunhar</strong> as necessidades e realidades do campo.</li>
                     <li>Somos <strong>transparentes</strong> e responsáveis em nossa gestão e ações.</li>
                     <li>Somos comprometidos com a <strong>diversidade</strong>, <strong>equidade</strong> e <strong>inclusão</strong>.</li>
                     <li>Somos <strong>independentes</strong>, <strong>imparciais</strong> e <strong>neutros</strong> no cuidado oferecido.</li>
-                 </ul>
-                 <a href="#sobre" class="btn-outlined">Saiba Mais Sobre Nós</a>
+                </ul>
+                <a href="#sobre" class="btn-outlined">Saiba Mais Sobre Nós</a>
             </div>
         </section>
 
@@ -519,6 +601,20 @@
                 </div>
             </div>
         </section>
+
+        <!-- ========= ALTERAÇÃO (INÍCIO): Nova Seção Telelaboratório ========= -->
+        <section id="telelaboratorio">
+            <div class="container">
+                <h2 class="section-title">Nossa Ferramenta de Análise</h2>
+                <div class="telelab-box">
+                    <div class="telelab-icon">🔬</div>
+                    <h3>TELELABORATÓRIO</h3>
+                    <p>Uma ferramenta para interpretar exames laboratoriais, oferecendo insights precisos para auxiliar no cuidado. Não substitui o diagnóstico médico profissional.</p>
+                    <a href="https://telesaudemissionaria.github.io/tele_lab/" target="_blank" class="btn-telelab-section">Acessar o Telelaboratório</a>
+                </div>
+            </div>
+        </section>
+        <!-- ========= ALTERAÇÃO (FIM) ========= -->
 
         <section id="acesso-grupos-whatsapp">
             <div class="group-container">
@@ -567,7 +663,6 @@
             </div>
         </section>
 
-
         <section id="ajudar" class="alternate-bg">
             <div class="container">
                 <h2 class="section-title">Como Você Pode Ajudar</h2>
@@ -578,12 +673,12 @@
                         <p>Profissionais de saúde, TI, tradutores e outros. Doe seu tempo e talento para apoiar missionários.</p>
                         <a href="https://wa.me/59173346906" target="_blank" class="btn-outlined">Quero Ser Voluntário</a>
                     </div>
-                     <div class="help-card">
+                    <div class="help-card">
                         <h4>Faça uma Doação</h4>
                         <p>Sua contribuição financeira nos ajuda a manter a estrutura e expandir o alcance do cuidado gratuito.</p>
-                         <a href="http://link.mercadopago.com.br/telesaudemissionaria" target="_blank" class="btn-outlined">Doar Agora (Mercado Pago)</a>
+                        <a href="http://link.mercadopago.com.br/telesaudemissionaria" target="_blank" class="btn-outlined">Doar Agora (Mercado Pago)</a>
                     </div>
-                     <div class="help-card">
+                    <div class="help-card">
                         <h4>Interceda Conosco</h4>
                         <p>A oração é fundamental. Ore pelos missionários, pelos voluntários e pela sustentabilidade deste ministério.</p>
                         <a href="#contato" class="btn-outlined">Receber Pedidos de Oração</a>
@@ -639,25 +734,24 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column">
-                     <span class="footer-logo-text">Telessaúde Missionária</span>
-                     <p>Levando saúde e esperança aos missionários nos lugares mais remotos.</p>
-                      <div class="footer-social-icons">
-                          <!-- Ícones atualizados -->
-                          <a href="#" target="_blank" title="Facebook" aria-label="Nossa página no Facebook">Fb</a>
-                          <a href="https://www.instagram.com/" target="_blank" title="Instagram" aria-label="Nosso perfil no Instagram">Ig</a>
-                          <a href="https://wa.me/59173346906" target="_blank" title="WhatsApp Info" aria-label="Entre em contato pelo WhatsApp">Wpp</a>
-                      </div>
+                    <span class="footer-logo-text">Telessaúde Missionária</span>
+                    <p>Levando saúde e esperança aos missionários nos lugares mais remotos.</p>
+                    <div class="footer-social-icons">
+                        <a href="https://www.facebook.com/TelessaudeMissionaria" target="_blank" title="Facebook" aria-label="Nossa página no Facebook">Fb</a>
+                        <a href="https://www.instagram.com/telessaudemissionaria" target="_blank" title="Instagram" aria-label="Nosso perfil no Instagram">Ig</a>
+                        <a href="https://wa.me/59173346906" target="_blank" title="WhatsApp Info" aria-label="Entre em contato pelo WhatsApp">Wpp</a>
+                    </div>
                 </div>
-                 <div class="footer-column">
+                <div class="footer-column">
                     <h5>A Telessaúde</h5>
                     <ul>
                         <li><a href="#sobre">Sobre Nós</a></li>
                         <li><a href="#principios">Nossos Princípios</a></li>
                         <li><a href="#servicos">Nossos Serviços</a></li>
-                         <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
-                 <div class="footer-column">
+                <div class="footer-column">
                     <h5>Envolva-se</h5>
                     <ul>
                         <li><a href="#ajudar">Como Ajudar</a></li>
@@ -670,7 +764,7 @@
                     <p><strong>Informações Gerais:</strong><br>missionarymedicalcare@gmail.com</p>
                     <p><strong>WhatsApp (Info):</strong><br><a href="https://wa.me/59173346906" target="_blank">+591 7334 6906</a> (Samuel)</p>
                     <p><a href="link-para-politica-privacidade.html">Política de Privacidade</a></p>
-                 </div>
+                </div>
             </div>
             <div class="footer-bottom">
                 © <span id="currentYear"></span> Telessaúde Missionária. Iniciativa da Missionary Medical Care. Todos os direitos reservados.
@@ -691,7 +785,7 @@
                 
                 // Fecha todos os outros itens antes de abrir o novo
                 faqItems.forEach(i => {
-                   if (i !== item) i.classList.remove('active');
+                    if (i !== item) i.classList.remove('active');
                 });
 
                 // Alterna a classe 'active' no item clicado
@@ -702,4 +796,3 @@
 
 </body>
 </html>
-                  
