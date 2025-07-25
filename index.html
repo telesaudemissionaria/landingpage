@@ -160,7 +160,10 @@
             background-color: var(--color-primary-red); margin: 15px auto 0;
         }
         #hero {
-            background-color: var(--color-text-dark);
+            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('assets/images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             padding: clamp(100px, 15vh, 120px) 20px;
             text-align: left; color: var(--color-text-light);
         }
@@ -207,10 +210,39 @@
         .principles-section li { font-size: 1.2em; margin-bottom: 10px; font-weight: 600; color: var(--color-text-dark); }
         .principles-section li strong { color: var(--color-primary-red); }
 
-        .work-item { margin-bottom: 40px; text-align: center; }
+        .work-item { 
+            margin-bottom: 40px; 
+            text-align: center; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         .work-item:last-child { margin-bottom: 0; }
         .work-item h3 { color: var(--color-primary-red); }
         .work-item p { max-width: 600px; margin: 0 auto; }
+        .work-item img {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: var(--color-background-light-gray);
+        }
+        .work-item img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        .work-item img:not([src]), .work-item img[src=""] {
+            background: linear-gradient(45deg, var(--color-primary-red), var(--color-secondary-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2em;
+            font-weight: bold;
+        }
         
         #assistente-medico .section-title { display: none; }
         .assistente-box {
@@ -255,9 +287,41 @@
         .btn-whatsapp:hover { background-color: var(--color-whatsapp-btn-hover); text-decoration: none; color: white; }
 
         .help-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 400px)); gap: 30px; justify-content: center; }
-        .help-card { background-color: var(--color-background-white); border: 1px solid var(--color-border-light); padding: 30px; border-radius: 4px; text-align: center; }
+        .help-card { 
+            background-color: var(--color-background-white); 
+            border: 1px solid var(--color-border-light); 
+            padding: 30px; 
+            border-radius: 4px; 
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         .help-card h4 { color: var(--color-primary-red); margin-bottom: 15px; }
         .help-card .btn-outlined { display: inline-block; margin-top: 20px; }
+        .help-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: var(--color-background-light-gray);
+        }
+        .help-card img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        .help-card img:not([src]), .help-card img[src=""] {
+            background: linear-gradient(45deg, var(--color-primary-red), var(--color-secondary-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
 
         #faq .faq-accordion { max-width: 800px; margin: 0 auto; }
         #faq .faq-item { border-bottom: 1px solid var(--color-border-light); }
@@ -389,7 +453,7 @@
             </div>
         </section>
 
-        <section id="testemunhos">
+        <section id="testemunhos" style="background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('assets/images/testimonials-bg.jpg'); background-size: cover; background-position: center;">
             <div class="container">
                 <h2 class="section-title">Histórias de Cuidado e Impacto</h2>
                 <div class="testimonial-grid">
@@ -402,7 +466,7 @@
             </div>
         </section>
 
-        <section id="principios" class="principles-section alternate-bg">
+        <section id="principios" class="principles-section alternate-bg" style="background: linear-gradient(rgba(242, 242, 242, 0.9), rgba(242, 242, 242, 0.9)), url('assets/images/principles-bg.jpg'); background-size: cover; background-position: center;">
             <div class="container">
                 <h2 class="section-title">Os Princípios Que Nos Movem</h2>
                 <ul>
@@ -419,8 +483,16 @@
         <section id="servicos">
             <div class="container">
                 <h2 class="section-title">Cuidado Integral Onde é Mais Necessário</h2>
-                <div class="work-item"><h3>Consultas Médicas Online</h3><p>Nossas equipes de voluntários tratam uma ampla gama de necessidades médicas, desde orientação sobre doenças comuns até apoio em condições crônicas e emergências (dentro das limitações da telessaúde).</p></div>
-                <div class="work-item"><h3>Apoio Emocional e Espiritual</h3><p>Oferecemos aconselhamento psicológico e suporte espiritual para lidar com os desafios únicos da vida missionária, como estresse, adaptação cultural e solidão.</p></div>
+                <div class="work-item">
+                    <img src="assets/images/medical-consultation.jpg" alt="Consulta médica online" loading="lazy">
+                    <h3>Consultas Médicas Online</h3>
+                    <p>Nossas equipes de voluntários tratam uma ampla gama de necessidades médicas, desde orientação sobre doenças comuns até apoio em condições crônicas e emergências (dentro das limitações da telessaúde).</p>
+                </div>
+                <div class="work-item">
+                    <img src="assets/images/emotional-support.jpg" alt="Apoio emocional e espiritual" loading="lazy">
+                    <h3>Apoio Emocional e Espiritual</h3>
+                    <p>Oferecemos aconselhamento psicológico e suporte espiritual para lidar com os desafios únicos da vida missionária, como estresse, adaptação cultural e solidão.</p>
+                </div>
             </div>
         </section>
 
@@ -465,8 +537,18 @@
                 <h2 class="section-title">Como Você Pode Ajudar</h2>
                 <p style="text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; margin-top: -40px; margin-bottom: 50px;">Somos um movimento sustentado por voluntários e doadores. Sua participação é vital para continuarmos oferecendo cuidado.</p>
                 <div class="help-grid">
-                    <div class="help-card"><h4>Seja um Voluntário</h4><p>Profissionais de saúde, TI, tradutores e outros. Doe seu tempo e talento para apoiar missionários.</p><a href="https://wa.me/59173346906" target="_blank" class="btn-outlined">Quero Ser Voluntário</a></div>
-                    <div class="help-card"><h4>Faça uma Doação</h4><p>Sua contribuição financeira nos ajuda a manter a estrutura e expandir o alcance do cuidado gratuito.</p><a href="http://link.mercadopago.com.br/telesaudemissionaria" target="_blank" class="btn-outlined">Doar Agora</a></div>
+                    <div class="help-card">
+                        <img src="assets/images/volunteer.jpg" alt="Voluntários trabalhando" loading="lazy">
+                        <h4>Seja um Voluntário</h4>
+                        <p>Profissionais de saúde, TI, tradutores e outros. Doe seu tempo e talento para apoiar missionários.</p>
+                        <a href="https://wa.me/59173346906" target="_blank" class="btn-outlined">Quero Ser Voluntário</a>
+                    </div>
+                    <div class="help-card">
+                        <img src="assets/images/donation.jpg" alt="Doação e apoio" loading="lazy">
+                        <h4>Faça uma Doação</h4>
+                        <p>Sua contribuição financeira nos ajuda a manter a estrutura e expandir o alcance do cuidado gratuito.</p>
+                        <a href="http://link.mercadopago.com.br/telesaudemissionaria" target="_blank" class="btn-outlined">Doar Agora</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -573,6 +655,32 @@
                     }
                 });
             }
+
+            // Script para lidar com imagens que falham ao carregar
+            const images = document.querySelectorAll('img');
+            images.forEach(function(img) {
+                img.addEventListener('error', function() {
+                    this.style.display = 'none';
+                    // Criar um placeholder com ícone
+                    const placeholder = document.createElement('div');
+                    placeholder.style.cssText = `
+                        width: ${this.width || '120px'};
+                        height: ${this.height || '120px'};
+                        background: linear-gradient(45deg, var(--color-primary-red), var(--color-secondary-blue));
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: white;
+                        font-size: ${this.classList.contains('help-card') ? '1.5em' : '2em'};
+                        font-weight: bold;
+                        margin-bottom: 20px;
+                        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                    `;
+                    placeholder.innerHTML = '🏥';
+                    this.parentNode.insertBefore(placeholder, this);
+                });
+            });
 
             // Script do Modal da Política de Privacidade
             const modal = document.getElementById('privacy-modal');
