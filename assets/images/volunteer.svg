@@ -1,0 +1,21 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="volunteerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#25D366;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#1DAE54;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#volunteerGradient)" rx="100"/>
+  <g fill="white" opacity="0.9">
+    <!-- Pessoas -->
+    <circle cx="80" cy="70" r="15"/>
+    <circle cx="120" cy="70" r="15"/>
+    <circle cx="100" cy="70" r="15"/>
+    <!-- Corpos -->
+    <rect x="70" y="85" width="20" height="30" rx="10"/>
+    <rect x="110" y="85" width="20" height="30" rx="10"/>
+    <rect x="90" y="85" width="20" height="30" rx="10"/>
+    <!-- Mãos unidas -->
+    <path d="M85 115 Q100 125 115 115" stroke="white" stroke-width="3" fill="none"/>
+  </g>
+</svg> 
