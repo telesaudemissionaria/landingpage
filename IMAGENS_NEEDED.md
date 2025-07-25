@@ -97,9 +97,18 @@ As seguintes imagens estão sendo usadas no site:
 - 🌄 **Apoio Emocional**: Paisagem de montanhas ao pôr do sol
 - 👥 **Voluntários**: Equipe diversificada trabalhando
 - 💝 **Doações**: Mãos unidas em oração
-- 🤖 **Assistente Médico**: Profissional de saúde
+- 🤖 **Assistente Médico**: assistente-medico.png (arquivo local)
 - 🏔️ **Fundo Testemunhos**: Equipe trabalhando
 - 🌅 **Fundo Princípios**: Paisagem espiritual
+
+## Arquivos Locais Necessários
+
+### assistente-medico.png
+
+- **Localização**: Raiz do projeto (mesmo nível do index.html)
+- **Descrição**: Ícone do assistente médico
+- **Dimensões recomendadas**: 64x64px ou maior (será redimensionado)
+- **Formato**: PNG com fundo transparente (preferencialmente)
 
 ## Imagens Opcionais
 
