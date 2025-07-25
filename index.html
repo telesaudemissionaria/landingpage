@@ -1,26 +1,32 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" style="scroll-behavior: smooth;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <!-- Meta Descrição para SEO -->
     <meta name="description" content="A Telessaúde Missionária conecta missionários a voluntários da saúde para cuidado médico, emocional e espiritual. Conheça nosso trabalho e saiba como ajudar.">
+    
     <!-- Meta Tags Open Graph para compartilhamento social -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://telesaudemissionaria.github.io/tele_saude/">
     <meta property="og:title" content="Telessaúde Missionária: Cuidado e Esperança">
     <meta property="og:description" content="Conectamos missionários a voluntários da saúde para cuidado médico, emocional e espiritual.">
-    <meta property="og:image" content="https://telesaudemissionaria.github.io/tele_saude/assets/og-image.jpg"> <!-- Sugestão: Crie e hospede uma imagem representativa -->
-
+    <meta property="og:image" content="https://telesaudemissionaria.github.io/tele_saude/assets/og-image.jpg">
+    
     <title>Telessaúde Missionária: Cuidado e Esperança</title>
-    <!-- <link rel="icon" href="favicon.ico"> -->
+    
+    <!-- Favicons para diversos dispositivos -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     
     <style>
-        /* Estilo Inspirado no MSF */
+        /* Estilo Inspirado no MSF e melhores práticas */
         :root {
             --color-primary-red: #D10000;
             --color-primary-red-hover: #A80000;
-            --color-secondary-blue: #0056a8; /* Nova cor para destaque */
+            --color-secondary-blue: #0056a8;
             --color-secondary-blue-hover: #00417f;
             --color-text-dark: #1A1A1A;
             --color-text-medium: #555555;
@@ -34,15 +40,17 @@
             --color-whatsapp-btn-hover: #1DAE54;
 
             /* Cores para Testemunhos */
-            --testimonial-bg-1: #E3F2FD; /* Azul claro */
-            --testimonial-bg-2: #E8F5E9; /* Verde claro */
-            --testimonial-bg-3: #FFF3E0; /* Laranja claro */
-            --testimonial-bg-4: #F3E5F5; /* Roxo claro */
-            --testimonial-bg-5: #E0F7FA; /* Ciano claro */
+            --testimonial-bg-1: #E3F2FD;
+            --testimonial-bg-2: #E8F5E9;
+            --testimonial-bg-3: #FFF3E0;
+            --testimonial-bg-4: #F3E5F5;
+            --testimonial-bg-5: #E0F7FA;
         }
 
-        /* Reset Básico */
+        /* Reset Básico e Padrões */
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -68,19 +76,16 @@
             line-height: 1.3;
             font-weight: 700;
         }
-        h1 { font-size: 2.8em; }
-        h2 { font-size: 2.0em; }
-        h3 { font-size: 1.5em; }
+        h1 { font-size: clamp(2.1em, 5vw, 3.2em); }
+        h2 { font-size: clamp(1.6em, 4vw, 2.2em); }
+        h3 { font-size: clamp(1.3em, 3vw, 1.5em); }
         h4 { font-size: 1.2em; }
 
-        p {
-            margin-bottom: 1.2em;
-            font-size: 1.05em;
-        }
-        a { color: var(--color-primary-red); text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        p { margin-bottom: 1.2em; font-size: 1.05em; }
+        a { color: var(--color-primary-red); text-decoration: none; transition: color 0.3s ease; }
+        a:hover { text-decoration: underline; color: var(--color-primary-red-hover); }
 
-        /* Header Fixo */
+        /* Header */
         .site-header {
             background-color: var(--color-background-white);
             height: 70px;
@@ -94,20 +99,20 @@
         }
         .site-header .container { display: flex; justify-content: space-between; align-items: center; }
         
-        .site-header .logo-title {
-            font-size: 1.4em;
+        /* CORREÇÃO: Logo removido, apenas texto */
+        .logo-container {
+            text-decoration: none;
+        }
+        .logo-title {
+            font-size: 1.6em;
             font-weight: 700;
             color: var(--color-text-dark);
-            text-decoration: none;
-            flex-shrink: 0;
         }
-        .site-header nav {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-        .site-header nav ul { list-style: none; display: flex; align-items: center; }
-        .site-header nav ul li a {
+        
+        /* Navegação */
+        .main-nav { display: flex; }
+        .main-nav ul { list-style: none; display: flex; align-items: center; }
+        .main-nav ul li a {
             font-weight: 600;
             font-size: 14px;
             color: var(--color-text-dark);
@@ -115,233 +120,118 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             white-space: nowrap;
+            cursor: pointer;
         }
-        .site-header nav ul li a:hover { color: var(--color-primary-red); text-decoration: none; }
+        .main-nav ul li a:hover { color: var(--color-primary-red); text-decoration: none; }
+        
+        .header-actions { display: none; }
 
-        .header-actions {
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        /* Menu Mobile */
+        .mobile-menu-toggle {
+            display: none; background: none; border: none;
+            cursor: pointer; padding: 10px; z-index: 1002;
         }
-        .header-actions .btn {
-            font-weight: 700;
-            padding: 10px 20px;
-            text-transform: uppercase;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 14px;
-            border: 2px solid transparent;
-            white-space: nowrap;
+        .mobile-menu-toggle .icon-bar {
+            display: block; width: 25px; height: 3px;
+            background-color: var(--color-text-dark);
+            margin: 5px 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
         }
-        .header-actions .btn:hover {
-            text-decoration: none;
+        body.mobile-menu-open .mobile-menu-toggle .icon-bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        body.mobile-menu-open .mobile-menu-toggle .icon-bar:nth-child(2) { opacity: 0; }
+        body.mobile-menu-open .mobile-menu-toggle .icon-bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+        body.mobile-menu-open .main-nav {
+            display: flex; flex-direction: column; position: absolute;
+            top: 70px; left: 0; width: 100%;
+            background-color: var(--color-background-white);
+            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
         }
-        .btn-donate {
-            background-color: var(--color-primary-red);
-            color: var(--color-text-light);
-            border-color: var(--color-primary-red);
-        }
-        .btn-donate:hover { background-color: var(--color-primary-red-hover); border-color: var(--color-primary-red-hover); }
+        body.mobile-menu-open .main-nav ul { flex-direction: column; width: 100%; padding: 20px 0; }
+        body.mobile-menu-open .main-nav ul li { width: 100%; text-align: center; }
+        body.mobile-menu-open .main-nav ul li a { padding: 15px; display: block; width: 100%; }
 
-        .btn-telelab {
-            background-color: transparent;
-            color: var(--color-secondary-blue);
-            border-color: var(--color-secondary-blue);
+        /* Seções */
+        section { padding: 80px 0; border-bottom: 1px solid var(--color-border-light); }
+        section:last-of-type { border-bottom: none; }
+        .alternate-bg { background-color: var(--color-background-light-gray); }
+        .section-title { text-align: center; margin-bottom: 60px; position: relative; }
+        .section-title::after {
+            content: ''; display: block; width: 50px; height: 4px;
+            background-color: var(--color-primary-red); margin: 15px auto 0;
         }
-        .btn-telelab:hover {
-            background-color: var(--color-secondary-blue);
-            color: var(--color-text-light);
-        }
-
-        /* Hero Section */
         #hero {
             background-color: var(--color-text-dark);
-            padding: 120px 20px;
-            text-align: left;
-            color: var(--color-text-light);
+            padding: clamp(100px, 15vh, 120px) 20px;
+            text-align: left; color: var(--color-text-light);
         }
         #hero .hero-content { max-width: 750px; }
-        #hero h1 {
-            color: var(--color-text-light);
-            font-size: 3.2em;
-            margin-bottom: 0.5em;
-            font-weight: 700;
-        }
-        #hero .subtitle {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.3em;
-            margin-bottom: 1.5em;
-            font-weight: 400;
-        }
+        #hero h1 { color: var(--color-text-light); }
+        #hero .subtitle { color: rgba(255, 255, 255, 0.9); font-size: 1.3em; max-width: 600px; }
         .cta-button-hero {
-            display: inline-block;
-            background: transparent;
-            color: var(--color-text-light);
-            padding: 14px 30px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 700;
-            font-size: 1.1em;
-            margin-top: 10px;
+            display: inline-block; background: transparent; color: var(--color-text-light);
+            padding: 14px 30px; border-radius: 4px; font-weight: 700;
+            font-size: 1.1em; margin-top: 10px;
             transition: background-color 0.3s ease, color 0.3s ease;
-            border: 2px solid var(--color-text-light);
-            text-transform: uppercase;
+            border: 2px solid var(--color-text-light); text-transform: uppercase;
         }
-        .cta-button-hero:hover {
-            background-color: var(--color-text-light);
-            color: var(--color-text-dark);
-            text-decoration: none;
-        }
+        .cta-button-hero:hover { background-color: var(--color-text-light); color: var(--color-text-dark); text-decoration: none; }
 
-        /* Seções Gerais */
-        section {
-            padding: 80px 0;
-            border-bottom: 1px solid var(--color-border-light);
-        }
-        section:last-of-type { border-bottom: none; }
-        section.alternate-bg { background-color: var(--color-background-light-gray); }
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-            position: relative;
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 4px;
-            background-color: var(--color-primary-red);
-            margin: 15px auto 0;
-        }
-
-        /* Intro / Impacto Section */
         .intro-impact-section { display: flex; gap: 40px; align-items: center; }
         .intro-text { flex-basis: 60%; }
         .impact-stats { flex-basis: 40%; }
         .impact-stats .stat-item { display: flex; align-items: center; margin-bottom: 25px; }
-        .impact-stats .stat-icon { font-size: 2.5em; color: var(--color-primary-red); margin-right: 20px; width: 50px; text-align: center; }
+        .impact-stats .stat-icon { color: var(--color-primary-red); margin-right: 20px; width: 50px; height: 50px; text-align: center; flex-shrink: 0; }
         .impact-stats .stat-number { font-size: 2.2em; font-weight: 700; color: var(--color-text-dark); line-height: 1; }
         .impact-stats .stat-label { font-size: 1em; color: var(--color-text-medium); }
         .btn-outlined {
-            display: inline-block;
-            background: transparent;
-            color: var(--color-text-dark);
-            padding: 12px 28px;
-            border: 2px solid var(--color-text-dark);
-            font-weight: 700;
-            transition: background-color 0.3s, color 0.3s;
-            text-transform: uppercase;
-            font-size: 0.9em; letter-spacing: 1px;
+            display: inline-block; background: transparent; color: var(--color-text-dark);
+            padding: 12px 28px; border: 2px solid var(--color-text-dark);
+            font-weight: 700; transition: background-color 0.3s, color 0.3s;
+            text-transform: uppercase; font-size: 0.9em; letter-spacing: 1px;
             border-radius: 4px;
         }
         .btn-outlined:hover { background-color: var(--color-text-dark); color: var(--color-text-light); text-decoration: none; }
         
-        /* Seção de Testemunhos */
-        #testemunhos { background-color: var(--color-background-white); }
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-        .testimonial-card {
-            padding: 30px;
-            border-radius: 5px;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-        .testimonial-card p {
-            font-size: 1em;
-            margin-bottom: 1em;
-        }
-        .testimonial-card .author {
-            font-weight: 700;
-            color: var(--color-text-dark);
-            text-align: right;
-            font-style: italic;
-        }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .testimonial-card { padding: 30px; border-radius: 5px; border: 1px solid rgba(0,0,0,0.05); display: flex; flex-direction: column; }
+        .testimonial-card p:first-of-type { flex-grow: 1; }
+        .testimonial-card .author { font-weight: 700; color: var(--color-text-dark); text-align: right; font-style: italic; }
         .testimonial-card.color-1 { background-color: var(--testimonial-bg-1); }
         .testimonial-card.color-2 { background-color: var(--testimonial-bg-2); }
         .testimonial-card.color-3 { background-color: var(--testimonial-bg-3); }
         .testimonial-card.color-4 { background-color: var(--testimonial-bg-4); }
         .testimonial-card.color-5 { background-color: var(--testimonial-bg-5); }
 
-        /* Princípios Section */
         .principles-section { text-align: center; max-width: 700px; margin: 0 auto; }
         .principles-section ul { list-style: none; padding: 0; margin-bottom: 30px; }
         .principles-section li { font-size: 1.2em; margin-bottom: 10px; font-weight: 600; color: var(--color-text-dark); }
-        .principles-section li strong { color: var(--color-primary-red); font-weight: 700;}
+        .principles-section li strong { color: var(--color-primary-red); }
 
-        /* O Trabalho / Serviços */
         .work-item { margin-bottom: 40px; text-align: center; }
         .work-item:last-child { margin-bottom: 0; }
         .work-item h3 { color: var(--color-primary-red); }
-        .work-item p { max-width: 600px; margin-left: auto; margin-right: auto; }
+        .work-item p { max-width: 600px; margin: 0 auto; }
         
-        /* ========= ALTERAÇÃO (INÍCIO): Seção Telelaboratório ========= */
-        #telelaboratorio {
-            background-color: var(--color-background-white);
+        #assistente-medico .section-title { display: none; }
+        .assistente-box {
+            background-color: #f7faff; border: 1px solid #d4e3ff;
+            border-radius: 5px; padding: 40px; max-width: 700px;
+            margin: 0 auto; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
-        .telelab-box {
-            background-color: #f7faff; /* Fundo azul bem claro para destaque */
-            border: 1px solid #d4e3ff;
-            border-radius: 5px;
-            padding: 40px;
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        .assistente-icon-img { width: 64px; height: 64px; margin-bottom: 20px; }
+        .assistente-box h3 { font-size: 1.8em; margin-bottom: 15px; }
+        .assistente-box p { font-size: 1.1em; color: var(--color-text-medium); margin-bottom: 30px; }
+        .btn-assistente-section {
+            display: inline-block; background-color: var(--color-secondary-blue); color: var(--color-text-light);
+            padding: 14px 35px; border-radius: 4px; font-weight: 700;
+            font-size: 1em; text-transform: uppercase; transition: background-color 0.3s ease;
         }
-        .telelab-icon {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            color: var(--color-secondary-blue);
-        }
-        .telelab-box h3 {
-            color: var(--color-text-dark);
-            font-size: 1.8em;
-            margin-bottom: 15px;
-        }
-        .telelab-box p {
-            font-size: 1.1em;
-            color: var(--color-text-medium);
-            margin-bottom: 30px;
-        }
-        .btn-telelab-section {
-            display: inline-block;
-            background-color: var(--color-secondary-blue);
-            color: var(--color-text-light);
-            padding: 14px 35px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 700;
-            font-size: 1em;
-            text-transform: uppercase;
-            transition: background-color 0.3s ease;
-        }
-        .btn-telelab-section:hover {
-            background-color: var(--color-secondary-blue-hover);
-            text-decoration: none;
-        }
-        /* ========= ALTERAÇÃO (FIM) ========= */
+        .btn-assistente-section:hover { background-color: var(--color-secondary-blue-hover); text-decoration: none; }
 
-        /* Seção de Acesso aos Grupos WhatsApp */
-        #acesso-grupos-whatsapp { background-color: var(--color-background-light-gray); }
-        #acesso-grupos-whatsapp .group-container { max-width: 900px; margin: 0 auto; padding: 20px 0; }
-        #acesso-grupos-whatsapp .group-header { text-align: center; margin-bottom: 40px; padding-bottom: 20px; }
-        #acesso-grupos-whatsapp .group-header h2 {
-            color: var(--color-text-dark);
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-        #acesso-grupos-whatsapp .group-header h2::after{
-            content: ''; display: block; width: 50px; height: 4px;
-            background-color: var(--color-primary-red); margin: 10px auto 0;
-        }
-        #acesso-grupos-whatsapp .group-header p { font-size: 1.1em; color: var(--color-text-medium); }
+        #acesso-grupos-whatsapp .group-container { max-width: 900px; margin: 0 auto; }
         .group-section-title {
-            font-size: 1.6em; color: var(--color-text-dark); text-align: center;
-            margin-top: 40px; margin-bottom: 25px; padding-bottom: 10px;
+            font-size: 1.6em; text-align: center; margin-top: 40px;
+            margin-bottom: 25px; padding-bottom: 10px;
             border-bottom: 1px solid var(--color-border-light); font-weight: 600;
         }
         .region-grid, .general-groups-grid {
@@ -350,151 +240,123 @@
         }
         .region-card, .general-group-card {
             background-color: var(--color-background-white); border: 1px solid var(--color-border-light);
-            border-radius: 4px; padding: 25px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-            display: flex; flex-direction: column;
+            border-radius: 4px; padding: 25px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+            display: flex; flex-direction: column; text-align: center;
         }
-        .region-card:hover, .general-group-card:hover {
-            transform: translateY(-4px); box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .region-card { justify-content: center; text-align: center; }
-        .region-card h3 { margin-bottom: 8px;}
-        .general-group-card h3 {
-            font-size: 1.25em; color: var(--color-primary-red); margin-top: 0; margin-bottom: 12px;
-            font-weight: 700;
-        }
-        .region-card p, .general-group-card p {
-            font-size: 0.95em; color: var(--color-text-medium); margin-bottom: 20px;
-            flex-grow: 1;
-        }
+        .region-card h3, .general-group-card h3 { font-size: 1.25em; margin-bottom: 12px; }
+        .general-group-card h3 { color: var(--color-primary-red); }
+        .region-card p { font-size: 0.95em; color: var(--color-text-medium); margin-bottom: 0; flex-grow: 1; }
+        .general-group-card p { font-size: 0.95em; color: var(--color-text-medium); margin-bottom: 20px; flex-grow: 1; }
         .btn-whatsapp {
             display: inline-block; background-color: var(--color-whatsapp-btn); color: white;
-            padding: 10px 18px; text-decoration: none; border-radius: 4px; font-weight: bold;
-            text-align: center; transition: background-color 0.2s ease; font-size: 0.95em;
-            margin-top: auto; align-self: center;
+            padding: 10px 18px; border-radius: 4px; font-weight: bold;
+            font-size: 0.95em; margin-top: auto; align-self: center;
         }
-        .btn-whatsapp:hover { background-color: var(--color-whatsapp-btn-hover); }
+        .btn-whatsapp:hover { background-color: var(--color-whatsapp-btn-hover); text-decoration: none; color: white; }
 
-        /* Como Ajudar Section */
-        .help-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .help-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 400px)); gap: 30px; justify-content: center; }
         .help-card { background-color: var(--color-background-white); border: 1px solid var(--color-border-light); padding: 30px; border-radius: 4px; text-align: center; }
         .help-card h4 { color: var(--color-primary-red); margin-bottom: 15px; }
-        .help-card .btn { display: inline-block; text-align: center; margin-top: 20px; }
+        .help-card .btn-outlined { display: inline-block; margin-top: 20px; }
 
-        /* FAQ Section */
-        #faq { background-color: var(--color-background-white); }
         #faq .faq-accordion { max-width: 800px; margin: 0 auto; }
         #faq .faq-item { border-bottom: 1px solid var(--color-border-light); }
-        #faq .faq-question {
-            padding: 20px 0; cursor: pointer; display: flex;
-            justify-content: space-between; align-items: center;
-            font-weight: 600; color: var(--color-text-dark); font-size: 1.2em;
-        }
-        #faq .faq-question .icon {
-            font-size: 1.2em; color: var(--color-primary-red); transition: transform 0.3s ease-in-out; font-weight: bold;
-        }
-        #faq .faq-answer {
-            max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; padding: 0.4s ease-out; padding: 0;
-        }
-        #faq .faq-answer p { font-size: 1em; color: var(--color-text-medium); padding-bottom: 20px; }
+        #faq .faq-question { padding: 20px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 1.2em; }
+        #faq .faq-question .icon { font-size: 1.2em; color: var(--color-primary-red); transition: transform 0.3s ease-in-out; font-weight: bold; }
+        #faq .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
+        #faq .faq-answer p { font-size: 1em; padding-bottom: 20px; padding-top: 10px; }
         #faq .faq-item.active .faq-question .icon { transform: rotate(45deg); }
         #faq .faq-item.active .faq-answer { max-height: 400px; }
 
         /* Footer */
-        .site-footer {
-            background-color: var(--color-footer-bg);
-            color: var(--color-footer-text);
-            padding: 60px 0 30px;
-            font-size: 14px;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
+        .site-footer { background-color: var(--color-footer-bg); color: var(--color-footer-text); padding: 60px 0 30px; font-size: 14px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; margin-bottom: 40px; }
         .footer-column .footer-logo-text { font-size: 1.5em; font-weight: 700; color: var(--color-text-light); margin-bottom: 20px; display: block;}
         .footer-column h5 { color: var(--color-text-light); margin-bottom: 15px; font-size: 16px; text-transform: uppercase; }
         .footer-column ul { list-style: none; padding: 0; }
         .footer-column ul li { margin-bottom: 10px; }
-        .footer-column ul li a { color: var(--color-footer-text); font-weight: 400; }
+        .footer-column ul li a { color: var(--color-footer-text); cursor: pointer; }
         .footer-column ul li a:hover { color: var(--color-text-light); text-decoration: underline; }
-        .footer-column p { color: var(--color-footer-text); font-size: 14px; line-height: 1.7; }
-        .footer-social-icons a { color: var(--color-footer-text); margin-right: 15px; font-size: 1.5em; text-decoration: none; }
-        .footer-social-icons a:hover { color: var(--color-text-light); }
+        .footer-column p { line-height: 1.7; }
+        .footer-social-icons { display: flex; gap: 15px; }
+        .footer-social-icons a:hover { transform: scale(1.1); }
+        .footer-social-icons svg { width: 24px; height: 24px; }
+        .footer-bottom { text-align: center; padding-top: 30px; margin-top: 30px; border-top: 1px solid rgba(204, 204, 204, 0.2); font-size: 13px; }
 
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            margin-top: 30px;
-            border-top: 1px solid rgba(204, 204, 204, 0.2);
-            font-size: 13px;
+        /* Modal da Política de Privacidade */
+        .modal {
+            display: none; position: fixed; z-index: 2000;
+            left: 0; top: 0; width: 100%; height: 100%;
+            overflow: auto; background-color: rgba(0,0,0,0.6);
+            animation: fadeIn 0.3s;
         }
-        .footer-bottom a { color: var(--color-footer-text); }
-        .footer-bottom a:hover { color: var(--color-text-light); }
+        .modal-content {
+            background-color: #fefefe; margin: 5% auto;
+            padding: 30px 40px; border: 1px solid #888;
+            width: 80%; max-width: 800px; border-radius: 8px;
+            position: relative;
+            animation: slideIn 0.3s;
+        }
+        @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+        @keyframes slideIn { from {transform: translateY(-50px);} to {transform: translateY(0);} }
+        .modal-content h2 { color: var(--color-primary-red); }
+        .modal-content h3 { color: var(--color-text-dark); border-bottom: 2px solid #f2f2f2; padding-bottom: 10px; margin-top: 30px; }
+        .close-button {
+            color: #aaa; float: right; font-size: 28px;
+            font-weight: bold; position: absolute; top: 10px; right: 25px;
+        }
+        .close-button:hover, .close-button:focus {
+            color: black; text-decoration: none; cursor: pointer;
+        }
 
         /* Responsividade */
-        @media (max-width: 1200px) {
-            .site-header nav ul li a {
-                padding: 0 10px;
-                font-size: 13px;
-            }
-        }
-        @media (max-width: 992px) {
-            h1 { font-size: 2.5em; }
-            h2 { font-size: 1.8em; }
-            .site-header nav { display: none; }
+        @media (max-width: 991px) {
+            .main-nav { display: none; }
+            .mobile-menu-toggle { display: block; }
+            .site-header .container { justify-content: space-between; width: 100%; }
             .intro-impact-section { flex-direction: column; }
             .testimonial-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 767px) {
             body { font-size: 15px; }
-            h1 { font-size: 2.1em; }
-            h2 { font-size: 1.6em; }
             section { padding: 60px 0; }
-            #hero { padding: 100px 15px; text-align: center;}
-            #hero .hero-content { max-width: 100%; }
+            #hero { padding: 80px 15px; text-align: center;}
+            #hero .hero-content { margin: 0 auto; }
             .impact-stats .stat-item { flex-direction: column; text-align: center; }
-            .impact-stats .stat-icon { margin-right: 0; margin-bottom: 5px;}
+            .impact-stats .stat-icon { margin-right: 0; margin-bottom: 10px;}
             .region-grid, .general-groups-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr; text-align: center; }
-            .footer-social-icons { margin-bottom: 20px; }
-            
-            .header-actions {
-                gap: 5px;
-            }
-            .header-actions .btn {
-                padding: 8px 10px;
-                font-size: 12px;
-            }
-            .site-header .logo-title {
-                font-size: 1.2em;
-            }
-             .telelab-box {
-                padding: 30px 20px;
-            }
+            .footer-social-icons { justify-content: center; margin-bottom: 20px; }
+            .site-header .logo-title { font-size: 1.2em; }
+            .assistente-box { padding: 30px 20px; }
         }
-
     </style>
 </head>
 <body>
 
     <header class="site-header">
         <div class="container">
-            <a href="#hero" class="logo-title">Telessaúde Missionária</a>
-            <nav>
+            <a href="#hero" class="logo-container">
+                <span class="logo-title">Telessaúde Missionária</span>
+            </a>
+            
+            <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
                 <ul>
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#servicos">Serviços</a></li>
                     <li><a href="#ajudar">Como Ajudar</a></li>
                     <li><a href="#contato">Contato</a></li>
+                    <li><a id="open-privacy-nav">Privacidade</a></li>
                 </ul>
             </nav>
-            <div class="header-actions">
-                <a href="https://telesaudemissionaria.github.io/tele_lab/" target="_blank" class="btn btn-telelab" title="Interpreta exames laboratoriais, oferecendo insights precisos, sem substituir diagnósticos médicos">TELELAB</a>
-                <a href="http://link.mercadopago.com.br/telesaudemissionaria" target="_blank" class="btn btn-donate">DOAR</a>
-            </div>
+            
+            <div class="header-actions"></div>
+
+            <button class="mobile-menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menu">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
         </div>
     </header>
 
@@ -509,7 +371,7 @@
             </div>
         </section>
 
-        <section id="sobre" class="intro-impact-section alternate-bg">
+        <section id="sobre" class="alternate-bg">
             <div class="container">
                 <div class="intro-impact-section">
                     <div class="intro-text">
@@ -519,27 +381,9 @@
                         <a href="#principios" class="btn-outlined">Nossos Princípios</a>
                     </div>
                     <div class="impact-stats">
-                        <div class="stat-item">
-                            <span class="stat-icon">🌍</span>
-                            <div>
-                                <div class="stat-number">5+</div>
-                                <div class="stat-label">Continentes Alcançados</div>
-                            </div>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-icon">🧑‍⚕️</span>
-                            <div>
-                                <div class="stat-number">100+</div>
-                                <div class="stat-label">Profissionais Voluntários</div>
-                            </div>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-icon">❤️</span>
-                            <div>
-                                <div class="stat-number">100%</div>
-                                <div class="stat-label">Foco no Cuidado Missionário</div>
-                            </div>
-                        </div>
+                        <div class="stat-item"><div class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L8 12v1c0 1.1.9 2 2 2v3.93zm2-14.24c.02 0 .04 0 .06 0l2.35 2.35-1.41 1.41-2.35-2.35C11.18 6.58 11.58 4 13 4c1.49 0 2.7 1.21 2.7 2.7 0 .3-.05.59-.13.86l.73.73c.1-.27.16-.56.16-.86C16.46 4.45 14.93 3 13 3c-1.55 0-2.88 1.08-3.23 2.5l3.23 3.23zm-3.23 0c-.35-1.42-1.68-2.5-3.23-2.5-1.93 0-3.46 1.55-3.46 3.54 0 .3.06.59.16.86l.73-.73c-.08-.27-.13-.56-.13-.86 0-1.49 1.21-2.7 2.7-2.7.42 0 .82.1.18.26L9.77 9.23zM8 15v-1c0-1.1-.9-2-2-2V8.21c-1.78.76-3 2.54-3 4.79 0 3.93 2.9 7.17 6.79 7.87L8 15z"></path></svg></div><div><div class="stat-number">5+</div><div class="stat-label">Continentes Alcançados</div></div></div>
+                        <div class="stat-item"><div class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 12c1.38 0 2.5-1.12 2.5-2.5S17.88 7 16.5 7 14 8.12 14 9.5s1.12 2.5 2.5 2.5zM9 11c1.66 0 3-1.34 3-3S10.66 5 9 5 6 6.34 6 8s1.34 3 3 3zm7.5 3c-1.83 0-5.5.92-5.5 2.75V19h11v-2.25c0-1.83-3.67-2.75-5.5-2.75zM9 13c-2.33 0-7 1.17-7 3.5V19h7v-2.25c0-.9.33-1.6.83-2.25-.42-.08-.86-.12-1.33-.12z"></path></svg></div><div><div class="stat-number">100+</div><div class="stat-label">Profissionais Voluntários</div></div></div>
+                        <div class="stat-item"><div class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg></div><div><div class="stat-number">100%</div><div class="stat-label">Foco no Cuidado Missionário</div></div></div>
                     </div>
                 </div>
             </div>
@@ -549,30 +393,14 @@
             <div class="container">
                 <h2 class="section-title">Histórias de Cuidado e Impacto</h2>
                 <div class="testimonial-grid">
-                    <div class="testimonial-card color-1">
-                        <p>"Ao enfrentarem uma virose na família e receberem um antibiótico forte na farmácia local, buscaram orientação. Com apoio da equipe, receberam indicação de um tratamento mais seguro e, em poucos dias, houve uma recuperação significativa."</p>
-                        <p class="author">- Leste da África</p>
-                    </div>
-                    <div class="testimonial-card color-2">
-                        <p>"Uma missionária agradeceu o atendimento recebido, que trouxe tranquilidade e explicações claras sobre sua saúde em um contexto de acesso restrito à assistência médica. Destacou o impacto positivo da telessaúde em sua vida."</p>
-                        <p class="author">- Peru</p>
-                    </div>
-                    <div class="testimonial-card color-3">
-                        <p>"Após quase dois anos sofrendo com dores nos ombros e sem tratamento disponível, recebi atendimento online e presencial. Fiquei livre das dores e recuperei os movimentos. Agradeço emocionado pela iniciativa."</p>
-                        <p class="author">- Morro do Chapéu, Brasil</p>
-                    </div>
-                    <div class="testimonial-card color-4">
-                        <p>"No sertão, buscamos orientação para nossa filha recém-nascida. Recebemos não apenas atendimento de qualidade, mas também oração e cuidado espiritual. Sentimos de imediato o agir de Deus. Tem sido uma fonte de bênção."</p>
-                        <p class="author">- Sertão Nordestino, Brasil</p>
-                    </div>
-                    <div class="testimonial-card color-5">
-                        <p>"Eu enfrentava problemas respiratórios há meses, sem diagnóstico preciso nos hospitais locais. Com o suporte da telessaúde, recebi o diagnóstico correto e tratamento eficaz, sentindo-me rapidamente melhor."</p>
-                        <p class="author">- Guiné-Bissau, África</p>
-                    </div>
+                    <div class="testimonial-card color-1"><p>"Ao enfrentarem uma virose na família e receberem um antibiótico forte na farmácia local, buscaram orientação. Com apoio da equipe, receberam indicação de um tratamento mais seguro e, em poucos dias, houve uma recuperação significativa."</p><p class="author">- Leste da África</p></div>
+                    <div class="testimonial-card color-2"><p>"Uma missionária agradeceu o atendimento recebido, que trouxe tranquilidade e explicações claras sobre sua saúde em um contexto de acesso restrito à assistência médica. Destacou o impacto positivo da telessaúde em sua vida."</p><p class="author">- Peru</p></div>
+                    <div class="testimonial-card color-3"><p>"Após quase dois anos sofrendo com dores nos ombros e sem tratamento disponível, recebi atendimento online e presencial. Fiquei livre das dores e recuperei os movimentos. Agradeço emocionado pela iniciativa."</p><p class="author">- Morro do Chapéu, Brasil</p></div>
+                    <div class="testimonial-card color-4"><p>"No sertão, buscamos orientação para nossa filha recém-nascida. Recebemos não apenas atendimento de qualidade, mas também oração e cuidado espiritual. Sentimos de imediato o agir de Deus. Tem sido uma fonte de bênção."</p><p class="author">- Sertão Nordestino, Brasil</p></div>
+                    <div class="testimonial-card color-5"><p>"Eu enfrentava problemas respiratórios há meses, sem diagnóstico preciso nos hospitais locais. Com o suporte da telessaúde, recebi o diagnóstico correto e tratamento eficaz, sentindo-me rapidamente melhor."</p><p class="author">- Guiné-Bissau, África</p></div>
                 </div>
             </div>
         </section>
-
 
         <section id="principios" class="principles-section alternate-bg">
             <div class="container">
@@ -590,34 +418,26 @@
 
         <section id="servicos">
             <div class="container">
-                <h2 class="section-title">Cuidado Médico Onde é Mais Necessário</h2>
-                <div class="work-item">
-                    <h3>Consultas Médicas Online</h3>
-                    <p>Nossas equipes de voluntários tratam uma ampla gama de necessidades médicas, desde orientação sobre doenças comuns até apoio em condições crônicas e emergências (dentro das limitações da telessaúde).</p>
-                </div>
-                <div class="work-item">
-                    <h3>Apoio Emocional e Espiritual</h3>
-                    <p>Oferecemos aconselhamento psicológico e suporte espiritual para lidar com os desafios únicos da vida missionária, como estresse, adaptação cultural e solidão.</p>
-                </div>
+                <h2 class="section-title">Cuidado Integral Onde é Mais Necessário</h2>
+                <div class="work-item"><h3>Consultas Médicas Online</h3><p>Nossas equipes de voluntários tratam uma ampla gama de necessidades médicas, desde orientação sobre doenças comuns até apoio em condições crônicas e emergências (dentro das limitações da telessaúde).</p></div>
+                <div class="work-item"><h3>Apoio Emocional e Espiritual</h3><p>Oferecemos aconselhamento psicológico e suporte espiritual para lidar com os desafios únicos da vida missionária, como estresse, adaptação cultural e solidão.</p></div>
             </div>
         </section>
 
-        <!-- ========= ALTERAÇÃO (INÍCIO): Nova Seção Telelaboratório ========= -->
-        <section id="telelaboratorio">
+        <section id="assistente-medico">
             <div class="container">
-                <h2 class="section-title">Nossa Ferramenta de Análise</h2>
-                <div class="telelab-box">
-                    <div class="telelab-icon">🔬</div>
-                    <h3>TELELABORATÓRIO</h3>
+                <h2 class="section-title" style="display: none;">Assistente Médico</h2>
+                <div class="assistente-box">
+                    <img src="assistente medico.ico" alt="Ícone do Assistente Médico" class="assistente-icon-img">
+                    <h3>ASSISTENTE MÉDICO</h3>
                     <p>Uma ferramenta para interpretar exames laboratoriais, oferecendo insights precisos para auxiliar no cuidado. Não substitui o diagnóstico médico profissional.</p>
-                    <a href="https://telesaudemissionaria.github.io/tele_lab/" target="_blank" class="btn-telelab-section">Acessar o Telelaboratório</a>
+                    <a href="https://telesaudemissionaria.github.io/assistentemedico/" target="_blank" class="btn-assistente-section">Acessar o Assistente Médico</a>
                 </div>
             </div>
         </section>
-        <!-- ========= ALTERAÇÃO (FIM) ========= -->
 
-        <section id="acesso-grupos-whatsapp">
-            <div class="group-container">
+        <section id="acesso-grupos-whatsapp" class="alternate-bg">
+            <div class="container group-container">
                 <header class="group-header">
                     <h2>Conecte-se aos Nossos Grupos de Apoio</h2>
                     <p>Encontre sua comunidade! Selecione sua região ou grupo de interesse para acessar via WhatsApp.</p>
@@ -625,109 +445,44 @@
 
                 <h3 class="group-section-title">Grupos Regionais</h3>
                 <div class="region-grid">
-                    <div class="region-card">
-                        <h3>🇪🇺 EUROPA</h3>
-                        <p>Para missionários na Europa Ocidental, Oriental e Leste Europeu.</p>
-                    </div>
-                    <div class="region-card">
-                        <h3>🌊 OCEANIA</h3>
-                        <p>Conectando obreiros na Austrália, Nova Zelândia e ilhas do Pacífico.</p>
-                    </div>
-                    <div class="region-card">
-                        <h3>🌍 ÁFRICA</h3>
-                        <p>Apoio para missionários servindo em todo o continente africano.</p>
-                    </div>
-                    <div class="region-card">
-                        <h3>🌎 AMÉRICAS</h3>
-                        <p>Unindo missionários que atuam na América do Norte, Central e do Sul.</p>
-                    </div>
-                    <div class="region-card">
-                        <h3>🌏 ÁSIA</h3>
-                        <p>Comunidade para aqueles que servem desde o Oriente Médio ao Sudeste Asiático.</p>
-                    </div>
+                    <div class="region-card"><h3>EUROPA</h3><p>Para missionários na Europa Ocidental, Oriental e Leste Europeu.</p></div>
+                    <div class="region-card"><h3>OCEANIA</h3><p>Conectando obreiros na Austrália, Nova Zelândia e ilhas do Pacífico.</p></div>
+                    <div class="region-card"><h3>ÁFRICA</h3><p>Apoio para missionários servindo em todo o continente africano.</p></div>
+                    <div class="region-card"><h3>AMÉRICAS</h3><p>Unindo missionários que atuam na América do Norte, Central e do Sul.</p></div>
+                    <div class="region-card"><h3>ÁSIA</h3><p>Comunidade para aqueles que servem desde o Oriente Médio ao Sudeste Asiático.</p></div>
                 </div>
 
                 <h3 class="group-section-title">Grupos Gerais</h3>
                 <div class="general-groups-grid">
-                    <div class="general-group-card">
-                        <h3>🌐 REDE GLOBAL</h3>
-                        <p>Ponto de encontro para todos os missionários trocarem experiências e orações.</p>
-                        <a href="https://chat.whatsapp.com/GgnjqfSTEHZ2RNAgYN6KtD" class="btn-whatsapp" target="_blank">Acessar Rede</a>
-                    </div>
-                    <div class="general-group-card">
-                        <h3>💡 HEALTHTECH</h3>
-                        <p>Discussão sobre inovações em tecnologia para a telessaúde missionária.</p>
-                        <a href="https://chat.whatsapp.com/FpQ07VxvHYgFP8uG6bxyT5" class="btn-whatsapp" target="_blank">Acessar Grupo</a>
-                    </div>
+                    <div class="general-group-card"><h3>REDE GLOBAL</h3><p>Ponto de encontro para todos os missionários trocarem experiências e orações.</p><a href="https://chat.whatsapp.com/GgnjqfSTEHZ2RNAgYN6KtD" class="btn-whatsapp" target="_blank">Acessar Rede</a></div>
+                    <div class="general-group-card"><h3>HEALTHTECH</h3><p>Discussão sobre inovações em tecnologia para a telessaúde missionária.</p><a href="https://chat.whatsapp.com/FpQ07VxvHYgFP8uG6bxyT5" class="btn-whatsapp" target="_blank">Acessar Grupo</a></div>
                 </div>
             </div>
         </section>
 
-        <section id="ajudar" class="alternate-bg">
+        <section id="ajudar">
             <div class="container">
                 <h2 class="section-title">Como Você Pode Ajudar</h2>
                 <p style="text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; margin-top: -40px; margin-bottom: 50px;">Somos um movimento sustentado por voluntários e doadores. Sua participação é vital para continuarmos oferecendo cuidado.</p>
                 <div class="help-grid">
-                    <div class="help-card">
-                        <h4>Seja um Voluntário</h4>
-                        <p>Profissionais de saúde, TI, tradutores e outros. Doe seu tempo e talento para apoiar missionários.</p>
-                        <a href="https://wa.me/59173346906" target="_blank" class="btn-outlined">Quero Ser Voluntário</a>
-                    </div>
-                    <div class="help-card">
-                        <h4>Faça uma Doação</h4>
-                        <p>Sua contribuição financeira nos ajuda a manter a estrutura e expandir o alcance do cuidado gratuito.</p>
-                        <a href="http://link.mercadopago.com.br/telesaudemissionaria" target="_blank" class="btn-outlined">Doar Agora (Mercado Pago)</a>
-                    </div>
-                    <div class="help-card">
-                        <h4>Interceda Conosco</h4>
-                        <p>A oração é fundamental. Ore pelos missionários, pelos voluntários e pela sustentabilidade deste ministério.</p>
-                        <a href="#contato" class="btn-outlined">Receber Pedidos de Oração</a>
-                    </div>
+                    <div class="help-card"><h4>Seja um Voluntário</h4><p>Profissionais de saúde, TI, tradutores e outros. Doe seu tempo e talento para apoiar missionários.</p><a href="https://wa.me/59173346906" target="_blank" class="btn-outlined">Quero Ser Voluntário</a></div>
+                    <div class="help-card"><h4>Faça uma Doação</h4><p>Sua contribuição financeira nos ajuda a manter a estrutura e expandir o alcance do cuidado gratuito.</p><a href="http://link.mercadopago.com.br/telesaudemissionaria" target="_blank" class="btn-outlined">Doar Agora</a></div>
                 </div>
             </div>
         </section>
 
-
-        <section id="faq">
+        <section id="faq" class="alternate-bg">
             <div class="container">
                 <h2 class="section-title">Perguntas Frequentes</h2>
                 <div class="faq-accordion">
-                    <div class="faq-item">
-                        <div class="faq-question">1. O que é a Telessaúde Missionária? <span class="icon">+</span></div>
-                        <div class="faq-answer"><p>É uma iniciativa que conecta missionários em locais remotos com profissionais de saúde voluntários, oferecendo cuidados médicos, emocionais e espirituais através da tecnologia.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">2. Para quem é este serviço? <span class="icon">+</span></div>
-                        <div class="faq-answer"><p>É para missionários cristãos e suas famílias que servem em áreas remotas ou com pouco acesso a serviços de saúde.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">3. Que tipo de cuidados oferece? <span class="icon">+</span></div>
-                        <div class="faq-answer"><p>Oferece consultas médicas online, apoio emocional e psicológico, suporte espiritual e orientações de saúde.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">4. Como funciona o atendimento? <span class="icon">+</span></div>
-                        <div class="faq-answer"><p>O missionário entra em contato pelo grupo regional de WhatsApp (veja seção 'Nossos Grupos'), a equipe de enfermagem faz uma triagem e agenda uma consulta online com um profissional de saúde.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">5. É gratuito? <span class="icon">+</span></div>
-                        <div class="faq-answer"><p>Sim, o serviço de teleorientação e aconselhamento é gratuito para os missionários, sustentado por doações e voluntariado.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">6. Quem são os profissionais de saúde? <span class="icon">+</span></div>
-                        <div class="faq-answer"><p>São médicos, enfermeiros, psicólogos e outros profissionais voluntários que doam seu tempo e conhecimento.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">7. Como a Telessaúde Missionária protege meus dados? <span class="icon">+</span></div>
-                        <div class="faq-answer"><p>Utiliza plataformas seguras e segue as leis de proteção de dados para garantir a privacidade e confidencialidade das informações.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">8. Como posso apoiar? <span class="icon">+</span></div>
-                        <div class="faq-answer"><p>Você pode apoiar como voluntário profissional, fazendo doações para sustentar o projeto, ou intercedendo em oração por este ministério e pelos missionários.</p></div>
-                    </div>
+                    <div class="faq-item"><div class="faq-question">1. O que é a Telessaúde Missionária? <span class="icon">+</span></div><div class="faq-answer"><p>É uma iniciativa que conecta missionários em locais remotos com profissionais de saúde voluntários, oferecendo cuidados médicos, emocionais e espirituais através da tecnologia.</p></div></div>
+                    <div class="faq-item"><div class="faq-question">2. Para quem é este serviço? <span class="icon">+</span></div><div class="faq-answer"><p>É para missionários cristãos e suas famílias que servem em áreas remotas ou com pouco acesso a serviços de saúde.</p></div></div>
+                    <div class="faq-item"><div class="faq-question">3. Que tipo de cuidados oferece? <span class="icon">+</span></div><div class="faq-answer"><p>Oferece consultas médicas online, apoio emocional e psicológico, suporte espiritual e orientações de saúde.</p></div></div>
+                    <div class="faq-item"><div class="faq-question">4. Como funciona o atendimento? <span class="icon">+</span></div><div class="faq-answer"><p>O missionário entra em contato através dos nossos grupos de WhatsApp, a equipe de enfermagem faz uma triagem e agenda uma consulta online com um profissional de saúde.</p></div></div>
+                    <div class="faq-item"><div class="faq-question">5. É gratuito? <span class="icon">+</span></div><div class="faq-answer"><p>Sim, o serviço de teleorientação e aconselhamento é gratuito para os missionários, sustentado por doações e voluntariado.</p></div></div>
                 </div>
             </div>
         </section>
-
     </main>
 
     <footer class="site-footer" id="contato">
@@ -737,62 +492,115 @@
                     <span class="footer-logo-text">Telessaúde Missionária</span>
                     <p>Levando saúde e esperança aos missionários nos lugares mais remotos.</p>
                     <div class="footer-social-icons">
-                        <a href="https://www.facebook.com/TelessaudeMissionaria" target="_blank" title="Facebook" aria-label="Nossa página no Facebook">Fb</a>
-                        <a href="https://www.instagram.com/telessaudemissionaria" target="_blank" title="Instagram" aria-label="Nosso perfil no Instagram">Ig</a>
-                        <a href="https://wa.me/59173346906" target="_blank" title="WhatsApp Info" aria-label="Entre em contato pelo WhatsApp">Wpp</a>
+                        <!-- CORREÇÃO: Links do Facebook e Instagram atualizados -->
+                        <a href="https://www.facebook.com/MissionaryMedicalCare/" target="_blank" title="Facebook" aria-label="Nossa página no Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-1.5c-1 0-1.5.5-1.5 1.5V12h3l-.5 3h-2.5v6.8c4.56-.93 8-4.96 8-9.8z"></path></svg></a>
+                        <a href="https://www.instagram.com/missionarymedicalcare/" target="_blank" title="Instagram" aria-label="Nosso perfil no Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8A3.6 3.6 0 0 0 20 16.4V7.6A3.6 3.6 0 0 0 16.4 4H7.6m4.4 3.2a4.8 4.8 0 1 1 0 9.6 4.8 4.8 0 0 1 0-9.6M12 9a3.2 3.2 0 1 0 0 6.4A3.2 3.2 0 0 0 12 9m4.6-2.4a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4"></path></svg></a>
+                        <a href="https://wa.me/59173346906" target="_blank" title="WhatsApp Info" aria-label="Entre em contato pelo WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.46 3.48 1.34 4.94L2.05 22l5.25-1.42c1.41.81 3.02 1.23 4.74 1.23h.01c5.46 0 9.91-4.45 9.91-9.91s-4.45-9.91-9.91-9.91zM17.23 15.3c-.27-.14-1.59-.78-1.84-.88-.25-.09-.43-.14-.62.14-.19.27-.7.88-.86 1.06-.16.18-.32.2-.59.06-.27-.14-1.14-.42-2.17-1.33-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.56.13-.13.27-.33.41-.49.14-.17.19-.27.29-.46.1-.19.05-.37-.02-.51s-.62-1.49-.84-2.04c-.23-.55-.46-.48-.62-.48-.16-.01-.34-.01-.52-.01-.18 0-.46.06-.7.33-.24.27-.92 1.01-.92 2.46s.94 2.86 1.06 3.06c.12.2.18.33.3.51.42.61.99 1.12 1.62 1.52.88.55 1.57.79 2.05.97.7.27 1.25.23 1.67.14.48-.1.7-.42.82-.83.11-.4.11-.76.08-.83l-.02-.03z"></path></svg></a>
                     </div>
                 </div>
-                <div class="footer-column">
-                    <h5>A Telessaúde</h5>
-                    <ul>
-                        <li><a href="#sobre">Sobre Nós</a></li>
-                        <li><a href="#principios">Nossos Princípios</a></li>
-                        <li><a href="#servicos">Nossos Serviços</a></li>
-                        <li><a href="#faq">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h5>Envolva-se</h5>
-                    <ul>
-                        <li><a href="#ajudar">Como Ajudar</a></li>
-                        <li><a href="https://wa.me/59173346906" target="_blank">Seja Voluntário</a></li>
-                        <li><a href="http://link.mercadopago.com.br/telesaudemissionaria" target="_blank">Doe Agora</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h5>Contato</h5>
-                    <p><strong>Informações Gerais:</strong><br>missionarymedicalcare@gmail.com</p>
-                    <p><strong>WhatsApp (Info):</strong><br><a href="https://wa.me/59173346906" target="_blank">+591 7334 6906</a> (Samuel)</p>
-                    <p><a href="link-para-politica-privacidade.html">Política de Privacidade</a></p>
-                </div>
+                <div class="footer-column"><h5>A Telessaúde</h5><ul><li><a href="#sobre">Sobre Nós</a></li><li><a href="#principios">Nossos Princípios</a></li><li><a href="#servicos">Nossos Serviços</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+                <div class="footer-column"><h5>Envolva-se</h5><ul><li><a href="#ajudar">Como Ajudar</a></li><li><a href="https://wa.me/59173346906" target="_blank">Seja Voluntário</a></li><li><a href="http://link.mercadopago.com.br/telesaudemissionaria" target="_blank">Doe Agora</a></li></ul></div>
+                <div class="footer-column"><h5>Contato</h5><p><strong>Informações Gerais:</strong><br>missionarymedicalcare@gmail.com</p><p><strong>WhatsApp (Info):</strong><br><a href="https://wa.me/59173346906" target="_blank">+591 7334 6906</a> (Samuel)</p><p><a id="open-privacy-footer">Política de Privacidade</a></p></div>
             </div>
-            <div class="footer-bottom">
-                © <span id="currentYear"></span> Telessaúde Missionária. Iniciativa da Missionary Medical Care. Todos os direitos reservados.
-            </div>
+            <div class="footer-bottom">© <span id="currentYear"></span> Telessaúde Missionária. Iniciativa da Missionary Medical Care. Todos os direitos reservados.</div>
         </div>
     </footer>
 
-    <script>
-        // Script para obter o ano atual
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    <div id="privacy-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Política de Privacidade</h2>
+            <h3>Versão: 1.0</h3>
+            <h3>1. Âmbito</h3>
+            <p>Esta política aplica-se a todos os profissionais, voluntários, parceiros e pacientes envolvidos no serviço de telessaúde da Telessaúde Missionária.</p>
+            <h3>2. Coleta e Uso de Dados</h3>
+            <p>Coletamos os seguintes dados: identificação pessoal, informações de saúde, dados de conexão e de uso da plataforma. Estes dados são utilizados para prestar atendimento, garantir a segurança clínica, cumprir obrigações legais e realizar melhorias de serviço (utilizando dados anonimizados).</p>
+            <h3>3. Consentimento</h3>
+            <p>Só iniciamos o atendimento após o consentimento livre e informado do paciente, que pode ser revogado a qualquer momento.</p>
+            <h3>4. Compartilhamento</h3>
+            <p>Os dados só são compartilhados com a equipe de saúde diretamente envolvida, fornecedores essenciais (sob confidencialidade), autoridades (se exigido por lei) e para pesquisas com dados anonimizados.</p>
+            <h3>5. Segurança e Armazenamento</h3>
+            <p>Utilizamos ambiente criptografado, acesso restrito, backups regulares e retenção de dados pelo tempo legal mínimo para garantir a segurança.</p>
+            <h3>6. Direitos dos Pacientes</h3>
+            <p>A qualquer momento, pacientes podem confirmar, acessar, corrigir, eliminar ou solicitar a portabilidade de seus dados, além de revogar o consentimento e ser informados sobre incidentes de segurança.</p>
+            <h3>7. Incidentes de Segurança</h3>
+            <p>Em caso de vazamento ou acesso indevido, realizaremos a contenção imediata, notificaremos o paciente e as autoridades, e adotaremos medidas corretivas.</p>
+            <h3>8. Responsabilidades</h3>
+            <p>Todos os envolvidos devem seguir esta política, sob risco de sanções administrativas e legais.</p>
+            <h3>9. Revisão</h3>
+            <p>Atualizamos esta política conforme mudanças legais ou operacionais, comunicando qualquer alteração a todos os envolvidos.</p>
+        </div>
+    </div>
 
-        // Script para FAQ Accordion
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            question.addEventListener('click', () => {
-                const isActive = item.classList.contains('active');
-                
-                // Fecha todos os outros itens antes de abrir o novo
-                faqItems.forEach(i => {
-                    if (i !== item) i.classList.remove('active');
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Script do ano atual no rodapé
+            const currentYearEl = document.getElementById('currentYear');
+            if (currentYearEl) {
+                currentYearEl.textContent = new Date().getFullYear();
+            }
+
+            // Script do FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(function(item) {
+                const question = item.querySelector('.faq-question');
+                if (question) {
+                    question.addEventListener('click', function() {
+                        faqItems.forEach(function(otherItem) {
+                            if (otherItem !== item) {
+                                otherItem.classList.remove('active');
+                            }
+                        });
+                        item.classList.toggle('active');
+                    });
+                }
+            });
+
+            // Script do Menu Mobile
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const mainNav = document.querySelector('#main-nav');
+            if (mobileMenuToggle && mainNav) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    document.body.classList.toggle('mobile-menu-open');
+                    const isExpanded = document.body.classList.contains('mobile-menu-open');
+                    mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
                 });
 
-                // Alterna a classe 'active' no item clicado
-                item.classList.toggle('active');
-            });
+                mainNav.addEventListener('click', function(e) {
+                    if (e.target.tagName === 'A' && e.target.href.includes('#')) {
+                        document.body.classList.remove('mobile-menu-open');
+                        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+
+            // Script do Modal da Política de Privacidade
+            const modal = document.getElementById('privacy-modal');
+            const openNav = document.getElementById('open-privacy-nav');
+            const openFooter = document.getElementById('open-privacy-footer');
+            const closeBtn = modal ? modal.querySelector('.close-button') : null;
+
+            if(modal && openNav && openFooter && closeBtn) {
+                const openModal = function() {
+                    modal.style.display = 'block';
+                };
+                const closeModal = function() {
+                    modal.style.display = 'none';
+                };
+
+                openNav.addEventListener('click', openModal);
+                openFooter.addEventListener('click', openModal);
+                closeBtn.addEventListener('click', closeModal);
+
+                window.addEventListener('click', function(event) {
+                    if (event.target === modal) {
+                        closeModal();
+                    }
+                });
+            }
         });
     </script>
 
 </body>
 </html>
+
