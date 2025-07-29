@@ -56,8 +56,7 @@
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             line-height: 1.6;
             color: var(--color-text-medium);
-            background: url('./assets/images/bg-care-1.png') no-repeat center center fixed;
-            background-size: cover;
+            background-color: var(--color-background-white); /* Fundo base */
             font-size: 16px;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -100,10 +99,7 @@
         }
         .site-header .container { display: flex; justify-content: space-between; align-items: center; }
         
-        /* CORREÇÃO: Logo removido, apenas texto */
-        .logo-container {
-            text-decoration: none;
-        }
+        .logo-container { text-decoration: none; }
         .logo-title {
             font-size: 1.6em;
             font-weight: 700;
@@ -111,6 +107,7 @@
         }
         
         /* Navegação */
+        .header-right-content { display: flex; align-items: center; gap: 20px; }
         .main-nav { display: flex; }
         .main-nav ul { list-style: none; display: flex; align-items: center; }
         .main-nav ul li a {
@@ -125,7 +122,11 @@
         }
         .main-nav ul li a:hover { color: var(--color-primary-red); text-decoration: none; }
         
-        .header-actions { display: none; }
+        /* Language Switcher */
+        .lang-switcher { display: flex; gap: 10px; }
+        .lang-switcher button { background: none; border: none; cursor: pointer; padding: 5px; border-radius: 50%; transition: background-color 0.2s; }
+        .lang-switcher button:hover { background-color: #f0f0f0; }
+        .lang-switcher img { width: 24px; height: 24px; display: block; }
 
         /* Menu Mobile */
         .mobile-menu-toggle {
@@ -235,39 +236,58 @@
             transform: scale(1.05);
             box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
-        .work-item img:not([src]), .work-item img[src=""] {
-            background: linear-gradient(45deg, var(--color-primary-red), var(--color-secondary-blue));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2em;
-            font-weight: bold;
-        }
-
         
-        #assistente-medico .section-title { display: none; }
-        .assistente-box {
-            background-color: #f7faff; border: 1px solid #d4e3ff;
-            border-radius: 5px; padding: 40px; max-width: 700px;
-            margin: 0 auto; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        /* NOVA SEÇÃO MISSIONCARE PLUS */
+        #missioncare-plus {
+            background: linear-gradient(135deg, #0056a8 0%, #00417f 100%);
+            color: var(--color-text-light);
         }
-        .assistente-icon-img { 
-            width: 64px; 
-            height: 64px; 
-            margin-bottom: 20px; 
+        .missioncare-plus-box {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
         }
-
-        .assistente-box h3 { font-size: 1.8em; margin-bottom: 15px; }
-        .assistente-box p { font-size: 1.1em; color: var(--color-text-medium); margin-bottom: 30px; }
-        .btn-assistente-section {
-            display: inline-block; background-color: var(--color-secondary-blue); color: var(--color-text-light);
-            padding: 14px 35px; border-radius: 4px; font-weight: 700;
-            font-size: 1em; text-transform: uppercase; transition: background-color 0.3s ease;
+        .missioncare-plus-box .section-title {
+            margin-bottom: 20px;
         }
-        .btn-assistente-section:hover { background-color: var(--color-secondary-blue-hover); text-decoration: none; }
+        .missioncare-plus-box .section-title::after {
+            background-color: var(--color-text-light);
+        }
+        .missioncare-plus-box h2 {
+            color: var(--color-text-light);
+        }
+        .missioncare-plus-box p {
+            font-size: 1.2em;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 30px;
+        }
+        .btn-missioncare-plus {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--color-text-light);
+            color: var(--color-secondary-blue);
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: none;
+        }
+        .btn-missioncare-plus:hover {
+            background-color: #eef;
+            text-decoration: none;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            color: var(--color-secondary-blue-hover);
+        }
 
         #acesso-grupos-whatsapp .group-container { max-width: 900px; margin: 0 auto; }
+        .group-header { text-align: center; margin-bottom: 50px; }
+        .group-header h2 { font-size: clamp(1.6em, 4vw, 2.2em); }
+        .group-header p { max-width: 600px; margin: 0 auto; }
         .group-section-title {
             font-size: 1.6em; text-align: center; margin-top: 40px;
             margin-bottom: 25px; padding-bottom: 10px;
@@ -277,22 +297,29 @@
             display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px; margin-bottom: 40px;
         }
-        .region-card, .general-group-card {
+        .region-card-link { text-decoration: none; }
+        .region-card {
             background-color: var(--color-background-white); border: 1px solid var(--color-border-light);
-            border-radius: 4px; padding: 25px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+            border-radius: 8px; padding: 25px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
             display: flex; flex-direction: column; text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
         }
-        .region-card h3, .general-group-card h3 { font-size: 1.25em; margin-bottom: 12px; }
-        .general-group-card h3 { color: var(--color-primary-red); }
-        .region-card p { font-size: 0.95em; color: var(--color-text-medium); margin-bottom: 0; flex-grow: 1; }
-        .general-group-card p { font-size: 0.95em; color: var(--color-text-medium); margin-bottom: 20px; flex-grow: 1; }
-        .btn-whatsapp {
-            display: inline-block; background-color: var(--color-whatsapp-btn); color: white;
-            padding: 10px 18px; border-radius: 4px; font-weight: bold;
-            font-size: 0.95em; margin-top: auto; align-self: center;
+        .region-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        .btn-whatsapp:hover { background-color: var(--color-whatsapp-btn-hover); text-decoration: none; color: white; }
-
+        .region-icon { color: var(--color-primary-red); margin-bottom: 15px; }
+        .region-icon svg { width: 40px; height: 40px; margin: 0 auto; }
+        .region-card h3 { font-size: 1.25em; margin-bottom: 12px; color: var(--color-text-dark); }
+        .region-card p { font-size: 0.95em; color: var(--color-text-medium); margin-bottom: 20px; flex-grow: 1; }
+        .access-link {
+            display: inline-block;
+            font-weight: 600;
+            color: var(--color-secondary-blue);
+            margin-top: auto;
+        }
+        
         .help-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 400px)); gap: 30px; justify-content: center; }
         .help-card { 
             background-color: var(--color-background-white); 
@@ -320,16 +347,6 @@
             transform: scale(1.1);
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
-        .help-card img:not([src]), .help-card img[src=""] {
-            background: linear-gradient(45deg, var(--color-primary-red), var(--color-secondary-blue));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-
 
         #faq .faq-accordion { max-width: 800px; margin: 0 auto; }
         #faq .faq-item { border-bottom: 1px solid var(--color-border-light); }
@@ -383,11 +400,14 @@
 
         /* Responsividade */
         @media (max-width: 991px) {
-            .main-nav { display: none; }
+            .main-nav, .lang-switcher { display: none; }
             .mobile-menu-toggle { display: block; }
             .site-header .container { justify-content: space-between; width: 100%; }
             .intro-impact-section { flex-direction: column; }
             .testimonial-grid { grid-template-columns: 1fr; }
+            .missioncare-plus-box { flex-direction: column; text-align: center; }
+            .missioncare-plus-text .section-title { text-align: center; }
+            .missioncare-plus-text .section-title::after { margin: 15px auto 0; }
         }
         @media (max-width: 767px) {
             body { font-size: 15px; }
@@ -400,7 +420,6 @@
             .footer-grid { grid-template-columns: 1fr; text-align: center; }
             .footer-social-icons { justify-content: center; margin-bottom: 20px; }
             .site-header .logo-title { font-size: 1.2em; }
-            .assistente-box { padding: 30px 20px; }
         }
     </style>
 </head>
@@ -412,17 +431,25 @@
                 <span class="logo-title">Telessaúde Missionária</span>
             </a>
             
-            <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
-                <ul>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#ajudar">Como Ajudar</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                    <li><a id="open-privacy-nav">Privacidade</a></li>
-                </ul>
-            </nav>
-            
-            <div class="header-actions"></div>
+            <div class="header-right-content">
+                <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+                    <ul>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#ajudar">Como Ajudar</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                        <li><a id="open-privacy-nav">Privacidade</a></li>
+                    </ul>
+                </nav>
+                <div class="lang-switcher">
+                    <button title="Português (Brasil)" aria-label="Mudar para Português (Brasil)">
+                        <img src="https://flagcdn.com/br.svg" alt="Bandeira do Brasil">
+                    </button>
+                    <button title="Español" aria-label="Mudar para Español">
+                        <img src="https://flagcdn.com/es.svg" alt="Bandeira da Espanha">
+                    </button>
+                </div>
+            </div>
 
             <button class="mobile-menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menu">
                 <span class="icon-bar"></span>
@@ -461,7 +488,7 @@
             </div>
         </section>
 
-        <section id="testemunhos" style="background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center;">
+        <section id="testemunhos">
             <div class="container">
                 <h2 class="section-title">Histórias de Cuidado e Impacto</h2>
                 <div class="testimonial-grid">
@@ -474,7 +501,7 @@
             </div>
         </section>
 
-        <section id="principios" class="principles-section alternate-bg" style="background: linear-gradient(rgba(242, 242, 242, 0.9), rgba(242, 242, 242, 0.9)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center;">
+        <section id="principios" class="principles-section alternate-bg">
             <div class="container">
                 <h2 class="section-title">Os Princípios Que Nos Movem</h2>
                 <ul>
@@ -488,30 +515,36 @@
             </div>
         </section>
 
-        <section id="servicos" style="background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center;">
+        <section id="servicos">
             <div class="container">
                 <h2 class="section-title">Cuidado Integral Onde é Mais Necessário</h2>
                 <div class="work-item">
-                    <img src="./assets/images/icon-consulta-medica.png" alt="Consulta médica online" loading="lazy">
+                    <img src="https://placehold.co/120x120/0056a8/FFFFFF?text=Consulta" alt="Consulta médica online" loading="lazy">
                     <h3>Consultas Médicas Online</h3>
                     <p>Nossas equipes de voluntários tratam uma ampla gama de necessidades médicas, desde orientação sobre doenças comuns até apoio em condições crônicas e emergências (dentro das limitações da telessaúde).</p>
                 </div>
                 <div class="work-item">
-                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300&q=80" alt="Apoio emocional e espiritual" loading="lazy">
+                    <img src="https://placehold.co/120x120/D10000/FFFFFF?text=Apoio" alt="Apoio emocional e espiritual" loading="lazy">
                     <h3>Apoio Emocional e Espiritual</h3>
                     <p>Oferecemos aconselhamento psicológico e suporte espiritual para lidar com os desafios únicos da vida missionária, como estresse, adaptação cultural e solidão.</p>
                 </div>
             </div>
         </section>
 
-        <section id="assistente-medico">
+        <!-- SEÇÃO ATUALIZADA PARA MISSIONCARE PLUS -->
+        <section id="missioncare-plus">
             <div class="container">
-                <h2 class="section-title" style="display: none;">Assistente Médico</h2>
-                <div class="assistente-box">
-                    <img src="./assets/images/assistente-medico.png" alt="Ícone do Assistente Médico" class="assistente-icon-img">
-                    <h3>ASSISTENTE MÉDICO</h3>
-                    <p>Uma ferramenta para interpretar exames laboratoriais, oferecendo insights precisos para auxiliar no cuidado. Não substitui o diagnóstico médico profissional.</p>
-                    <a href="https://telesaudemissionaria.github.io/assistentemedico/" target="_blank" class="btn-assistente-section">Acessar o Assistente Médico</a>
+                <div class="missioncare-plus-box">
+                    <div class="missioncare-plus-text">
+                        <h2 class="section-title">Conheça o MISSIONCARE PLUS</h2>
+                        <p>No campo missionário cada segundo e cada recurso contam. Acesse sua nova ferramenta de saúde.</p>
+                        <a href="https://telesaudemissionaria.github.io/missioncare-plus/" target="_blank" class="btn-missioncare-plus">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                            </svg>
+                            <span>ACESSE AGORA: MissionCare Plus - Início</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -523,36 +556,85 @@
                     <p>Encontre sua comunidade! Selecione sua região ou grupo de interesse para acessar via WhatsApp.</p>
                 </header>
 
-                <h3 class="group-section-title">Grupos Regionais</h3>
+                <h3 class="group-section-title">Grupos Regionais de Atendimento</h3>
                 <div class="region-grid">
-                    <div class="region-card"><h3>EUROPA</h3><p>Para missionários na Europa Ocidental, Oriental e Leste Europeu.</p></div>
-                    <div class="region-card"><h3>OCEANIA</h3><p>Conectando obreiros na Austrália, Nova Zelândia e ilhas do Pacífico.</p></div>
-                    <div class="region-card"><h3>ÁFRICA</h3><p>Apoio para missionários servindo em todo o continente africano.</p></div>
-                    <div class="region-card"><h3>AMÉRICAS</h3><p>Unindo missionários que atuam na América do Norte, Central e do Sul.</p></div>
-                    <div class="region-card"><h3>ÁSIA</h3><p>Comunidade para aqueles que servem desde o Oriente Médio ao Sudeste Asiático.</p></div>
+                    <a href="https://chat.whatsapp.com/invite/your-link-here" target="_blank" class="region-card-link">
+                        <div class="region-card">
+                            <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
+                            <h3>EUROPA</h3>
+                            <p>Para missionários na Europa Ocidental, Oriental e Leste Europeu.</p>
+                            <span class="access-link">Acessar Grupo &rarr;</span>
+                        </div>
+                    </a>
+                     <a href="https://chat.whatsapp.com/invite/your-link-here" target="_blank" class="region-card-link">
+                        <div class="region-card">
+                            <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
+                            <h3>OCEANIA</h3>
+                            <p>Conectando obreiros na Austrália, Nova Zelândia e ilhas do Pacífico.</p>
+                             <span class="access-link">Acessar Grupo &rarr;</span>
+                        </div>
+                    </a>
+                     <a href="https://chat.whatsapp.com/invite/your-link-here" target="_blank" class="region-card-link">
+                        <div class="region-card">
+                            <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
+                            <h3>ÁFRICA</h3>
+                            <p>Apoio para missionários servindo em todo o continente africano.</p>
+                             <span class="access-link">Acessar Grupo &rarr;</span>
+                        </div>
+                    </a>
+                     <a href="https://chat.whatsapp.com/invite/your-link-here" target="_blank" class="region-card-link">
+                        <div class="region-card">
+                            <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
+                            <h3>AMÉRICAS</h3>
+                            <p>Unindo missionários que atuam na América do Norte, Central e do Sul.</p>
+                             <span class="access-link">Acessar Grupo &rarr;</span>
+                        </div>
+                    </a>
+                     <a href="https://chat.whatsapp.com/invite/your-link-here" target="_blank" class="region-card-link">
+                        <div class="region-card">
+                            <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
+                            <h3>ÁSIA</h3>
+                            <p>Comunidade para aqueles que servem desde o Oriente Médio ao Sudeste Asiático.</p>
+                             <span class="access-link">Acessar Grupo &rarr;</span>
+                        </div>
+                    </a>
                 </div>
 
                 <h3 class="group-section-title">Grupos Gerais</h3>
                 <div class="general-groups-grid">
-                    <div class="general-group-card"><h3>REDE GLOBAL</h3><p>Ponto de encontro para todos os missionários trocarem experiências e orações.</p><a href="https://chat.whatsapp.com/GgnjqfSTEHZ2RNAgYN6KtD" class="btn-whatsapp" target="_blank">Acessar Rede</a></div>
-                    <div class="general-group-card"><h3>HEALTHTECH</h3><p>Discussão sobre inovações em tecnologia para a telessaúde missionária.</p><a href="https://chat.whatsapp.com/FpQ07VxvHYgFP8uG6bxyT5" class="btn-whatsapp" target="_blank">Acessar Grupo</a></div>
+                    <a href="https://chat.whatsapp.com/GgnjqfSTEHZ2RNAgYN6KtD" target="_blank" class="region-card-link">
+                        <div class="region-card">
+                            <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
+                            <h3>REDE GLOBAL</h3>
+                            <p>Ponto de encontro para todos os missionários trocarem experiências e orações.</p>
+                            <span class="access-link">Acessar Rede &rarr;</span>
+                        </div>
+                    </a>
+                    <a href="https://chat.whatsapp.com/Icyf4L4nhcV1MqDxvQycvm" target="_blank" class="region-card-link">
+                        <div class="region-card">
+                            <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
+                            <h3>Red Misionera Telesalud</h3>
+                            <p>Una Red global de cuidado, esperanza y apoyo integral pensada exclusivamente para el mundo hispano hablante.</p>
+                            <span class="access-link">Acceder al Grupo &rarr;</span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section id="ajudar" style="background: linear-gradient(rgba(242, 242, 242, 0.9), rgba(242, 242, 242, 0.9)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center;">
+        <section id="ajudar">
             <div class="container">
                 <h2 class="section-title">Como Você Pode Ajudar</h2>
                 <p style="text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; margin-top: -40px; margin-bottom: 50px;">Somos um movimento sustentado por voluntários e doadores. Sua participação é vital para continuarmos oferecendo cuidado.</p>
                 <div class="help-grid">
                     <div class="help-card">
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80" alt="Voluntários trabalhando" loading="lazy">
+                        <img src="https://placehold.co/80x80/555555/FFFFFF?text=Voluntário" alt="Voluntários trabalhando" loading="lazy">
                         <h4>Seja um Voluntário</h4>
                         <p>Profissionais de saúde, TI, tradutores e outros. Doe seu tempo e talento para apoiar missionários.</p>
                         <a href="https://wa.me/59173346906" target="_blank" class="btn-outlined">Quero Ser Voluntário</a>
                     </div>
                     <div class="help-card">
-                        <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80" alt="Doação e apoio" loading="lazy">
+                        <img src="https://placehold.co/80x80/D10000/FFFFFF?text=Doação" alt="Doação e apoio" loading="lazy">
                         <h4>Faça uma Doação</h4>
                         <p>Sua contribuição financeira nos ajuda a manter a estrutura e expandir o alcance do cuidado gratuito.</p>
                         <a href="http://link.mercadopago.com.br/telesaudemissionaria" target="_blank" class="btn-outlined">Doar Agora</a>
@@ -582,7 +664,6 @@
                     <span class="footer-logo-text">Telessaúde Missionária</span>
                     <p>Levando saúde e esperança aos missionários nos lugares mais remotos.</p>
                     <div class="footer-social-icons">
-                        <!-- CORREÇÃO: Links do Facebook e Instagram atualizados -->
                         <a href="https://www.facebook.com/MissionaryMedicalCare/" target="_blank" title="Facebook" aria-label="Nossa página no Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-1.5c-1 0-1.5.5-1.5 1.5V12h3l-.5 3h-2.5v6.8c4.56-.93 8-4.96 8-9.8z"></path></svg></a>
                         <a href="https://www.instagram.com/missionarymedicalcare/" target="_blank" title="Instagram" aria-label="Nosso perfil no Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8A3.6 3.6 0 0 0 20 16.4V7.6A3.6 3.6 0 0 0 16.4 4H7.6m4.4 3.2a4.8 4.8 0 1 1 0 9.6 4.8 4.8 0 0 1 0-9.6M12 9a3.2 3.2 0 1 0 0 6.4A3.2 3.2 0 0 0 12 9m4.6-2.4a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4"></path></svg></a>
                         <a href="https://wa.me/59173346906" target="_blank" title="WhatsApp Info" aria-label="Entre em contato pelo WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.46 3.48 1.34 4.94L2.05 22l5.25-1.42c1.41.81 3.02 1.23 4.74 1.23h.01c5.46 0 9.91-4.45 9.91-9.91s-4.45-9.91-9.91-9.91zM17.23 15.3c-.27-.14-1.59-.78-1.84-.88-.25-.09-.43-.14-.62.14-.19.27-.7.88-.86 1.06-.16.18-.32.2-.59.06-.27-.14-1.14-.42-2.17-1.33-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.56.13-.13.27-.33.41-.49.14-.17.19-.27.29-.46.1-.19.05-.37-.02-.51s-.62-1.49-.84-2.04c-.23-.55-.46-.48-.62-.48-.16-.01-.34-.01-.52-.01-.18 0-.46.06-.7.33-.24.27-.92 1.01-.92 2.46s.94 2.86 1.06 3.06c.12.2.18.33.3.51.42.61.99 1.12 1.62 1.52.88.55 1.57.79 2.05.97.7.27 1.25.23 1.67.14.48-.1.7-.42.82-.83.11-.4.11-.76.08-.83l-.02-.03z"></path></svg></a>
@@ -664,32 +745,6 @@
                 });
             }
 
-            // Script para lidar com imagens que falham ao carregar
-            const images = document.querySelectorAll('img');
-            images.forEach(function(img) {
-                img.addEventListener('error', function() {
-                    this.style.display = 'none';
-                    // Criar um placeholder com ícone
-                    const placeholder = document.createElement('div');
-                    placeholder.style.cssText = `
-                        width: ${this.width || '120px'};
-                        height: ${this.height || '120px'};
-                        background: linear-gradient(45deg, var(--color-primary-red), var(--color-secondary-blue));
-                        border-radius: 50%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        color: white;
-                        font-size: ${this.classList.contains('help-card') ? '1.5em' : '2em'};
-                        font-weight: bold;
-                        margin-bottom: 20px;
-                        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-                    `;
-                    placeholder.innerHTML = '🏥';
-                    this.parentNode.insertBefore(placeholder, this);
-                });
-            });
-
             // Script do Modal da Política de Privacidade
             const modal = document.getElementById('privacy-modal');
             const openNav = document.getElementById('open-privacy-nav');
@@ -719,4 +774,3 @@
 
 </body>
 </html>
-
