@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Meta Descrição para SEO -->
-    <meta name="description" content="A Telessaúde Missionária conecta missionários a voluntários da saúde para cuidado médico, emocional e espiritual. Conheça nosso trabalho e saiba como ajudar.">
+    <meta name="description" data-key="meta-description" content="A Telessaúde Missionária conecta missionários a voluntários da saúde para cuidado médico, emocional e espiritual. Conheça nosso trabalho e saiba como ajudar.">
     
     <!-- Meta Tags Open Graph para compartilhamento social -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://telesaudemissionaria.github.io/tele_saude/">
-    <meta property="og:title" content="Telessaúde Missionária: Cuidado e Esperança">
-    <meta property="og:description" content="Conectamos missionários a voluntários da saúde para cuidado médico, emocional e espiritual.">
+    <meta property="og:title" data-key="og-title" content="Telessaúde Missionária: Cuidado e Esperança">
+    <meta property="og:description" data-key="og-description" content="Conectamos missionários a voluntários da saúde para cuidado médico, emocional e espiritual.">
     <meta property="og:image" content="https://telesaudemissionaria.github.io/tele_saude/assets/og-image.jpg">
     
-    <title>Telessaúde Missionária: Cuidado e Esperança</title>
+    <title data-key="title">Telessaúde Missionária: Cuidado e Esperança</title>
     
     <!-- Favicons para diversos dispositivos -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -428,25 +428,28 @@
     <header class="site-header">
         <div class="container">
             <a href="#hero" class="logo-container">
-                <span class="logo-title">Telessaúde Missionária</span>
+                <span class="logo-title" data-key="logo-title">Telessaúde Missionária</span>
             </a>
             
             <div class="header-right-content">
                 <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
                     <ul>
-                        <li><a href="#sobre">Sobre</a></li>
-                        <li><a href="#servicos">Serviços</a></li>
-                        <li><a href="#ajudar">Como Ajudar</a></li>
-                        <li><a href="#contato">Contato</a></li>
-                        <li><a id="open-privacy-nav">Privacidade</a></li>
+                        <li><a href="#sobre" data-key="nav-about">Sobre</a></li>
+                        <li><a href="#servicos" data-key="nav-services">Serviços</a></li>
+                        <li><a href="#ajudar" data-key="nav-how-to-help">Como Ajudar</a></li>
+                        <li><a href="#contato" data-key="nav-contact">Contato</a></li>
+                        <li><a id="open-privacy-nav" data-key="nav-privacy">Privacidade</a></li>
                     </ul>
                 </nav>
                 <div class="lang-switcher">
-                    <button title="Português (Brasil)" aria-label="Mudar para Português (Brasil)">
+                    <button data-lang="pt-BR" title="Português (Brasil)" aria-label="Mudar para Português (Brasil)">
                         <img src="https://flagcdn.com/br.svg" alt="Bandeira do Brasil">
                     </button>
-                    <button title="Español" aria-label="Mudar para Español">
+                    <button data-lang="es" title="Español" aria-label="Mudar para Español">
                         <img src="https://flagcdn.com/es.svg" alt="Bandeira da Espanha">
+                    </button>
+                    <button data-lang="en" title="English" aria-label="Mudar para English">
+                        <img src="https://flagcdn.com/us.svg" alt="Bandeira dos EUA">
                     </button>
                 </div>
             </div>
@@ -463,9 +466,9 @@
         <section id="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1>Saúde e Esperança Através da Telessaúde no Campo Missionário</h1>
-                    <p class="subtitle">Conectamos missionários a voluntários da saúde para cuidado médico, emocional e espiritual, onde quer que a missão os leve.</p>
-                    <a href="https://wa.me/59173346906" target="_blank" class="cta-button-hero">Precisa de Orientação? Fale Conosco</a>
+                    <h1 data-key="hero-h1">Saúde e Esperança Através da Telessaúde no Campo Missionário</h1>
+                    <p class="subtitle" data-key="hero-subtitle">Conectamos missionários a voluntários da saúde para cuidado médico, emocional e espiritual, onde quer que a missão os leve.</p>
+                    <a href="https://wa.me/59173346906" target="_blank" class="cta-button-hero" data-key="hero-cta">Precisa de Orientação? Fale Conosco</a>
                 </div>
             </div>
         </section>
@@ -474,15 +477,15 @@
             <div class="container">
                 <div class="intro-impact-section">
                     <div class="intro-text">
-                        <h2>Cuidado Independente e Imparcial Levado Aonde é Mais Necessário</h2>
-                        <p>A Telessaúde Missionária, formada por voluntários, cuida de missionários e suas famílias impactados por desafios de saúde em locais remotos, conflitos, ou exclusão do sistema de saúde, inspirados pelo amor cristão.</p>
-                        <p>Oferecemos um suporte vital para que possam continuar seu chamado com saúde e paz.</p>
-                        <a href="#principios" class="btn-outlined">Nossos Princípios</a>
+                        <h2 data-key="about-h2">Cuidado Independente e Imparcial Levado Aonde é Mais Necessário</h2>
+                        <p data-key="about-p1">A Telessaúde Missionária, formada por voluntários, cuida de missionários e suas famílias impactados por desafios de saúde em locais remotos, conflitos, ou exclusão do sistema de saúde, inspirados pelo amor cristão.</p>
+                        <p data-key="about-p2">Oferecemos um suporte vital para que possam continuar seu chamado com saúde e paz.</p>
+                        <a href="#principios" class="btn-outlined" data-key="about-btn">Nossos Princípios</a>
                     </div>
                     <div class="impact-stats">
-                        <div class="stat-item"><div class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L8 12v1c0 1.1.9 2 2 2v3.93zm2-14.24c.02 0 .04 0 .06 0l2.35 2.35-1.41 1.41-2.35-2.35C11.18 6.58 11.58 4 13 4c1.49 0 2.7 1.21 2.7 2.7 0 .3-.05.59-.13.86l.73.73c.1-.27.16-.56.16-.86C16.46 4.45 14.93 3 13 3c-1.55 0-2.88 1.08-3.23 2.5l3.23 3.23zm-3.23 0c-.35-1.42-1.68-2.5-3.23-2.5-1.93 0-3.46 1.55-3.46 3.54 0 .3.06.59.16.86l.73-.73c-.08-.27-.13-.56-.13-.86 0-1.49 1.21-2.7 2.7-2.7.42 0 .82.1.18.26L9.77 9.23zM8 15v-1c0-1.1-.9-2-2-2V8.21c-1.78.76-3 2.54-3 4.79 0 3.93 2.9 7.17 6.79 7.87L8 15z"></path></svg></div><div><div class="stat-number">5+</div><div class="stat-label">Continentes Alcançados</div></div></div>
-                        <div class="stat-item"><div class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 12c1.38 0 2.5-1.12 2.5-2.5S17.88 7 16.5 7 14 8.12 14 9.5s1.12 2.5 2.5 2.5zM9 11c1.66 0 3-1.34 3-3S10.66 5 9 5 6 6.34 6 8s1.34 3 3 3zm7.5 3c-1.83 0-5.5.92-5.5 2.75V19h11v-2.25c0-1.83-3.67-2.75-5.5-2.75zM9 13c-2.33 0-7 1.17-7 3.5V19h7v-2.25c0-.9.33-1.6.83-2.25-.42-.08-.86-.12-1.33-.12z"></path></svg></div><div><div class="stat-number">100+</div><div class="stat-label">Profissionais Voluntários</div></div></div>
-                        <div class="stat-item"><div class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg></div><div><div class="stat-number">100%</div><div class="stat-label">Foco no Cuidado Missionário</div></div></div>
+                        <div class="stat-item"><div class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L8 12v1c0 1.1.9 2 2 2v3.93zm2-14.24c.02 0 .04 0 .06 0l2.35 2.35-1.41 1.41-2.35-2.35C11.18 6.58 11.58 4 13 4c1.49 0 2.7 1.21 2.7 2.7 0 .3-.05.59-.13.86l.73.73c.1-.27.16-.56.16-.86C16.46 4.45 14.93 3 13 3c-1.55 0-2.88 1.08-3.23 2.5l3.23 3.23zm-3.23 0c-.35-1.42-1.68-2.5-3.23-2.5-1.93 0-3.46 1.55-3.46 3.54 0 .3.06.59.16.86l.73-.73c-.08-.27-.13-.56-.13-.86 0-1.49 1.21-2.7 2.7-2.7.42 0 .82.1.18.26L9.77 9.23zM8 15v-1c0-1.1-.9-2-2-2V8.21c-1.78.76-3 2.54-3 4.79 0 3.93 2.9 7.17 6.79 7.87L8 15z"></path></svg></div><div><div class="stat-number">5+</div><div class="stat-label" data-key="stats-continents-label">Continentes Alcançados</div></div></div>
+                        <div class="stat-item"><div class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 12c1.38 0 2.5-1.12 2.5-2.5S17.88 7 16.5 7 14 8.12 14 9.5s1.12 2.5 2.5 2.5zM9 11c1.66 0 3-1.34 3-3S10.66 5 9 5 6 6.34 6 8s1.34 3 3 3zm7.5 3c-1.83 0-5.5.92-5.5 2.75V19h11v-2.25c0-1.83-3.67-2.75-5.5-2.75zM9 13c-2.33 0-7 1.17-7 3.5V19h7v-2.25c0-.9.33-1.6.83-2.25-.42-.08-.86-.12-1.33-.12z"></path></svg></div><div><div class="stat-number">100+</div><div class="stat-label" data-key="stats-professionals-label">Profissionais Voluntários</div></div></div>
+                        <div class="stat-item"><div class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg></div><div><div class="stat-number">100%</div><div class="stat-label" data-key="stats-focus-label">Foco no Cuidado Missionário</div></div></div>
                     </div>
                 </div>
             </div>
@@ -490,43 +493,43 @@
 
         <section id="testemunhos">
             <div class="container">
-                <h2 class="section-title">Histórias de Cuidado e Impacto</h2>
+                <h2 class="section-title" data-key="testimonials-h2">Histórias de Cuidado e Impacto</h2>
                 <div class="testimonial-grid">
-                    <div class="testimonial-card color-1"><p>"Ao enfrentarem uma virose na família e receberem um antibiótico forte na farmácia local, buscaram orientação. Com apoio da equipe, receberam indicação de um tratamento mais seguro e, em poucos dias, houve uma recuperação significativa."</p><p class="author">- Leste da África</p></div>
-                    <div class="testimonial-card color-2"><p>"Uma missionária agradeceu o atendimento recebido, que trouxe tranquilidade e explicações claras sobre sua saúde em um contexto de acesso restrito à assistência médica. Destacou o impacto positivo da telessaúde em sua vida."</p><p class="author">- Peru</p></div>
-                    <div class="testimonial-card color-3"><p>"Após quase dois anos sofrendo com dores nos ombros e sem tratamento disponível, recebi atendimento online e presencial. Fiquei livre das dores e recuperei os movimentos. Agradeço emocionado pela iniciativa."</p><p class="author">- Morro do Chapéu, Brasil</p></div>
-                    <div class="testimonial-card color-4"><p>"No sertão, buscamos orientação para nossa filha recém-nascida. Recebemos não apenas atendimento de qualidade, mas também oração e cuidado espiritual. Sentimos de imediato o agir de Deus. Tem sido uma fonte de bênção."</p><p class="author">- Sertão Nordestino, Brasil</p></div>
-                    <div class="testimonial-card color-5"><p>"Eu enfrentava problemas respiratórios há meses, sem diagnóstico preciso nos hospitais locais. Com o suporte da telessaúde, recebi o diagnóstico correto e tratamento eficaz, sentindo-me rapidamente melhor."</p><p class="author">- Guiné-Bissau, África</p></div>
+                    <div class="testimonial-card color-1"><p data-key="testimony-1-text">"Ao enfrentarem uma virose na família e receberem um antibiótico forte na farmácia local, buscaram orientação. Com apoio da equipe, receberam indicação de um tratamento mais seguro e, em poucos dias, houve uma recuperação significativa."</p><p class="author" data-key="testimony-1-author">- Leste da África</p></div>
+                    <div class="testimonial-card color-2"><p data-key="testimony-2-text">"Uma missionária agradeceu o atendimento recebido, que trouxe tranquilidade e explicações claras sobre sua saúde em um contexto de acesso restrito à assistência médica. Destacou o impacto positivo da telessaúde em sua vida."</p><p class="author" data-key="testimony-2-author">- Peru</p></div>
+                    <div class="testimonial-card color-3"><p data-key="testimony-3-text">"Após quase dois anos sofrendo com dores nos ombros e sem tratamento disponível, recebi atendimento online e presencial. Fiquei livre das dores e recuperei os movimentos. Agradeço emocionado pela iniciativa."</p><p class="author" data-key="testimony-3-author">- Morro do Chapéu, Brasil</p></div>
+                    <div class="testimonial-card color-4"><p data-key="testimony-4-text">"No sertão, buscamos orientação para nossa filha recém-nascida. Recebemos não apenas atendimento de qualidade, mas também oração e cuidado espiritual. Sentimos de imediato o agir de Deus. Tem sido uma fonte de bênção."</p><p class="author" data-key="testimony-4-author">- Sertão Nordestino, Brasil</p></div>
+                    <div class="testimonial-card color-5"><p data-key="testimony-5-text">"Eu enfrentava problemas respiratórios há meses, sem diagnóstico preciso nos hospitais locais. Com o suporte da telessaúde, recebi o diagnóstico correto e tratamento eficaz, sentindo-me rapidamente melhor."</p><p class="author" data-key="testimony-5-author">- Guiné-Bissau, África</p></div>
                 </div>
             </div>
         </section>
 
         <section id="principios" class="principles-section alternate-bg">
             <div class="container">
-                <h2 class="section-title">Os Princípios Que Nos Movem</h2>
+                <h2 class="section-title" data-key="principles-h2">Os Princípios Que Nos Movem</h2>
                 <ul>
-                    <li>Somos guiados pela <strong>ética médica universal</strong> e pelos <strong>princípios cristãos</strong> de cuidado.</li>
-                    <li>Somos comprometidos em <strong>testemunhar</strong> as necessidades e realidades do campo.</li>
-                    <li>Somos <strong>transparentes</strong> e responsáveis em nossa gestão e ações.</li>
-                    <li>Somos comprometidos com a <strong>diversidade</strong>, <strong>equidade</strong> e <strong>inclusão</strong>.</li>
-                    <li>Somos <strong>independentes</strong>, <strong>imparciais</strong> e <strong>neutros</strong> no cuidado oferecido.</li>
+                    <li data-key="principle-1">Somos guiados pela <strong>ética médica universal</strong> e pelos <strong>princípios cristãos</strong> de cuidado.</li>
+                    <li data-key="principle-2">Somos comprometidos em <strong>testemunhar</strong> as necessidades e realidades do campo.</li>
+                    <li data-key="principle-3">Somos <strong>transparentes</strong> e responsáveis em nossa gestão e ações.</li>
+                    <li data-key="principle-4">Somos comprometidos com a <strong>diversidade</strong>, <strong>equidade</strong> e <strong>inclusão</strong>.</li>
+                    <li data-key="principle-5">Somos <strong>independentes</strong>, <strong>imparciais</strong> e <strong>neutros</strong> no cuidado oferecido.</li>
                 </ul>
-                <a href="#sobre" class="btn-outlined">Saiba Mais Sobre Nós</a>
+                <a href="#sobre" class="btn-outlined" data-key="principles-btn">Saiba Mais Sobre Nós</a>
             </div>
         </section>
 
         <section id="servicos">
             <div class="container">
-                <h2 class="section-title">Cuidado Integral Onde é Mais Necessário</h2>
+                <h2 class="section-title" data-key="services-h2">Cuidado Integral Onde é Mais Necessário</h2>
                 <div class="work-item">
                     <img src="https://placehold.co/120x120/0056a8/FFFFFF?text=Consulta" alt="Consulta médica online" loading="lazy">
-                    <h3>Consultas Médicas Online</h3>
-                    <p>Nossas equipes de voluntários tratam uma ampla gama de necessidades médicas, desde orientação sobre doenças comuns até apoio em condições crônicas e emergências (dentro das limitações da telessaúde).</p>
+                    <h3 data-key="service-1-h3">Consultas Médicas Online</h3>
+                    <p data-key="service-1-p">Nossas equipes de voluntários tratam uma ampla gama de necessidades médicas, desde orientação sobre doenças comuns até apoio em condições crônicas e emergências (dentro das limitações da telessaúde).</p>
                 </div>
                 <div class="work-item">
                     <img src="https://placehold.co/120x120/D10000/FFFFFF?text=Apoio" alt="Apoio emocional e espiritual" loading="lazy">
-                    <h3>Apoio Emocional e Espiritual</h3>
-                    <p>Oferecemos aconselhamento psicológico e suporte espiritual para lidar com os desafios únicos da vida missionária, como estresse, adaptação cultural e solidão.</p>
+                    <h3 data-key="service-2-h3">Apoio Emocional e Espiritual</h3>
+                    <p data-key="service-2-p">Oferecemos aconselhamento psicológico e suporte espiritual para lidar com os desafios únicos da vida missionária, como estresse, adaptação cultural e solidão.</p>
                 </div>
             </div>
         </section>
@@ -536,9 +539,9 @@
             <div class="container">
                 <div class="missioncare-plus-box">
                     <div class="missioncare-plus-text">
-                        <h2 class="section-title">Conheça o MISSIONCARE PLUS</h2>
-                        <p>No campo missionário cada segundo e cada recurso contam. Acesse sua nova ferramenta de saúde.</p>
-                        <a href="https://telesaudemissionaria.github.io/missioncare-plus/" target="_blank" class="btn-missioncare-plus">
+                        <h2 class="section-title" data-key="missioncare-plus-h2">Conheça o MISSIONCARE PLUS</h2>
+                        <p data-key="missioncare-plus-p">No campo missionário cada segundo e cada recurso contam. Acesse sua nova ferramenta de saúde.</p>
+                        <a href="https://telesaudemissionaria.github.io/missioncare-plus/" target="_blank" class="btn-missioncare-plus" data-key="missioncare-plus-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                             </svg>
@@ -552,70 +555,70 @@
         <section id="acesso-grupos-whatsapp" class="alternate-bg">
             <div class="container group-container">
                 <header class="group-header">
-                    <h2>Conecte-se aos Nossos Grupos de Apoio</h2>
-                    <p>Encontre sua comunidade! Selecione sua região ou grupo de interesse para acessar via WhatsApp.</p>
+                    <h2 data-key="whatsapp-groups-h2">Conecte-se aos Nossos Grupos de Apoio</h2>
+                    <p data-key="whatsapp-groups-p">Encontre sua comunidade! Selecione sua região ou grupo de interesse para acessar via WhatsApp.</p>
                 </header>
 
-                <h3 class="group-section-title">Grupos Regionais de Atendimento</h3>
+                <h3 class="group-section-title" data-key="regional-groups-title">Grupos Regionais de Atendimento</h3>
                 <div class="region-grid">
                     <a href="https://chat.whatsapp.com/invite/your-link-here" target="_blank" class="region-card-link">
                         <div class="region-card">
                             <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
-                            <h3>EUROPA</h3>
-                            <p>Para missionários na Europa Ocidental, Oriental e Leste Europeu.</p>
-                            <span class="access-link">Acessar Grupo &rarr;</span>
+                            <h3 data-key="europe-h3">EUROPA</h3>
+                            <p data-key="europe-p">Para missionários na Europa Ocidental, Oriental e Leste Europeu.</p>
+                            <span class="access-link" data-key="access-group">Acessar Grupo &rarr;</span>
                         </div>
                     </a>
-                     <a href="https://chat.whatsapp.com/invite/your-link-here" target="_blank" class="region-card-link">
+                   <a href="https://chat.whatsapp.com/invite/your-link-here" target="_blank" class="region-card-link">
                         <div class="region-card">
                             <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
-                            <h3>OCEANIA</h3>
-                            <p>Conectando obreiros na Austrália, Nova Zelândia e ilhas do Pacífico.</p>
-                             <span class="access-link">Acessar Grupo &rarr;</span>
+                            <h3 data-key="oceania-h3">OCEANIA</h3>
+                            <p data-key="oceania-p">Conectando obreiros na Austrália, Nova Zelândia e ilhas do Pacífico.</p>
+                            <span class="access-link" data-key="access-group">Acessar Grupo &rarr;</span>
                         </div>
                     </a>
-                     <a href="https://chat.whatsapp.com/invite/your-link-here" target="_blank" class="region-card-link">
+                   <a href="https://chat.whatsapp.com/invite/your-link-here" target="_blank" class="region-card-link">
                         <div class="region-card">
                             <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
-                            <h3>ÁFRICA</h3>
-                            <p>Apoio para missionários servindo em todo o continente africano.</p>
-                             <span class="access-link">Acessar Grupo &rarr;</span>
+                            <h3 data-key="africa-h3">ÁFRICA</h3>
+                            <p data-key="africa-p">Apoio para missionários servindo em todo o continente africano.</p>
+                            <span class="access-link" data-key="access-group">Acessar Grupo &rarr;</span>
                         </div>
                     </a>
-                     <a href="https://chat.whatsapp.com/invite/your-link-here" target="_blank" class="region-card-link">
+                   <a href="https://chat.whatsapp.com/invite/your-link-here" target="_blank" class="region-card-link">
                         <div class="region-card">
                             <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
-                            <h3>AMÉRICAS</h3>
-                            <p>Unindo missionários que atuam na América do Norte, Central e do Sul.</p>
-                             <span class="access-link">Acessar Grupo &rarr;</span>
+                            <h3 data-key="americas-h3">AMÉRICAS</h3>
+                            <p data-key="americas-p">Unindo missionários que atuam na América do Norte, Central e do Sul.</p>
+                            <span class="access-link" data-key="access-group">Acessar Grupo &rarr;</span>
                         </div>
                     </a>
-                     <a href="https://chat.whatsapp.com/invite/your-link-here" target="_blank" class="region-card-link">
+                   <a href="https://chat.whatsapp.com/invite/your-link-here" target="_blank" class="region-card-link">
                         <div class="region-card">
                             <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
-                            <h3>ÁSIA</h3>
-                            <p>Comunidade para aqueles que servem desde o Oriente Médio ao Sudeste Asiático.</p>
-                             <span class="access-link">Acessar Grupo &rarr;</span>
+                            <h3 data-key="asia-h3">ÁSIA</h3>
+                            <p data-key="asia-p">Comunidade para aqueles que servem desde o Oriente Médio ao Sudeste Asiático.</p>
+                            <span class="access-link" data-key="access-group">Acessar Grupo &rarr;</span>
                         </div>
                     </a>
                 </div>
 
-                <h3 class="group-section-title">Grupos Gerais</h3>
+                <h3 class="group-section-title" data-key="general-groups-title">Grupos Gerais</h3>
                 <div class="general-groups-grid">
                     <a href="https://chat.whatsapp.com/GgnjqfSTEHZ2RNAgYN6KtD" target="_blank" class="region-card-link">
                         <div class="region-card">
                             <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
-                            <h3>REDE GLOBAL</h3>
-                            <p>Ponto de encontro para todos os missionários trocarem experiências e orações.</p>
-                            <span class="access-link">Acessar Rede &rarr;</span>
+                            <h3 data-key="global-network-h3">REDE GLOBAL</h3>
+                            <p data-key="global-network-p">Ponto de encontro para todos os missionários trocarem experiências e orações.</p>
+                            <span class="access-link" data-key="access-network">Acessar Rede &rarr;</span>
                         </div>
                     </a>
                     <a href="https://chat.whatsapp.com/Icyf4L4nhcV1MqDxvQycvm" target="_blank" class="region-card-link">
                         <div class="region-card">
                             <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
-                            <h3>Red Misionera Telesalud</h3>
-                            <p>Una Red global de cuidado, esperanza y apoyo integral pensada exclusivamente para el mundo hispano hablante.</p>
-                            <span class="access-link">Acceder al Grupo &rarr;</span>
+                            <h3 data-key="hispanic-network-h3">Red Misionera Telesalud</h3>
+                            <p data-key="hispanic-network-p">Una Red global de cuidado, esperanza y apoyo integral pensada exclusivamente para el mundo hispano hablante.</p>
+                            <span class="access-link" data-key="access-group">Acceder al Grupo &rarr;</span>
                         </div>
                     </a>
                 </div>
@@ -624,20 +627,20 @@
 
         <section id="ajudar">
             <div class="container">
-                <h2 class="section-title">Como Você Pode Ajudar</h2>
-                <p style="text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; margin-top: -40px; margin-bottom: 50px;">Somos um movimento sustentado por voluntários e doadores. Sua participação é vital para continuarmos oferecendo cuidado.</p>
+                <h2 class="section-title" data-key="how-to-help-h2">Como Você Pode Ajudar</h2>
+                <p style="text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; margin-top: -40px; margin-bottom: 50px;" data-key="how-to-help-p">Somos um movimento sustentado por voluntários e doadores. Sua participação é vital para continuarmos oferecendo cuidado.</p>
                 <div class="help-grid">
                     <div class="help-card">
                         <img src="https://placehold.co/80x80/555555/FFFFFF?text=Voluntário" alt="Voluntários trabalhando" loading="lazy">
-                        <h4>Seja um Voluntário</h4>
-                        <p>Profissionais de saúde, TI, tradutores e outros. Doe seu tempo e talento para apoiar missionários.</p>
-                        <a href="https://wa.me/59173346906" target="_blank" class="btn-outlined">Quero Ser Voluntário</a>
+                        <h4 data-key="volunteer-h4">Seja um Voluntário</h4>
+                        <p data-key="volunteer-p">Profissionais de saúde, TI, tradutores e outros. Doe seu tempo e talento para apoiar missionários.</p>
+                        <a href="https://wa.me/59173346906" target="_blank" class="btn-outlined" data-key="volunteer-btn">Quero Ser Voluntário</a>
                     </div>
                     <div class="help-card">
                         <img src="https://placehold.co/80x80/D10000/FFFFFF?text=Doação" alt="Doação e apoio" loading="lazy">
-                        <h4>Faça uma Doação</h4>
-                        <p>Sua contribuição financeira nos ajuda a manter a estrutura e expandir o alcance do cuidado gratuito.</p>
-                        <a href="http://link.mercadopago.com.br/telesaudemissionaria" target="_blank" class="btn-outlined">Doar Agora</a>
+                        <h4 data-key="donate-h4">Faça uma Doação</h4>
+                        <p data-key="donate-p">Sua contribuição financeira nos ajuda a manter a estrutura e expandir o alcance do cuidado gratuito.</p>
+                        <a href="http://link.mercadopago.com.br/telesaudemissionaria" target="_blank" class="btn-outlined" data-key="donate-btn">Doar Agora</a>
                     </div>
                 </div>
             </div>
@@ -645,13 +648,13 @@
 
         <section id="faq" class="alternate-bg">
             <div class="container">
-                <h2 class="section-title">Perguntas Frequentes</h2>
+                <h2 class="section-title" data-key="faq-h2">Perguntas Frequentes</h2>
                 <div class="faq-accordion">
-                    <div class="faq-item"><div class="faq-question">1. O que é a Telessaúde Missionária? <span class="icon">+</span></div><div class="faq-answer"><p>É uma iniciativa que conecta missionários em locais remotos com profissionais de saúde voluntários, oferecendo cuidados médicos, emocionais e espirituais através da tecnologia.</p></div></div>
-                    <div class="faq-item"><div class="faq-question">2. Para quem é este serviço? <span class="icon">+</span></div><div class="faq-answer"><p>É para missionários cristãos e suas famílias que servem em áreas remotas ou com pouco acesso a serviços de saúde.</p></div></div>
-                    <div class="faq-item"><div class="faq-question">3. Que tipo de cuidados oferece? <span class="icon">+</span></div><div class="faq-answer"><p>Oferece consultas médicas online, apoio emocional e psicológico, suporte espiritual e orientações de saúde.</p></div></div>
-                    <div class="faq-item"><div class="faq-question">4. Como funciona o atendimento? <span class="icon">+</span></div><div class="faq-answer"><p>O missionário entra em contato através dos nossos grupos de WhatsApp, a equipe de enfermagem faz uma triagem e agenda uma consulta online com um profissional de saúde.</p></div></div>
-                    <div class="faq-item"><div class="faq-question">5. É gratuito? <span class="icon">+</span></div><div class="faq-answer"><p>Sim, o serviço de teleorientação e aconselhamento é gratuito para os missionários, sustentado por doações e voluntariado.</p></div></div>
+                    <div class="faq-item"><div class="faq-question" data-key="faq-1-q">1. O que é a Telessaúde Missionária? <span class="icon">+</span></div><div class="faq-answer"><p data-key="faq-1-a">É uma iniciativa que conecta missionários em locais remotos com profissionais de saúde voluntários, oferecendo cuidados médicos, emocionais e espirituais através da tecnologia.</p></div></div>
+                    <div class="faq-item"><div class="faq-question" data-key="faq-2-q">2. Para quem é este serviço? <span class="icon">+</span></div><div class="faq-answer"><p data-key="faq-2-a">É para missionários cristãos e suas famílias que servem em áreas remotas ou com pouco acesso a serviços de saúde.</p></div></div>
+                    <div class="faq-item"><div class="faq-question" data-key="faq-3-q">3. Que tipo de cuidados oferece? <span class="icon">+</span></div><div class="faq-answer"><p data-key="faq-3-a">Oferece consultas médicas online, apoio emocional e psicológico, suporte espiritual e orientações de saúde.</p></div></div>
+                    <div class="faq-item"><div class="faq-question" data-key="faq-4-q">4. Como funciona o atendimento? <span class="icon">+</span></div><div class="faq-answer"><p data-key="faq-4-a">O missionário entra em contato através dos nossos grupos de WhatsApp, a equipe de enfermagem faz uma triagem e agenda uma consulta online com um profissional de saúde.</p></div></div>
+                    <div class="faq-item"><div class="faq-question" data-key="faq-5-q">5. É gratuito? <span class="icon">+</span></div><div class="faq-answer"><p data-key="faq-5-a">Sim, o serviço de teleorientação e aconselhamento é gratuito para os missionários, sustentado por doações e voluntariado.</p></div></div>
                 </div>
             </div>
         </section>
@@ -661,49 +664,494 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-column">
-                    <span class="footer-logo-text">Telessaúde Missionária</span>
-                    <p>Levando saúde e esperança aos missionários nos lugares mais remotos.</p>
+                    <span class="footer-logo-text" data-key="footer-logo-text">Telessaúde Missionária</span>
+                    <p data-key="footer-description">Levando saúde e esperança aos missionários nos lugares mais remotos.</p>
                     <div class="footer-social-icons">
                         <a href="https://www.facebook.com/MissionaryMedicalCare/" target="_blank" title="Facebook" aria-label="Nossa página no Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-1.5c-1 0-1.5.5-1.5 1.5V12h3l-.5 3h-2.5v6.8c4.56-.93 8-4.96 8-9.8z"></path></svg></a>
                         <a href="https://www.instagram.com/missionarymedicalcare/" target="_blank" title="Instagram" aria-label="Nosso perfil no Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8A3.6 3.6 0 0 0 20 16.4V7.6A3.6 3.6 0 0 0 16.4 4H7.6m4.4 3.2a4.8 4.8 0 1 1 0 9.6 4.8 4.8 0 0 1 0-9.6M12 9a3.2 3.2 0 1 0 0 6.4A3.2 3.2 0 0 0 12 9m4.6-2.4a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4"></path></svg></a>
                         <a href="https://wa.me/59173346906" target="_blank" title="WhatsApp Info" aria-label="Entre em contato pelo WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.46 3.48 1.34 4.94L2.05 22l5.25-1.42c1.41.81 3.02 1.23 4.74 1.23h.01c5.46 0 9.91-4.45 9.91-9.91s-4.45-9.91-9.91-9.91zM17.23 15.3c-.27-.14-1.59-.78-1.84-.88-.25-.09-.43-.14-.62.14-.19.27-.7.88-.86 1.06-.16.18-.32.2-.59.06-.27-.14-1.14-.42-2.17-1.33-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.56.13-.13.27-.33.41-.49.14-.17.19-.27.29-.46.1-.19.05-.37-.02-.51s-.62-1.49-.84-2.04c-.23-.55-.46-.48-.62-.48-.16-.01-.34-.01-.52-.01-.18 0-.46.06-.7.33-.24.27-.92 1.01-.92 2.46s.94 2.86 1.06 3.06c.12.2.18.33.3.51.42.61.99 1.12 1.62 1.52.88.55 1.57.79 2.05.97.7.27 1.25.23 1.67.14.48-.1.7-.42.82-.83.11-.4.11-.76.08-.83l-.02-.03z"></path></svg></a>
                     </div>
                 </div>
-                <div class="footer-column"><h5>A Telessaúde</h5><ul><li><a href="#sobre">Sobre Nós</a></li><li><a href="#principios">Nossos Princípios</a></li><li><a href="#servicos">Nossos Serviços</a></li><li><a href="#faq">FAQ</a></li></ul></div>
-                <div class="footer-column"><h5>Envolva-se</h5><ul><li><a href="#ajudar">Como Ajudar</a></li><li><a href="https://wa.me/59173346906" target="_blank">Seja Voluntário</a></li><li><a href="http://link.mercadopago.com.br/telesaudemissionaria" target="_blank">Doe Agora</a></li></ul></div>
-                <div class="footer-column"><h5>Contato</h5><p><strong>Informações Gerais:</strong><br>missionarymedicalcare@gmail.com</p><p><strong>WhatsApp (Info):</strong><br><a href="https://wa.me/59173346906" target="_blank">+591 7334 6906</a> (Samuel)</p><p><a id="open-privacy-footer">Política de Privacidade</a></p></div>
+                <div class="footer-column">
+                    <h5 data-key="footer-col1-title">A Telessaúde</h5>
+                    <ul>
+                        <li><a href="#sobre" data-key="footer-col1-link1">Sobre Nós</a></li>
+                        <li><a href="#principios" data-key="footer-col1-link2">Nossos Princípios</a></li>
+                        <li><a href="#servicos" data-key="footer-col1-link3">Nossos Serviços</a></li>
+                        <li><a href="#faq" data-key="footer-col1-link4">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h5 data-key="footer-col2-title">Envolva-se</h5>
+                    <ul>
+                        <li><a href="#ajudar" data-key="footer-col2-link1">Como Ajudar</a></li>
+                        <li><a href="https://wa.me/59173346906" target="_blank" data-key="footer-col2-link2">Seja Voluntário</a></li>
+                        <li><a href="http://link.mercadopago.com.br/telesaudemissionaria" target="_blank" data-key="footer-col2-link3">Doe Agora</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h5 data-key="footer-col3-title">Contato</h5>
+                    <p><strong data-key="footer-col3-info1-title">Informações Gerais:</strong><br>missionarymedicalcare@gmail.com</p>
+                    <p><strong data-key="footer-col3-info2-title">WhatsApp (Info):</strong><br><a href="https://wa.me/59173346906" target="_blank">+591 7334 6906</a> (Samuel)</p>
+                    <p><a id="open-privacy-footer" data-key="footer-privacy-link">Política de Privacidade</a></p>
+                </div>
             </div>
-            <div class="footer-bottom">© <span id="currentYear"></span> Telessaúde Missionária. Iniciativa da Missionary Medical Care. Todos os direitos reservados.</div>
+            <div class="footer-bottom" data-key="footer-bottom">© <span id="currentYear"></span> Telessaúde Missionária. Iniciativa da Missionary Medical Care. Todos os direitos reservados.</div>
         </div>
     </footer>
 
     <div id="privacy-modal" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
-            <h2>Política de Privacidade</h2>
-            <h3>Versão: 1.0</h3>
-            <h3>1. Âmbito</h3>
-            <p>Esta política aplica-se a todos os profissionais, voluntários, parceiros e pacientes envolvidos no serviço de telessaúde da Telessaúde Missionária.</p>
-            <h3>2. Coleta e Uso de Dados</h3>
-            <p>Coletamos os seguintes dados: identificação pessoal, informações de saúde, dados de conexão e de uso da plataforma. Estes dados são utilizados para prestar atendimento, garantir a segurança clínica, cumprir obrigações legais e realizar melhorias de serviço (utilizando dados anonimizados).</p>
-            <h3>3. Consentimento</h3>
-            <p>Só iniciamos o atendimento após o consentimento livre e informado do paciente, que pode ser revogado a qualquer momento.</p>
-            <h3>4. Compartilhamento</h3>
-            <p>Os dados só são compartilhados com a equipe de saúde diretamente envolvida, fornecedores essenciais (sob confidencialidade), autoridades (se exigido por lei) e para pesquisas com dados anonimizados.</p>
-            <h3>5. Segurança e Armazenamento</h3>
-            <p>Utilizamos ambiente criptografado, acesso restrito, backups regulares e retenção de dados pelo tempo legal mínimo para garantir a segurança.</p>
-            <h3>6. Direitos dos Pacientes</h3>
-            <p>A qualquer momento, pacientes podem confirmar, acessar, corrigir, eliminar ou solicitar a portabilidade de seus dados, além de revogar o consentimento e ser informados sobre incidentes de segurança.</p>
-            <h3>7. Incidentes de Segurança</h3>
-            <p>Em caso de vazamento ou acesso indevido, realizaremos a contenção imediata, notificaremos o paciente e as autoridades, e adotaremos medidas corretivas.</p>
-            <h3>8. Responsabilidades</h3>
-            <p>Todos os envolvidos devem seguir esta política, sob risco de sanções administrativas e legais.</p>
-            <h3>9. Revisão</h3>
-            <p>Atualizamos esta política conforme mudanças legais ou operacionais, comunicando qualquer alteração a todos os envolvidos.</p>
+            <h2 data-key="modal-h2">Política de Privacidade</h2>
+            <h3 data-key="modal-h3-version">Versão: 1.0</h3>
+            <h3 data-key="modal-h3-scope">1. Âmbito</h3>
+            <p data-key="modal-p-scope">Esta política aplica-se a todos os profissionais, voluntários, parceiros e pacientes envolvidos no serviço de telessaúde da Telessaúde Missionária.</p>
+            <h3 data-key="modal-h3-data-collection">2. Coleta e Uso de Dados</h3>
+            <p data-key="modal-p-data-collection">Coletamos os seguintes dados: identificação pessoal, informações de saúde, dados de conexão e de uso da plataforma. Estes dados são utilizados para prestar atendimento, garantir a segurança clínica, cumprir obrigações legais e realizar melhorias de serviço (utilizando dados anonimizados).</p>
+            <h3 data-key="modal-h3-consent">3. Consentimento</h3>
+            <p data-key="modal-p-consent">Só iniciamos o atendimento após o consentimento livre e informado do paciente, que pode ser revogado a qualquer momento.</p>
+            <h3 data-key="modal-h3-sharing">4. Compartilhamento</h3>
+            <p data-key="modal-p-sharing">Os dados só são compartilhados com a equipe de saúde diretamente envolvida, fornecedores essenciais (sob confidencialidade), autoridades (se exigido por lei) e para pesquisas com dados anonimizados.</p>
+            <h3 data-key="modal-h3-security">5. Segurança e Armazenamento</h3>
+            <p data-key="modal-p-security">Utilizamos ambiente criptografado, acesso restrito, backups regulares e retenção de dados pelo tempo legal mínimo para garantir a segurança.</p>
+            <h3 data-key="modal-h3-patient-rights">6. Direitos dos Pacientes</h3>
+            <p data-key="modal-p-patient-rights">A qualquer momento, pacientes podem confirmar, acessar, corrigir, eliminar ou solicitar a portabilidade de seus dados, além de revogar o consentimento e ser informados sobre incidentes de segurança.</p>
+            <h3 data-key="modal-h3-security-incidents">7. Incidentes de Segurança</h3>
+            <p data-key="modal-p-security-incidents">Em caso de vazamento ou acesso indevido, realizaremos a contenção imediata, notificaremos o paciente e as autoridades, e adotaremos medidas corretivas.</p>
+            <h3 data-key="modal-h3-responsibilities">8. Responsabilidades</h3>
+            <p data-key="modal-p-responsibilities">Todos os envolvidos devem seguir esta política, sob risco de sanções administrativas e legais.</p>
+            <h3 data-key="modal-h3-review">9. Revisão</h3>
+            <p data-key="modal-p-review">Atualizamos esta política conforme mudanças legais ou operacionais, comunicando qualquer alteração a todos os envolvidos.</p>
         </div>
     </div>
 
     <script>
+        // Objeto de traduções
+        const translations = {
+            'pt-BR': {
+                'meta-description': 'A Telessaúde Missionária conecta missionários a voluntários da saúde para cuidado médico, emocional e espiritual. Conheça nosso trabalho e saiba como ajudar.',
+                'og-title': 'Telessaúde Missionária: Cuidado e Esperança',
+                'og-description': 'Conectamos missionários a voluntários da saúde para cuidado médico, emocional e espiritual.',
+                'title': 'Telessaúde Missionária: Cuidado e Esperança',
+                'logo-title': 'Telessaúde Missionária',
+                'nav-about': 'Sobre',
+                'nav-services': 'Serviços',
+                'nav-how-to-help': 'Como Ajudar',
+                'nav-contact': 'Contato',
+                'nav-privacy': 'Privacidade',
+                'lang-br-title': 'Português (Brasil)',
+                'lang-br-aria': 'Mudar para Português (Brasil)',
+                'lang-es-title': 'Español',
+                'lang-es-aria': 'Mudar para Español',
+                'lang-en-title': 'English',
+                'lang-en-aria': 'Mudar para English',
+                'hero-h1': 'Saúde e Esperança Através da Telessaúde no Campo Missionário',
+                'hero-subtitle': 'Conectamos missionários a voluntários da saúde para cuidado médico, emocional e espiritual, onde quer que a missão os leve.',
+                'hero-cta': 'Precisa de Orientação? Fale Conosco',
+                'about-h2': 'Cuidado Independente e Imparcial Levado Aonde é Mais Necessário',
+                'about-p1': 'A Telessaúde Missionária, formada por voluntários, cuida de missionários e suas famílias impactados por desafios de saúde em locais remotos, conflitos, ou exclusão do sistema de saúde, inspirados pelo amor cristão.',
+                'about-p2': 'Oferecemos um suporte vital para que possam continuar seu chamado com saúde e paz.',
+                'about-btn': 'Nossos Princípios',
+                'stats-continents-label': 'Continentes Alcançados',
+                'stats-professionals-label': 'Profissionais Voluntários',
+                'stats-focus-label': 'Foco no Cuidado Missionário',
+                'testimonials-h2': 'Histórias de Cuidado e Impacto',
+                'testimony-1-text': '"Ao enfrentarem uma virose na família e receberem um antibiótico forte na farmácia local, buscaram orientação. Com apoio da equipe, receberam indicação de um tratamento mais seguro e, em poucos dias, houve uma recuperação significativa."',
+                'testimony-1-author': '- Leste da África',
+                'testimony-2-text': '"Uma missionária agradeceu o atendimento recebido, que trouxe tranquilidade e explicações claras sobre sua saúde em um contexto de acesso restrito à assistência médica. Destacou o impacto positivo da telessaúde em sua vida."',
+                'testimony-2-author': '- Peru',
+                'testimony-3-text': '"Após quase dois anos sofrendo com dores nos ombros e sem tratamento disponível, recebi atendimento online e presencial. Fiquei livre das dores e recuperei os movimentos. Agradeço emocionado pela iniciativa."',
+                'testimony-3-author': '- Morro do Chapéu, Brasil',
+                'testimony-4-text': '"No sertão, buscamos orientação para nossa filha recém-nascida. Recebemos não apenas atendimento de qualidade, mas também oração e cuidado espiritual. Sentimos de imediato o agir de Deus. Tem sido uma fonte de bênção."',
+                'testimony-4-author': '- Sertão Nordestino, Brasil',
+                'testimony-5-text': '"Eu enfrentava problemas respiratórios há meses, sem diagnóstico preciso nos hospitais locais. Com o suporte da telessaúde, recebi o diagnóstico correto e tratamento eficaz, sentindo-me rapidamente melhor."',
+                'testimony-5-author': '- Guiné-Bissau, África',
+                'principles-h2': 'Os Princípios Que Nos Movem',
+                'principle-1': 'Somos guiados pela <strong>ética médica universal</strong> e pelos <strong>princípios cristãos</strong> de cuidado.',
+                'principle-2': 'Somos comprometidos em <strong>testemunhar</strong> as necessidades e realidades do campo.',
+                'principle-3': 'Somos <strong>transparentes</strong> e responsáveis em nossa gestão e ações.',
+                'principle-4': 'Somos comprometidos com a <strong>diversidade</strong>, <strong>equidade</strong> e <strong>inclusão</strong>.',
+                'principle-5': 'Somos <strong>independentes</strong>, <strong>imparciais</strong> e <strong>neutros</strong> no cuidado oferecido.',
+                'principles-btn': 'Saiba Mais Sobre Nós',
+                'services-h2': 'Cuidado Integral Onde é Mais Necessário',
+                'service-1-h3': 'Consultas Médicas Online',
+                'service-1-p': 'Nossas equipes de voluntários tratam uma ampla gama de necessidades médicas, desde orientação sobre doenças comuns até apoio em condições crônicas e emergências (dentro das limitações da telessaúde).',
+                'service-2-h3': 'Apoio Emocional e Espiritual',
+                'service-2-p': 'Oferecemos aconselhamento psicológico e suporte espiritual para lidar com os desafios únicos da vida missionária, como estresse, adaptação cultural e solidão.',
+                'missioncare-plus-h2': 'Conheça o MISSIONCARE PLUS',
+                'missioncare-plus-p': 'No campo missionário cada segundo e cada recurso contam. Acesse sua nova ferramenta de saúde.',
+                'missioncare-plus-btn': 'ACESSE AGORA: MissionCare Plus - Início',
+                'whatsapp-groups-h2': 'Conecte-se aos Nossos Grupos de Apoio',
+                'whatsapp-groups-p': 'Encontre sua comunidade! Selecione sua região ou grupo de interesse para acessar via WhatsApp.',
+                'regional-groups-title': 'Grupos Regionais de Atendimento',
+                'europe-h3': 'EUROPA',
+                'europe-p': 'Para missionários na Europa Ocidental, Oriental e Leste Europeu.',
+                'access-group': 'Acessar Grupo &rarr;',
+                'oceania-h3': 'OCEANIA',
+                'oceania-p': 'Conectando obreiros na Austrália, Nova Zelândia e ilhas do Pacífico.',
+                'africa-h3': 'ÁFRICA',
+                'africa-p': 'Apoio para missionários servindo em todo o continente africano.',
+                'americas-h3': 'AMÉRICAS',
+                'americas-p': 'Unindo missionários que atuam na América do Norte, Central e do Sul.',
+                'asia-h3': 'ÁSIA',
+                'asia-p': 'Comunidade para aqueles que servem desde o Oriente Médio ao Sudeste Asiático.',
+                'general-groups-title': 'Grupos Gerais',
+                'global-network-h3': 'REDE GLOBAL',
+                'global-network-p': 'Ponto de encontro para todos os missionários trocarem experiências e orações.',
+                'access-network': 'Acessar Rede &rarr;',
+                'hispanic-network-h3': 'Red Misionera Telesalud', // Already in Spanish, no change
+                'hispanic-network-p': 'Una Red global de cuidado, esperanza y apoyo integral pensada exclusivamente para el mundo hispano hablante.', // Already in Spanish, no change
+                'how-to-help-h2': 'Como Você Pode Ajudar',
+                'how-to-help-p': 'Somos um movimento sustentado por voluntários e doadores. Sua participação é vital para continuarmos oferecendo cuidado.',
+                'volunteer-h4': 'Seja um Voluntário',
+                'volunteer-p': 'Profissionais de saúde, TI, tradutores e outros. Doe seu tempo e talento para apoiar missionários.',
+                'volunteer-btn': 'Quero Ser Voluntário',
+                'donate-h4': 'Faça uma Doação',
+                'donate-p': 'Sua contribuição financeira nos ajuda a manter a estrutura e expandir o alcance do cuidado gratuito.',
+                'donate-btn': 'Doar Agora',
+                'faq-h2': 'Perguntas Frequentes',
+                'faq-1-q': '1. O que é a Telessaúde Missionária?',
+                'faq-1-a': 'É uma iniciativa que conecta missionários em locais remotos com profissionais de saúde voluntários, oferecendo cuidados médicos, emocionais e espirituais através da tecnologia.',
+                'faq-2-q': '2. Para quem é este serviço?',
+                'faq-2-a': 'É para missionários cristãos e suas famílias que servem em áreas remotas ou com pouco acesso a serviços de saúde.',
+                'faq-3-q': '3. Que tipo de cuidados oferece?',
+                'faq-3-a': 'Oferece consultas médicas online, apoio emocional e psicológico, suporte espiritual e orientações de saúde.',
+                'faq-4-q': '4. Como funciona o atendimento?',
+                'faq-4-a': 'O missionário entra em contato através dos nossos grupos de WhatsApp, a equipe de enfermagem faz uma triagem e agenda uma consulta online com um profissional de saúde.',
+                'faq-5-q': '5. É gratuito?',
+                'faq-5-a': 'Sim, o serviço de teleorientação e aconselhamento é gratuito para os missionários, sustentado por doações e voluntariado.',
+                'footer-logo-text': 'Telessaúde Missionária',
+                'footer-description': 'Levando saúde e esperança aos missionários nos lugares mais remotos.',
+                'footer-col1-title': 'A Telessaúde',
+                'footer-col1-link1': 'Sobre Nós',
+                'footer-col1-link2': 'Nossos Princípios',
+                'footer-col1-link3': 'Nossos Serviços',
+                'footer-col1-link4': 'FAQ',
+                'footer-col2-title': 'Envolva-se',
+                'footer-col2-link1': 'Como Ajudar',
+                'footer-col2-link2': 'Seja Voluntário',
+                'footer-col2-link3': 'Doe Agora',
+                'footer-col3-title': 'Contato',
+                'footer-col3-info1-title': 'Informações Gerais:',
+                'footer-col3-info2-title': 'WhatsApp (Info):',
+                'footer-privacy-link': 'Política de Privacidade',
+                'footer-bottom': '© <span id="currentYear"></span> Telessaúde Missionária. Iniciativa da Missionary Medical Care. Todos os direitos reservados.',
+                'modal-h2': 'Política de Privacidade',
+                'modal-h3-version': 'Versão: 1.0',
+                'modal-h3-scope': '1. Âmbito',
+                'modal-p-scope': 'Esta política aplica-se a todos os profissionais, voluntários, parceiros e pacientes envolvidos no serviço de telessaúde da Telessaúde Missionária.',
+                'modal-h3-data-collection': '2. Coleta e Uso de Dados',
+                'modal-p-data-collection': 'Coletamos os seguintes dados: identificação pessoal, informações de saúde, dados de conexão e de uso da plataforma. Estes dados são utilizados para prestar atendimento, garantir a segurança clínica, cumprir obrigações legais e realizar melhorias de serviço (utilizando dados anonimizados).',
+                'modal-h3-consent': '3. Consentimento',
+                'modal-p-consent': 'Só iniciamos o atendimento após o consentimento livre e informado do paciente, que pode ser revogado a qualquer momento.',
+                'modal-h3-sharing': '4. Compartilhamento',
+                'modal-p-sharing': 'Os dados só são compartilhados com a equipe de saúde diretamente envolvida, fornecedores essenciais (sob confidencialidade), autoridades (se exigido por lei) e para pesquisas com dados anonimizados.',
+                'modal-h3-security': '5. Segurança e Armazenamento',
+                'modal-p-security': 'Utilizamos ambiente criptografado, acesso restrito, backups regulares e retenção de dados pelo tempo legal mínimo para garantir a segurança.',
+                'modal-h3-patient-rights': '6. Direitos dos Pacientes',
+                'modal-p-patient-rights': 'A qualquer momento, pacientes podem confirmar, acessar, corrigir, eliminar ou solicitar a portabilidade de seus dados, além de revogar o consentimento e ser informados sobre incidentes de segurança.',
+                'modal-h3-security-incidents': '7. Incidentes de Segurança',
+                'modal-p-security-incidents': 'Em caso de vazamento ou acesso indevido, realizaremos a contenção imediata, notificaremos o paciente e as autoridades, e adotaremos medidas corretivas.',
+                'modal-h3-responsibilities': '8. Responsabilidades',
+                'modal-p-responsibilities': 'Todos os envolvidos devem seguir esta política, sob risco de sanções administrativas e legais.',
+                'modal-h3-review': '9. Revisão',
+                'modal-p-review': 'Atualizamos esta política conforme mudanças legais ou operacionais, comunicando qualquer alteração a todos os envolvidos.'
+            },
+            'es': {
+                'meta-description': 'Telesalud Misionera conecta misioneros con voluntarios de la salud para cuidado médico, emocional y espiritual. Conozca nuestro trabajo y cómo ayudar.',
+                'og-title': 'Telesalud Misionera: Cuidado y Esperanza',
+                'og-description': 'Conectamos misioneros con voluntarios de la salud para cuidado médico, emocional y espiritual.',
+                'title': 'Telesalud Misionera: Cuidado y Esperanza',
+                'logo-title': 'Telesalud Misionera',
+                'nav-about': 'Nosotros',
+                'nav-services': 'Servicios',
+                'nav-how-to-help': 'Cómo Ayudar',
+                'nav-contact': 'Contacto',
+                'nav-privacy': 'Privacidad',
+                'lang-br-title': 'Portugués (Brasil)',
+                'lang-br-aria': 'Cambiar a Portugués (Brasil)',
+                'lang-es-title': 'Español',
+                'lang-es-aria': 'Cambiar a Español',
+                'lang-en-title': 'Inglés',
+                'lang-en-aria': 'Cambiar a Inglés',
+                'hero-h1': 'Salud y Esperanza a Través de la Telesalud en el Campo Misionero',
+                'hero-subtitle': 'Conectamos misioneros con voluntarios de la salud para cuidado médico, emocional y espiritual, dondequiera que la misión los lleve.',
+                'hero-cta': '¿Necesita Orientación? Hable con Nosotros',
+                'about-h2': 'Cuidado Independiente e Imparcial Llevado Donde Más se Necesita',
+                'about-p1': 'Telesalud Misionera, formada por voluntarios, cuida de misioneros y sus familias impactados por desafíos de salud en lugares remotos, conflictos o exclusión del sistema de salud, inspirados por el amor cristiano.',
+                'about-p2': 'Ofrecemos un soporte vital para que puedan continuar su llamado con salud y paz.',
+                'about-btn': 'Nuestros Principios',
+                'stats-continents-label': 'Continentes Alcanzados',
+                'stats-professionals-label': 'Profesionales Voluntarios',
+                'stats-focus-label': 'Enfoque en el Cuidado Misionero',
+                'testimonials-h2': 'Historias de Cuidado e Impacto',
+                'testimony-1-text': '"Al enfrentar un virus en la familia y recibir un antibiótico fuerte en la farmacia local, buscaron orientación. Con el apoyo del equipo, recibieron la indicación de un tratamiento más seguro y, en pocos días, hubo una recuperación significativa."',
+                'testimony-1-author': '- Este de África',
+                'testimony-2-text': '"Una misionera agradeció la atención recibida, que le brindó tranquilidad y explicaciones claras sobre su salud en un contexto de acceso restringido a la asistencia médica. Destacó el impacto positivo de la telesalud en su vida."',
+                'testimony-2-author': '- Perú',
+                'testimony-3-text': '"Después de casi dos años sufriendo dolores en los hombros y sin tratamiento disponible, recibí atención online y presencial. Me liberé de los dolores y recuperé los movimientos. Agradezco emocionado la iniciativa."',
+                'testimony-3-author': '- Morro do Chapéu, Brasil',
+                'testimony-4-text': '"En el sertão, buscamos orientación para nuestra hija recién nacida. Recibimos no solo atención de calidad, sino también oración y cuidado espiritual. Sentimos de inmediato el obrar de Dios. Ha sido una fuente de bendición."',
+                'testimony-4-author': '- Sertão Nordestino, Brasil',
+                'testimony-5-text': '"Sufría problemas respiratorios desde hacía meses, sin diagnóstico preciso en los hospitales locales. Con el apoyo de la telesalud, recibí el diagnóstico correcto y un tratamiento eficaz, sintiéndome rápidamente mejor."',
+                'testimony-5-author': '- Guinea-Bissau, África',
+                'principles-h2': 'Los Principios Que Nos Mueven',
+                'principle-1': 'Nos guiamos por la <strong>ética médica universal</strong> y los <strong>principios cristianos</strong> de cuidado.',
+                'principle-2': 'Estamos comprometidos a <strong>testificar</strong> las necesidades y realidades del campo.',
+                'principle-3': 'Somos <strong>transparentes</strong> y responsables en nuestra gestión y acciones.',
+                'principle-4': 'Estamos comprometidos con la <strong>diversidad</strong>, <strong>equidad</strong> e <strong>inclusión</strong>.',
+                'principle-5': 'Somos <strong>independientes</strong>, <strong>imparciales</strong> y <strong>neutrales</strong> en el cuidado ofrecido.',
+                'principles-btn': 'Sepa Más Sobre Nosotros',
+                'services-h2': 'Cuidado Integral Donde Más se Necesita',
+                'service-1-h3': 'Consultas Médicas Online',
+                'service-1-p': 'Nuestros equipos de voluntarios tratan una amplia gama de necesidades médicas, desde orientación sobre enfermedades comunes hasta apoyo en condiciones crónicas y emergencias (dentro de las limitaciones de la telesalud).',
+                'service-2-h3': 'Apoyo Emocional y Espiritual',
+                'service-2-p': 'Ofrecemos asesoramiento psicológico y soporte espiritual para lidiar con los desafíos únicos de la vida misionera, como estrés, adaptación cultural y soledad.',
+                'missioncare-plus-h2': 'Conozca MISSIONCARE PLUS',
+                'missioncare-plus-p': 'En el campo misionero cada segundo y cada recurso cuentan. Acceda a su nueva herramienta de salud.',
+                'missioncare-plus-btn': 'ACCEDA AHORA: MissionCare Plus - Inicio',
+                'whatsapp-groups-h2': 'Conéctese a Nuestros Grupos de Apoyo',
+                'whatsapp-groups-p': '¡Encuentre su comunidad! Seleccione su región o grupo de interés para acceder vía WhatsApp.',
+                'regional-groups-title': 'Grupos Regionales de Atención',
+                'europe-h3': 'EUROPA',
+                'europe-p': 'Para misioneros en Europa Occidental, Oriental y Europa del Este.',
+                'access-group': 'Acceder al Grupo &rarr;',
+                'oceania-h3': 'OCEANÍA',
+                'oceania-p': 'Conectando obreros en Australia, Nueva Zelanda e islas del Pacífico.',
+                'africa-h3': 'ÁFRICA',
+                'africa-p': 'Apoyo para misioneros sirviendo en todo el continente africano.',
+                'americas-h3': 'AMÉRICAS',
+                'americas-p': 'Uniendo misioneros que actúan en América del Norte, Central y del Sur.',
+                'asia-h3': 'ASIA',
+                'asia-p': 'Comunidad para aquellos que sirven desde Oriente Medio hasta el Sudeste Asiático.',
+                'general-groups-title': 'Grupos Generales',
+                'global-network-h3': 'RED GLOBAL',
+                'global-network-p': 'Punto de encuentro para todos los misioneros para intercambiar experiencias y oraciones.',
+                'access-network': 'Acceder a la Red &rarr;',
+                'hispanic-network-h3': 'Red Misionera Telesalud', 
+                'hispanic-network-p': 'Una Red global de cuidado, esperanza y apoyo integral pensada exclusivamente para el mundo hispano hablante.', 
+                'how-to-help-h2': 'Cómo Usted Puede Ayudar',
+                'how-to-help-p': 'Somos un movimiento sostenido por voluntarios y donantes. Su participación es vital para continuar ofreciendo cuidado.',
+                'volunteer-h4': 'Sea un Voluntario',
+                'volunteer-p': 'Profesionales de la salud, TI, traductores y otros. Done su tiempo y talento para apoyar misioneros.',
+                'volunteer-btn': 'Quiero Ser Voluntario',
+                'donate-h4': 'Haga una Donación',
+                'donate-p': 'Su contribución financiera nos ayuda a mantener la estructura y expandir el alcance del cuidado gratuito.',
+                'donate-btn': 'Donar Ahora',
+                'faq-h2': 'Preguntas Frecuentes',
+                'faq-1-q': '1. ¿Qué es Telesalud Misionera?',
+                'faq-1-a': 'Es una iniciativa que conecta misioneros en lugares remotos con profesionales de la salud voluntarios, ofreciendo cuidados médicos, emocionales y espirituales a través de la tecnología.',
+                'faq-2-q': '2. ¿Para quién es este servicio?',
+                'faq-2-a': 'Es para misioneros cristianos y sus familias que sirven en áreas remotas o con poco acceso a servicios de salud.',
+                'faq-3-q': '3. ¿Qué tipo de cuidados ofrece?',
+                'faq-3-a': 'Ofrece consultas médicas online, apoyo emocional y psicológico, soporte espiritual y orientaciones de salud.',
+                'faq-4-q': '4. ¿Cómo funciona la atención?',
+                'faq-4-a': 'El misionero entra en contacto a través de nuestros grupos de WhatsApp, el equipo de enfermería realiza un triaje y agenda una consulta online con un profesional de la salud.',
+                'faq-5-q': '5. ¿Es gratuito?',
+                'faq-5-a': 'Sí, el servicio de teleorientación y asesoramiento es gratuito para los misioneros, sostenido por donaciones y voluntariado.',
+                'footer-logo-text': 'Telesalud Misionera',
+                'footer-description': 'Llevando salud y esperanza a los misioneros en los lugares más remotos.',
+                'footer-col1-title': 'La Telesalud',
+                'footer-col1-link1': 'Nosotros',
+                'footer-col1-link2': 'Nuestros Principios',
+                'footer-col1-link3': 'Nuestros Servicios',
+                'footer-col1-link4': 'FAQ',
+                'footer-col2-title': 'Involúcrese',
+                'footer-col2-link1': 'Cómo Ayudar',
+                'footer-col2-link2': 'Sea Voluntario',
+                'footer-col2-link3': 'Done Ahora',
+                'footer-col3-title': 'Contacto',
+                'footer-col3-info1-title': 'Información General:',
+                'footer-col3-info2-title': 'WhatsApp (Info):',
+                'footer-privacy-link': 'Política de Privacidad',
+                'footer-bottom': '© <span id="currentYear"></span> Telesalud Misionera. Iniciativa de Missionary Medical Care. Todos los derechos reservados.',
+                'modal-h2': 'Política de Privacidad',
+                'modal-h3-version': 'Versión: 1.0',
+                'modal-h3-scope': '1. Alcance',
+                'modal-p-scope': 'Esta política se aplica a todos los profesionales, voluntarios, socios y pacientes involucrados en el servicio de telesalud de Telesalud Misionera.',
+                'modal-h3-data-collection': '2. Recopilación y Uso de Datos',
+                'modal-p-data-collection': 'Recopilamos los siguientes datos: identificación personal, información de salud, datos de conexión y de uso de la plataforma. Estos datos se utilizan para brindar atención, garantizar la seguridad clínica, cumplir con obligaciones legales y realizar mejoras de servicio (utilizando datos anonimizados).',
+                'modal-h3-consent': '3. Consentimiento',
+                'modal-p-consent': 'Solo iniciamos la atención después del consentimiento libre e informado del paciente, que puede ser revocado en cualquier momento.',
+                'modal-h3-sharing': '4. Compartir',
+                'modal-p-sharing': 'Los datos solo se comparten con el equipo de salud directamente involucrado, proveedores esenciales (bajo confidencialidad), autoridades (si lo exige la ley) y para investigaciones con datos anonimizados.',
+                'modal-h3-security': '5. Seguridad y Almacenamiento',
+                'modal-p-security': 'Utilizamos un entorno cifrado, acceso restringido, copias de seguridad regulares y retención de datos por el tiempo legal mínimo para garantizar la seguridad.',
+                'modal-h3-patient-rights': '6. Derechos del Paciente',
+                'modal-p-patient-rights': 'En cualquier momento, los pacientes pueden confirmar, acceder, corregir, eliminar o solicitar la portabilidad de sus datos, además de revocar el consentimiento y ser informados sobre incidentes de seguridad.',
+                'modal-h3-security-incidents': '7. Incidentes de Seguridad',
+                'modal-p-security-incidents': 'En caso de fuga o acceso indebido, realizaremos la contención inmediata, notificaremos al paciente y a las autoridades, y adoptaremos medidas correctivas.',
+                'modal-h3-responsibilities': '8. Responsabilidades',
+                'modal-p-responsibilities': 'Todos los involucrados deben seguir esta política, bajo riesgo de sanciones administrativas y legales.',
+                'modal-h3-review': '9. Revisión',
+                'modal-p-review': 'Actualizamos esta política según los cambios legales u operativos, comunicando cualquier alteración a todos los involucrados.'
+            },
+            'en': {
+                'meta-description': 'Missionary Telehealth connects missionaries with health volunteers for medical, emotional, and spiritual care. Learn about our work and how to help.',
+                'og-title': 'Missionary Telehealth: Care and Hope',
+                'og-description': 'We connect missionaries with health volunteers for medical, emotional, and spiritual care.',
+                'title': 'Missionary Telehealth: Care and Hope',
+                'logo-title': 'Missionary Telehealth',
+                'nav-about': 'About',
+                'nav-services': 'Services',
+                'nav-how-to-help': 'How to Help',
+                'nav-contact': 'Contact',
+                'nav-privacy': 'Privacy',
+                'lang-br-title': 'Portuguese (Brazil)',
+                'lang-br-aria': 'Switch to Portuguese (Brazil)',
+                'lang-es-title': 'Spanish',
+                'lang-es-aria': 'Switch to Spanish',
+                'lang-en-title': 'English',
+                'lang-en-aria': 'Switch to English',
+                'hero-h1': 'Health and Hope Through Telehealth in the Missionary Field',
+                'hero-subtitle': 'We connect missionaries with health volunteers for medical, emotional, and spiritual care, wherever the mission takes them.',
+                'hero-cta': 'Need Guidance? Talk to Us',
+                'about-h2': 'Independent and Impartial Care Delivered Where It\'s Most Needed',
+                'about-p1': 'Missionary Telehealth, formed by volunteers, cares for missionaries and their families affected by health challenges in remote areas, conflicts, or exclusion from the healthcare system, inspired by Christian love.',
+                'about-p2': 'We offer vital support so they can continue their calling with health and peace.',
+                'about-btn': 'Our Principles',
+                'stats-continents-label': 'Continents Reached',
+                'stats-professionals-label': 'Volunteer Professionals',
+                'stats-focus-label': 'Focus on Missionary Care',
+                'testimonials-h2': 'Stories of Care and Impact',
+                'testimony-1-text': '"Facing a family virus and receiving a strong antibiotic at the local pharmacy, they sought guidance. With the team\'s support, they received a safer treatment recommendation and, in a few days, there was significant recovery."',
+                'testimony-1-author': '- East Africa',
+                'testimony-2-text': '"A missionary thanked the care received, which brought peace of mind and clear explanations about her health in a context of restricted access to medical assistance. She highlighted the positive impact of telehealth on her life."',
+                'testimony-2-author': '- Peru',
+                'testimony-3-text': '"After almost two years suffering from shoulder pain and no available treatment, I received online and in-person care. I was free from pain and regained movement. I am emotionally grateful for the initiative."',
+                'testimony-3-author': '- Morro do Chapéu, Brazil',
+                'testimony-4-text': '"In the sertão, we sought guidance for our newborn daughter. We received not only quality care, but also prayer and spiritual support. We immediately felt God\'s work. It has been a source of blessing."',
+                'testimony-4-author': '- Northeast Sertão, Brazil',
+                'testimony-5-text': '"I had been facing respiratory problems for months, with no precise diagnosis in local hospitals. With telehealth support, I received the correct diagnosis and effective treatment, quickly feeling better."',
+                'testimony-5-author': '- Guinea-Bissau, Africa',
+                'principles-h2': 'The Principles That Guide Us',
+                'principle-1': 'We are guided by <strong>universal medical ethics</strong> and <strong>Christian principles</strong> of care.',
+                'principle-2': 'We are committed to <strong>witnessing</strong> the needs and realities of the field.',
+                'principle-3': 'We are <strong>transparent</strong> and accountable in our management and actions.',
+                'principle-4': 'We are committed to <strong>diversity</strong>, <strong>equity</strong>, and <strong>inclusion</strong>.',
+                'principle-5': 'We are <strong>independent</strong>, <strong>impartial</strong>, and <strong>neutral</strong> in the care offered.',
+                'principles-btn': 'Learn More About Us',
+                'services-h2': 'Holistic Care Where It\'s Most Needed',
+                'service-1-h3': 'Online Medical Consultations',
+                'service-1-p': 'Our volunteer teams address a wide range of medical needs, from guidance on common illnesses to support for chronic conditions and emergencies (within telehealth limitations).',
+                'service-2-h3': 'Emotional and Spiritual Support',
+                'service-2-p': 'We offer psychological counseling and spiritual support to cope with the unique challenges of missionary life, such as stress, cultural adaptation, and loneliness.',
+                'missioncare-plus-h2': 'Discover MISSIONCARE PLUS',
+                'missioncare-plus-p': 'In the missionary field, every second and every resource counts. Access your new health tool.',
+                'missioncare-plus-btn': 'ACCESS NOW: MissionCare Plus - Home',
+                'whatsapp-groups-h2': 'Connect to Our Support Groups',
+                'whatsapp-groups-p': 'Find your community! Select your region or group of interest to access via WhatsApp.',
+                'regional-groups-title': 'Regional Service Groups',
+                'europe-h3': 'EUROPE',
+                'europe-p': 'For missionaries in Western Europe, Eastern Europe, and Eastern Europe.',
+                'access-group': 'Access Group &rarr;',
+                'oceania-h3': 'OCEANIA',
+                'oceania-p': 'Connecting workers in Australia, New Zealand, and Pacific islands.',
+                'africa-h3': 'AFRICA',
+                'africa-p': 'Support for missionaries serving across the African continent.',
+                'americas-h3': 'AMERICAS',
+                'americas-p': 'Uniting missionaries serving in North, Central, and South America.',
+                'asia-h3': 'ASIA',
+                'asia-p': 'Community for those serving from the Middle East to Southeast Asia.',
+                'general-groups-title': 'General Groups',
+                'global-network-h3': 'GLOBAL NETWORK',
+                'global-network-p': 'Meeting point for all missionaries to share experiences and prayers.',
+                'access-network': 'Access Network &rarr;',
+                'hispanic-network-h3': 'Missionary Telehealth Network', 
+                'hispanic-network-p': 'A global network of care, hope, and integral support designed exclusively for the Spanish-speaking world.', 
+                'how-to-help-h2': 'How You Can Help',
+                'how-to-help-p': 'We are a movement sustained by volunteers and donors. Your participation is vital to continue offering care.',
+                'volunteer-h4': 'Be a Volunteer',
+                'volunteer-p': 'Health professionals, IT, translators, and others. Donate your time and talent to support missionaries.',
+                'volunteer-btn': 'I Want to Be a Volunteer',
+                'donate-h4': 'Make a Donation',
+                'donate-p': 'Your financial contribution helps us maintain the structure and expand the reach of free care.',
+                'donate-btn': 'Donate Now',
+                'faq-h2': 'Frequently Asked Questions',
+                'faq-1-q': '1. What is Missionary Telehealth?',
+                'faq-1-a': 'It is an initiative that connects missionaries in remote locations with volunteer health professionals, offering medical, emotional, and spiritual care through technology.',
+                'faq-2-q': '2. Who is this service for?',
+                'faq-2-a': 'It is for Christian missionaries and their families who serve in remote areas or with limited access to health services.',
+                'faq-3-q': '3. What kind of care does it offer?',
+                'faq-3-a': 'It offers online medical consultations, emotional and psychological support, spiritual support, and health guidance.',
+                'faq-4-q': '4. How does the service work?',
+                'faq-4-a': 'The missionary contacts us through our WhatsApp groups, the nursing team performs a triage, and schedules an online consultation with a health professional.',
+                'faq-5-q': '5. Is it free?',
+                'faq-5-a': 'Yes, the tele-guidance and counseling service is free for missionaries, sustained by donations and volunteer work.',
+                'footer-logo-text': 'Missionary Telehealth',
+                'footer-description': 'Bringing health and hope to missionaries in the most remote places.',
+                'footer-col1-title': 'Telehealth',
+                'footer-col1-link1': 'About Us',
+                'footer-col1-link2': 'Our Principles',
+                'footer-col1-link3': 'Our Services',
+                'footer-col1-link4': 'FAQ',
+                'footer-col2-title': 'Get Involved',
+                'footer-col2-link1': 'How to Help',
+                'footer-col2-link2': 'Be a Volunteer',
+                'footer-col2-link3': 'Donate Now',
+                'footer-col3-title': 'Contact',
+                'footer-col3-info1-title': 'General Information:',
+                'footer-col3-info2-title': 'WhatsApp (Info):',
+                'footer-privacy-link': 'Privacy Policy',
+                'footer-bottom': '© <span id="currentYear"></span> Missionary Telehealth. An initiative of Missionary Medical Care. All rights reserved.',
+                'modal-h2': 'Privacy Policy',
+                'modal-h3-version': 'Version: 1.0',
+                'modal-h3-scope': '1. Scope',
+                'modal-p-scope': 'This policy applies to all professionals, volunteers, partners, and patients involved in Missionary Telehealth\'s telehealth service.',
+                'modal-h3-data-collection': '2. Data Collection and Use',
+                'modal-p-data-collection': 'We collect the following data: personal identification, health information, connection data, and platform usage data. This data is used to provide care, ensure clinical safety, comply with legal obligations, and make service improvements (using anonymized data).',
+                'modal-h3-consent': '3. Consent',
+                'modal-p-consent': 'We only begin service after the patient\'s free and informed consent, which can be revoked at any time.',
+                'modal-h3-sharing': '4. Sharing',
+                'modal-p-sharing': 'Data is only shared with the directly involved health team, essential suppliers (under confidentiality), authorities (if required by law), and for research with anonymized data.',
+                'modal-h3-security': '5. Security and Storage',
+                'modal-p-security': 'We use an encrypted environment, restricted access, regular backups, and data retention for the minimum legal time to ensure security.',
+                'modal-h3-patient-rights': '6. Patient Rights',
+                'modal-p-patient-rights': 'At any time, patients can confirm, access, correct, delete, or request the portability of their data, as well as revoke consent and be informed about security incidents.',
+                'modal-h3-security-incidents': '7. Security Incidents',
+                'modal-p-security-incidents': 'In case of a breach or improper access, we will immediately contain it, notify the patient and authorities, and take corrective measures.',
+                'modal-h3-responsibilities': '8. Responsibilities',
+                'modal-p-responsibilities': 'All involved must follow this policy, at the risk of administrative and legal sanctions.',
+                'modal-h3-review': '9. Review',
+                'modal-p-review': 'We update this policy according to legal or operational changes, communicating any alteration to all involved.'
+            }
+        };
+
+        // Função para definir o idioma
+        function setLanguage(lang) {
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+
+            // Update meta tags
+            document.querySelector('meta[name="description"]').setAttribute('content', translations[lang]['meta-description']);
+            document.querySelector('meta[property="og:title"]').setAttribute('content', translations[lang]['og-title']);
+            document.querySelector('meta[property="og:description"]').setAttribute('content', translations[lang]['og-description']);
+            document.querySelector('title').textContent = translations[lang]['title'];
+
+            // Update all elements with data-key
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[lang][key]) {
+                    // Handle innerHTML for elements with strong tags (like principles)
+                    if (key.startsWith('principle-')) {
+                        element.innerHTML = translations[lang][key];
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+
+            // Special handling for footer-bottom to preserve currentYear span
+            const footerBottomElement = document.querySelector('[data-key="footer-bottom"]');
+            if (footerBottomElement) {
+                const currentYear = new Date().getFullYear();
+                let translatedText = translations[lang]['footer-bottom'];
+                translatedText = translatedText.replace('<span id="currentYear"></span>', `<span id="currentYear">${currentYear}</span>`);
+                footerBottomElement.innerHTML = translatedText;
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
             // Script do ano atual no rodapé
             const currentYearEl = document.getElementById('currentYear');
@@ -769,6 +1217,19 @@
                     }
                 });
             }
+
+            // Language Switcher functionality
+            const langButtons = document.querySelectorAll('.lang-switcher button');
+            langButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    setLanguage(lang);
+                });
+            });
+
+            // Set default language on page load
+            // You can also try to detect browser language or use a stored preference
+            setLanguage('pt-BR'); 
         });
     </script>
 
