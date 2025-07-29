@@ -59,7 +59,7 @@
             background-color: var(--color-background-white); /* Fundo base */
             font-size: 16px;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            -moz-osx-smoothing: grayscale;
         }
 
         .container {
@@ -99,11 +99,16 @@
         }
         .site-header .container { display: flex; justify-content: space-between; align-items: center; }
         
-        .logo-container { text-decoration: none; }
+        .logo-container { text-decoration: none; display: flex; align-items: center; }
         .logo-title {
             font-size: 1.6em;
             font-weight: 700;
             color: var(--color-text-dark);
+            /* Removido margin-left: 10px; pois o ícone foi removido */
+        }
+        .header-logo-icon {
+            /* Removido o estilo do ícone pois o ícone foi removido */
+            display: none; /* Garante que não apareça mesmo que o HTML ainda o referencie */
         }
         
         /* Navegação */
@@ -151,6 +156,16 @@
         body.mobile-menu-open .main-nav ul { flex-direction: column; width: 100%; padding: 20px 0; }
         body.mobile-menu-open .main-nav ul li { width: 100%; text-align: center; }
         body.mobile-menu-open .main-nav ul li a { padding: 15px; display: block; width: 100%; }
+        
+        /* Ajuste para o seletor de idioma no menu mobile */
+        body.mobile-menu-open .lang-switcher {
+            display: flex; /* Garante que seja visível */
+            justify-content: center; /* Centraliza as bandeiras */
+            padding: 15px 0; /* Adiciona um pouco de padding */
+            border-top: 1px solid var(--color-border-light); /* Separador visual */
+            width: 100%; /* Ocupa a largura total */
+        }
+
 
         /* Seções */
         section { padding: 80px 0; border-bottom: 1px solid var(--color-border-light); }
@@ -313,11 +328,22 @@
         .region-icon svg { width: 40px; height: 40px; margin: 0 auto; }
         .region-card h3 { font-size: 1.25em; margin-bottom: 12px; color: var(--color-text-dark); }
         .region-card p { font-size: 0.95em; color: var(--color-text-medium); margin-bottom: 20px; flex-grow: 1; }
-        .access-link {
+        /* Estilo para o novo link de contato nos cartões de grupo */
+        .region-card .contact-link-button {
             display: inline-block;
+            background-color: var(--color-whatsapp-btn);
+            color: var(--color-text-light);
+            padding: 10px 15px;
+            border-radius: 5px;
             font-weight: 600;
-            color: var(--color-secondary-blue);
-            margin-top: auto;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            margin-top: auto; /* Empurra o botão para baixo */
+            transition: background-color 0.3s ease;
+        }
+        .region-card .contact-link-button:hover {
+            background-color: var(--color-whatsapp-btn-hover);
+            text-decoration: none;
         }
         
         .help-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 400px)); gap: 30px; justify-content: center; }
@@ -400,7 +426,8 @@
 
         /* Responsividade */
         @media (max-width: 991px) {
-            .main-nav, .lang-switcher { display: none; }
+            /* Removido o display: none do .lang-switcher */
+            .main-nav { display: none; } /* Continua oculto por padrão */
             .mobile-menu-toggle { display: block; }
             .site-header .container { justify-content: space-between; width: 100%; }
             .intro-impact-section { flex-direction: column; }
@@ -428,6 +455,7 @@
     <header class="site-header">
         <div class="container">
             <a href="#hero" class="logo-container">
+                <!-- Ícone removido do lado do título do logo -->
                 <span class="logo-title" data-key="logo-title">Telessaúde Missionária</span>
             </a>
             
@@ -440,18 +468,19 @@
                         <li><a href="#contato" data-key="nav-contact">Contato</a></li>
                         <li><a id="open-privacy-nav" data-key="nav-privacy">Privacidade</a></li>
                     </ul>
+                    <!-- O seletor de idioma é movido para dentro do nav para ser exibido com o menu mobile -->
+                    <div class="lang-switcher">
+                        <button data-lang="pt-BR" title="Português (Brasil)" aria-label="Mudar para Português (Brasil)">
+                            <img src="https://flagcdn.com/br.svg" alt="Bandeira do Brasil">
+                        </button>
+                        <button data-lang="es" title="Español" aria-label="Mudar para Español">
+                            <img src="https://flagcdn.com/es.svg" alt="Bandeira da Espanha">
+                        </button>
+                        <button data-lang="en" title="English" aria-label="Mudar para English">
+                            <img src="https://flagcdn.com/us.svg" alt="Bandeira dos EUA">
+                        </button>
+                    </div>
                 </nav>
-                <div class="lang-switcher">
-                    <button data-lang="pt-BR" title="Português (Brasil)" aria-label="Mudar para Português (Brasil)">
-                        <img src="https://flagcdn.com/br.svg" alt="Bandeira do Brasil">
-                    </button>
-                    <button data-lang="es" title="Español" aria-label="Mudar para Español">
-                        <img src="https://flagcdn.com/es.svg" alt="Bandeira da Espanha">
-                    </button>
-                    <button data-lang="en" title="English" aria-label="Mudar para English">
-                        <img src="https://flagcdn.com/us.svg" alt="Bandeira dos EUA">
-                    </button>
-                </div>
             </div>
 
             <button class="mobile-menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menu">
@@ -561,64 +590,64 @@
 
                 <h3 class="group-section-title" data-key="regional-groups-title">Grupos Regionais de Atendimento</h3>
                 <div class="region-grid">
-                    <a href="https://chat.whatsapp.com/invite/your-link-here" target="_blank" class="region-card-link">
+                    <a href="https://wa.me/59173346906" target="_blank" class="region-card-link">
                         <div class="region-card">
                             <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
                             <h3 data-key="europe-h3">EUROPA</h3>
                             <p data-key="europe-p">Para missionários na Europa Ocidental, Oriental e Leste Europeu.</p>
-                            <span class="access-link" data-key="access-group">Acessar Grupo &rarr;</span>
+                            <a href="https://wa.me/59173346906" target="_blank" class="contact-link-button" data-key="contact-for-info">ENTRE EM CONTATO CONOSCO PARA MAIS INFORMAÇOES</a>
                         </div>
                     </a>
-                   <a href="https://chat.whatsapp.com/invite/your-link-here" target="_blank" class="region-card-link">
+                   <a href="https://wa.me/59173346906" target="_blank" class="region-card-link">
                         <div class="region-card">
                             <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
                             <h3 data-key="oceania-h3">OCEANIA</h3>
                             <p data-key="oceania-p">Conectando obreiros na Austrália, Nova Zelândia e ilhas do Pacífico.</p>
-                            <span class="access-link" data-key="access-group">Acessar Grupo &rarr;</span>
+                            <a href="https://wa.me/59173346906" target="_blank" class="contact-link-button" data-key="contact-for-info">ENTRE EM CONTATO CONOSCO PARA MAIS INFORMAÇOES</a>
                         </div>
                     </a>
-                   <a href="https://chat.whatsapp.com/invite/your-link-here" target="_blank" class="region-card-link">
+                   <a href="https://wa.me/59173346906" target="_blank" class="region-card-link">
                         <div class="region-card">
                             <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
                             <h3 data-key="africa-h3">ÁFRICA</h3>
                             <p data-key="africa-p">Apoio para missionários servindo em todo o continente africano.</p>
-                            <span class="access-link" data-key="access-group">Acessar Grupo &rarr;</span>
+                            <a href="https://wa.me/59173346906" target="_blank" class="contact-link-button" data-key="contact-for-info">ENTRE EM CONTATO CONOSCO PARA MAIS INFORMAÇOES</a>
                         </div>
                     </a>
-                   <a href="https://chat.whatsapp.com/invite/your-link-here" target="_blank" class="region-card-link">
+                   <a href="https://wa.me/59173346906" target="_blank" class="region-card-link">
                         <div class="region-card">
                             <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
                             <h3 data-key="americas-h3">AMÉRICAS</h3>
                             <p data-key="americas-p">Unindo missionários que atuam na América do Norte, Central e do Sul.</p>
-                            <span class="access-link" data-key="access-group">Acessar Grupo &rarr;</span>
+                            <a href="https://wa.me/59173346906" target="_blank" class="contact-link-button" data-key="contact-for-info">ENTRE EM CONTATO CONOSCO PARA MAIS INFORMAÇOES</a>
                         </div>
                     </a>
-                   <a href="https://chat.whatsapp.com/invite/your-link-here" target="_blank" class="region-card-link">
+                   <a href="https://wa.me/59173346906" target="_blank" class="region-card-link">
                         <div class="region-card">
                             <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
                             <h3 data-key="asia-h3">ÁSIA</h3>
                             <p data-key="asia-p">Comunidade para aqueles que servem desde o Oriente Médio ao Sudeste Asiático.</p>
-                            <span class="access-link" data-key="access-group">Acessar Grupo &rarr;</span>
+                            <a href="https://wa.me/59173346906" target="_blank" class="contact-link-button" data-key="contact-for-info">ENTRE EM CONTATO CONOSCO PARA MAIS INFORMAÇOES</a>
                         </div>
                     </a>
                 </div>
 
                 <h3 class="group-section-title" data-key="general-groups-title">Grupos Gerais</h3>
                 <div class="general-groups-grid">
-                    <a href="https://chat.whatsapp.com/GgnjqfSTEHZ2RNAgYN6KtD" target="_blank" class="region-card-link">
+                    <a href="https://wa.me/59173346906" target="_blank" class="region-card-link">
                         <div class="region-card">
                             <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
                             <h3 data-key="global-network-h3">REDE GLOBAL</h3>
                             <p data-key="global-network-p">Ponto de encontro para todos os missionários trocarem experiências e orações.</p>
-                            <span class="access-link" data-key="access-network">Acessar Rede &rarr;</span>
+                            <a href="https://wa.me/59173346906" target="_blank" class="contact-link-button" data-key="contact-for-info">ENTRE EM CONTATO CONOSCO PARA MAIS INFORMAÇOES</a>
                         </div>
                     </a>
-                    <a href="https://chat.whatsapp.com/Icyf4L4nhcV1MqDxvQycvm" target="_blank" class="region-card-link">
+                    <a href="https://wa.me/59173346906" target="_blank" class="region-card-link">
                         <div class="region-card">
                             <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
                             <h3 data-key="hispanic-network-h3">Red Misionera Telesalud</h3>
                             <p data-key="hispanic-network-p">Una Red global de cuidado, esperanza y apoyo integral pensada exclusivamente para el mundo hispano hablante.</p>
-                            <span class="access-link" data-key="access-group">Acceder al Grupo &rarr;</span>
+                            <a href="https://wa.me/59173346906" target="_blank" class="contact-link-button" data-key="contact-for-info">ENTRE EM CONTATO CONOSCO PARA MAIS INFORMAÇOES</a>
                         </div>
                     </a>
                 </div>
@@ -787,7 +816,7 @@
                 'regional-groups-title': 'Grupos Regionais de Atendimento',
                 'europe-h3': 'EUROPA',
                 'europe-p': 'Para missionários na Europa Ocidental, Oriental e Leste Europeu.',
-                'access-group': 'Acessar Grupo &rarr;',
+                'contact-for-info': 'ENTRE EM CONTATO CONOSCO PARA MAIS INFORMAÇOES',
                 'oceania-h3': 'OCEANIA',
                 'oceania-p': 'Conectando obreiros na Austrália, Nova Zelândia e ilhas do Pacífico.',
                 'africa-h3': 'ÁFRICA',
@@ -799,9 +828,8 @@
                 'general-groups-title': 'Grupos Gerais',
                 'global-network-h3': 'REDE GLOBAL',
                 'global-network-p': 'Ponto de encontro para todos os missionários trocarem experiências e orações.',
-                'access-network': 'Acessar Rede &rarr;',
-                'hispanic-network-h3': 'Red Misionera Telesalud', // Already in Spanish, no change
-                'hispanic-network-p': 'Una Red global de cuidado, esperanza y apoyo integral pensada exclusivamente para el mundo hispano hablante.', // Already in Spanish, no change
+                'hispanic-network-h3': 'Red Misionera Telesalud', 
+                'hispanic-network-p': 'Una Red global de cuidado, esperanza y apoyo integral pensada exclusivamente para el mundo hispano hablante.', 
                 'how-to-help-h2': 'Como Você Pode Ajudar',
                 'how-to-help-p': 'Somos um movimento sustentado por voluntários e doadores. Sua participação é vital para continuarmos oferecendo cuidado.',
                 'volunteer-h4': 'Seja um Voluntário',
@@ -916,9 +944,9 @@
                 'regional-groups-title': 'Grupos Regionales de Atención',
                 'europe-h3': 'EUROPA',
                 'europe-p': 'Para misioneros en Europa Occidental, Oriental y Europa del Este.',
-                'access-group': 'Acceder al Grupo &rarr;',
+                'contact-for-info': 'CONTÁCTENOS PARA MÁS INFORMACIÓN',
                 'oceania-h3': 'OCEANÍA',
-                'oceania-p': 'Conectando obreros en Australia, Nueva Zelanda e islas del Pacífico.',
+                'oceania-p': 'Conectando obreros en Australia, Nueva Zelândia e islas del Pacífico.',
                 'africa-h3': 'ÁFRICA',
                 'africa-p': 'Apoyo para misioneros sirviendo en todo el continente africano.',
                 'americas-h3': 'AMÉRICAS',
@@ -928,7 +956,6 @@
                 'general-groups-title': 'Grupos Generales',
                 'global-network-h3': 'RED GLOBAL',
                 'global-network-p': 'Punto de encuentro para todos los misioneros para intercambiar experiencias y oraciones.',
-                'access-network': 'Acceder a la Red &rarr;',
                 'hispanic-network-h3': 'Red Misionera Telesalud', 
                 'hispanic-network-p': 'Una Red global de cuidado, esperanza y apoyo integral pensada exclusivamente para el mundo hispano hablante.', 
                 'how-to-help-h2': 'Cómo Usted Puede Ayudar',
@@ -1045,7 +1072,7 @@
                 'regional-groups-title': 'Regional Service Groups',
                 'europe-h3': 'EUROPE',
                 'europe-p': 'For missionaries in Western Europe, Eastern Europe, and Eastern Europe.',
-                'access-group': 'Access Group &rarr;',
+                'contact-for-info': 'CONTACT US FOR MORE INFORMATION',
                 'oceania-h3': 'OCEANIA',
                 'oceania-p': 'Connecting workers in Australia, New Zealand, and Pacific islands.',
                 'africa-h3': 'AFRICA',
@@ -1057,7 +1084,6 @@
                 'general-groups-title': 'General Groups',
                 'global-network-h3': 'GLOBAL NETWORK',
                 'global-network-p': 'Meeting point for all missionaries to share experiences and prayers.',
-                'access-network': 'Access Network &rarr;',
                 'hispanic-network-h3': 'Missionary Telehealth Network', 
                 'hispanic-network-p': 'A global network of care, hope, and integral support designed exclusively for the Spanish-speaking world.', 
                 'how-to-help-h2': 'How You Can Help',
