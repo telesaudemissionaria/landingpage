@@ -241,16 +241,6 @@
         .principles-section li { font-size: 1.2em; margin-bottom: 10px; font-weight: 600; color: var(--color-text-dark); }
         .principles-section li strong { color: var(--color-primary-blue); }
 
-        /* SEÇÃO MISSIONCARE PLUS (CTA NA HOME) */
-        #missioncare-plus { background: linear-gradient(135deg, #0056a8 0%, #00417f 100%); color: var(--color-text-light); }
-        .missioncare-plus-box { text-align: center; max-width: 700px; margin: 0 auto; }
-        .missioncare-plus-box .section-title { margin-bottom: 20px; }
-        .missioncare-plus-box .section-title::after { background-color: var(--color-text-light); }
-        .missioncare-plus-box h2 { color: var(--color-text-light); }
-        .missioncare-plus-box p { font-size: 1.2em; color: rgba(255,255,255,0.9); margin-bottom: 30px; }
-        .btn-missioncare-plus { display: inline-flex; align-items: center; gap: 10px; background-color: var(--color-text-light); color: var(--color-primary-blue); padding: 18px 40px; border-radius: 50px; font-weight: 700; font-size: 1.1em; text-transform: uppercase; transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2); border: none; }
-        .btn-missioncare-plus:hover { background-color: #eef; text-decoration: none; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.25); color: var(--color-primary-blue-hover); }
-
         /* Seção Grupos WhatsApp */
         #acesso-grupos-whatsapp .group-container { max-width: 900px; margin: 0 auto; }
         .group-header { text-align: center; margin-bottom: 50px; }
@@ -287,6 +277,19 @@
         #faq .faq-item.active .faq-question .icon { transform: rotate(45deg); }
         #faq .faq-item.active .faq-answer { max-height: 400px; }
 
+        /* Disclaimer Banner */
+        .disclaimer-banner {
+            background-color:#f9e79f; 
+            color:#5d4037; 
+            padding:15px; 
+            text-align:center; 
+            font-size:1em; /* Ajustado para melhor leitura */
+            border-top:2px solid #f7ca18;
+        }
+        .disclaimer-banner strong {
+            color: #d35400; /* Cor de destaque para o título */
+        }
+
         /* Footer */
         .site-footer { background-color: var(--color-footer-bg); color: var(--color-footer-text); padding: 60px 0 30px; font-size: 14px; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; margin-bottom: 40px; }
@@ -302,15 +305,44 @@
         .footer-social-icons svg { width: 24px; height: 24px; }
         .footer-bottom { text-align: center; padding-top: 30px; margin-top: 30px; border-top: 1px solid rgba(204, 204, 204, 0.2); font-size: 13px; }
 
-        /* Modal da Política de Privacidade */
+        /* Modal Jurídico */
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.6); animation: fadeIn 0.3s; }
-        .modal-content { background-color: #fefefe; margin: 5% auto; padding: 30px 40px; border: 1px solid #888; width: 80%; max-width: 800px; border-radius: 8px; position: relative; animation: slideIn 0.3s; }
+        .modal-content { background-color: #fff; margin: 5% auto; padding: 0; border: 1px solid #888; width: 80%; max-width: 800px; border-radius: 8px; position: relative; animation: slideIn 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.3); overflow: hidden;}
         @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
         @keyframes slideIn { from {transform: translateY(-50px);} to {transform: translateY(0);} }
-        .modal-content h2 { color: var(--color-primary-blue); }
-        .modal-content h3 { color: var(--color-text-dark); border-bottom: 2px solid #f2f2f2; padding-bottom: 10px; margin-top: 30px; }
-        .close-button { color: #aaa; float: right; font-size: 28px; font-weight: bold; position: absolute; top: 10px; right: 25px; }
-        .close-button:hover, .close-button:focus { color: black; text-decoration: none; cursor: pointer; }
+        
+        .modal-header {
+            padding: 15px 25px;
+            background-color: var(--color-primary-blue);
+            color: var(--color-text-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .modal-header h2 {
+            margin: 0;
+            color: var(--color-text-light);
+            font-size: 1.5em;
+        }
+        .modal-body {
+            padding: 20px 30px;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        .modal-body h3 {
+            color: var(--color-primary-blue);
+            border-bottom: 1px solid var(--color-border-light);
+            padding-bottom: 8px;
+            margin-top: 25px;
+        }
+        .modal-body p {
+            font-size: 1em;
+            line-height: 1.7;
+        }
+        .modal-section { display: none; }
+        
+        .close-button { color: #fff; font-size: 35px; font-weight: bold; transition: color 0.2s; }
+        .close-button:hover, .close-button:focus { color: #ddd; text-decoration: none; cursor: pointer; }
 
         /* Responsividade */
         @media (max-width: 991px) {
@@ -346,6 +378,7 @@
                 <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
                     <ul>
                         <li><a href="#sobre" data-key="nav-about">Sobre</a></li>
+                        <li><a href="#pilares" data-key="nav-pillars">Pilares</a></li>
                         <li><a href="#servicos" data-key="nav-services">Serviços</a></li>
                         <li><a href="#ajudar" data-key="nav-how-to-help">Como Ajudar</a></li>
                         <li><a href="#contato" data-key="nav-contact">Contato</a></li>
@@ -485,23 +518,6 @@
             </div>
         </section>
 
-        <section id="missioncare-plus">
-            <div class="container">
-                <div class="missioncare-plus-box">
-                    <div class="missioncare-plus-text">
-                        <h2 class="section-title" data-key="missioncare-plus-h2">Conheça o MISSIONCARE PLUS</h2>
-                        <p data-key="missioncare-plus-p">No campo missionário cada segundo e cada recurso contam. Acesse sua nova ferramenta de saúde.</p>
-                        <a href="https://telesaudemissionaria.github.io/appview/#" target="_blank" class="btn-missioncare-plus" data-key="missioncare-plus-btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width:20px; height:20px;">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                            </svg>
-                            <span>ACESSE AGORA: MissionCare Plus - Início</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="acesso-grupos-whatsapp" class="alternate-bg">
             <div class="container group-container">
                 <header class="group-header">
@@ -610,6 +626,12 @@
         </section>
     </main>
 
+    <!-- Disclaimer Banner -->
+    <div class="disclaimer-banner">
+        <strong data-key="disclaimer-title">AVISO IMPORTANTE:</strong>
+        <span data-key="disclaimer-text">Este serviço de telemedicina missionária tem caráter exclusivamente informativo e assistencial, não substituindo o atendimento presencial em casos de emergência médica, quadros graves ou situações que exijam exame físico detalhado. Ao utilizar esta plataforma, você declara estar ciente dos riscos tecnológicos inerentes ao ambiente digital, incluindo eventuais falhas de conexão e riscos mínimos de violação de dados, apesar dos protocolos de segurança adotados.</span>
+    </div>
+
     <footer class="site-footer" id="contato">
         <div class="container">
             <div class="footer-grid">
@@ -634,46 +656,65 @@
                 <div class="footer-column">
                     <h5 data-key="footer-col2-title">Envolva-se</h5>
                     <ul>
-                        <li><a href="https://telesaudemissionaria.github.io/Missionary-Telehealth-Center-/" target="_blank">Nosso Centro de Operações</a></li>
+                        <li><a href="https://telesaudemissionaria.github.io/Missionary-Telehealth-Center-/" target="_blank" data-key="footer-link-mtc">Nosso Centro de Operações</a></li>
                         <li><a href="https://wa.me/59173346906" target="_blank" data-key="footer-col2-link2">Seja Voluntário</a></li>
                         <li><a href="http://link.mercadopago.com.br/telesaudemissionaria" target="_blank" data-key="footer-col2-link3">Doe Agora</a></li>
-                        <li><a href="https://telesaudemissionaria.github.io/legadomissionario/" target="_blank">A Coroa do Sacrifício</a></li>
+                        <li><a href="https://telesaudemissionaria.github.io/legadomissionario/" target="_blank" data-key="footer-link-legacy">A Coroa do Sacrifício</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h5 data-key="footer-col3-title">Contato</h5>
-                    <p><strong data-key="footer-col3-info1-title">Informações Gerais:</strong><br>missionarymedicalcare@gmail.com</p>
-                    <p><strong data-key="footer-col3-info2-title">WhatsApp (Info):</strong><br><a href="https://wa.me/59173346906" target="_blank">+591 7334 6906</a> (Samuel)</p>
-                    <p><a id="open-privacy-footer" data-key="footer-privacy-link">Política de Privacidade</a></p>
+                    <h5 data-key="footer-col3-title">Legal</h5>
+                    <ul>
+                        <li><a href="#" id="open-terms-footer" data-key="footer-link-terms">Termos de Uso</a></li>
+                        <li><a href="#" id="open-privacy-footer" data-key="footer-link-privacy">Política de Privacidade</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom" data-key="footer-bottom">© <span id="currentYear"></span> Telessaúde Missionária. Iniciativa da Missionary Medical Care. Todos os direitos reservados.</div>
         </div>
     </footer>
 
-    <div id="privacy-modal" class="modal">
+    <!-- Modal Jurídico Unificado -->
+    <div id="legal-modal" class="modal">
         <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2 data-key="modal-h2">Política de Privacidade</h2>
-            <h3 data-key="modal-h3-version">Versão: 1.0</h3>
-            <h3 data-key="modal-h3-scope">1. Âmbito</h3>
-            <p data-key="modal-p-scope">Esta política aplica-se a todos os profissionais, voluntários, parceiros e pacientes envolvidos no serviço de telessaúde da Telessaúde Missionária.</p>
-            <h3 data-key="modal-h3-data-collection">2. Coleta e Uso de Dados</h3>
-            <p data-key="modal-p-data-collection">Coletamos os seguintes dados: identificação pessoal, informações de saúde, dados de conexão e de uso da plataforma. Estes dados são utilizados para prestar atendimento, garantir a segurança clínica, cumprir obrigações legais e realizar melhorias de serviço (utilizando dados anonimizados).</p>
-            <h3 data-key="modal-h3-consent">3. Consentimento</h3>
-            <p data-key="modal-p-consent">Só iniciamos o atendimento após o consentimento livre e informado do paciente, que pode ser revogado a qualquer momento.</p>
-            <h3 data-key="modal-h3-sharing">4. Compartilhamento</h3>
-            <p data-key="modal-p-sharing">Os dados só são compartilhados com a equipe de saúde diretamente envolvida, fornecedores essenciais (sob confidencialidade), autoridades (se exigido por lei) e para pesquisas com dados anonimizados.</p>
-            <h3 data-key="modal-h3-security">5. Segurança e Armazenamento</h3>
-            <p data-key="modal-p-security">Utilizamos ambiente criptografado, acesso restrito, backups regulares e retenção de dados pelo tempo legal mínimo para garantir a segurança.</p>
-            <h3 data-key="modal-h3-patient-rights">6. Direitos dos Pacientes</h3>
-            <p data-key="modal-p-patient-rights">A qualquer momento, pacientes podem confirmar, acessar, corrigir, eliminar ou solicitar a portabilidade de seus dados, além de revogar o consentimento e ser informados sobre incidentes de segurança.</p>
-            <h3 data-key="modal-h3-security-incidents">7. Incidentes de Segurança</h3>
-            <p data-key="modal-p-security-incidents">Em caso de vazamento ou acesso indevido, realizaremos a contenção imediata, notificaremos o paciente e as autoridades, e adotaremos medidas corretivas.</p>
-            <h3 data-key="modal-h3-responsibilities">8. Responsabilidades</h3>
-            <p data-key="modal-p-responsibilities">Todos os envolvidos devem seguir esta política, sob risco de sanções administrativas e legais.</p>
-            <h3 data-key="modal-h3-review">9. Revisão</h3>
-            <p data-key="modal-p-review">Atualizamos esta política conforme mudanças legais ou operacionais, comunicando qualquer alteração a todos os envolvidos.</p>
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+                <span class="close-button">&times;</span>
+            </div>
+            <div class="modal-body">
+                <!-- Conteúdo da Política de Privacidade -->
+                <div id="privacy-content" class="modal-section">
+                    <h3 data-key="privacy-h3-1">1. Coleta de dados</h3>
+                    <p data-key="privacy-p-1">Coletamos apenas as informações essenciais para o atendimento (nome, contato, histórico médico, informações de saúde, dados de conexão).</p>
+                    <h3 data-key="privacy-h3-2">2. Finalidade</h3>
+                    <p data-key="privacy-p-2">Os dados são usados exclusivamente para prestação do serviço de telemedicina, orientações de saúde, acompanhamento do paciente e aprimoramento da plataforma.</p>
+                    <h3 data-key="privacy-h3-3">3. Compartilhamento</h3>
+                    <p data-key="privacy-p-3">As informações são compartilhadas somente com profissionais diretamente envolvidos no atendimento ou, quando exigido por lei, com autoridades de saúde. Não comercializamos ou repassamos seus dados a terceiros para fins não assistenciais.</p>
+                    <h3 data-key="privacy-h3-4">4. Segurança</h3>
+                    <p data-key="privacy-p-4">Adotamos protocolos de criptografia, autenticação e controle de acesso para proteger suas informações. É responsabilidade do usuário acessar a plataforma de local seguro, com dispositivo próprio, evitando redes públicas.</p>
+                    <h3 data-key="privacy-h3-5">5. Direitos do titular</h3>
+                    <p data-key="privacy-p-5">O usuário pode solicitar a exclusão, atualização, portabilidade ou acesso aos seus dados a qualquer momento, bastando enviar uma solicitação para missionarymedicalcare@gmail.com.</p>
+                    <h3 data-key="privacy-h3-6">6. Consentimento</h3>
+                    <p data-key="privacy-p-6">O uso da plataforma implica o aceite desta política de privacidade. O consentimento pode ser revogado a qualquer tempo mediante comunicação formal.</p>
+                    <h3 data-key="privacy-h3-7">7. Dúvidas e contato</h3>
+                    <p data-key="privacy-p-7">Para dúvidas sobre privacidade ou exercício de seus direitos, entre em contato pelo e-mail: missionarymedicalcare@gmail.com.</p>
+                </div>
+                <!-- Conteúdo dos Termos de Uso -->
+                <div id="terms-content" class="modal-section">
+                    <h3 data-key="terms-h3-1">1. Natureza do serviço</h3>
+                    <p data-key="terms-p-1">A Telemedicina Missionária oferece consultas, orientações e suporte remoto a missionários e comunidades em áreas de difícil acesso, prestados por profissionais qualificados, voluntários e parceiros de saúde.</p>
+                    <h3 data-key="terms-h3-2">2. Limites do serviço</h3>
+                    <p data-key="terms-p-2">O atendimento realizado por meio desta plataforma não substitui a avaliação médica presencial quando necessária, nem se destina a casos de urgência/emergência. Em situações de risco iminente de vida, oriente-se a procurar o serviço de saúde mais próximo.</p>
+                    <h3 data-key="terms-h3-3">3. Consentimento informado</h3>
+                    <p data-key="terms-p-3">Ao iniciar a consulta, o paciente declara que compreende as limitações, riscos e benefícios do atendimento à distância, bem como as alternativas possíveis, e autoriza o uso da telemedicina para seu atendimento. O paciente pode revogar este consentimento a qualquer momento.</p>
+                    <h3 data-key="terms-h3-4">4. Privacidade e segurança</h3>
+                    <p data-key="terms-p-4">Os dados fornecidos são tratados conforme a Lei Geral de Proteção de Dados (LGPD), com uso de criptografia e demais medidas técnicas para proteção da confidencialidade, porém nenhum sistema é absolutamente infalível. Recomenda-se que o paciente também adote precauções ao acessar o serviço (ambiente privado, dispositivo próprio, conexão segura).</p>
+                    <h3 data-key="terms-h3-5">5. Responsabilidade</h3>
+                    <p data-key="terms-p-5">A organização e os profissionais não se responsabilizam por consequências advindas do uso inadequado das informações fornecidas na consulta remota, por limitações técnicas alheias ao seu controle (ex.: falhas de conexão, indisponibilidade do sistema) ou por decisões tomadas sem consulta a um profissional presencial quando indicado.</p>
+                    <h3 data-key="terms-h3-6">6. Alterações dos termos</h3>
+                    <p data-key="terms-p-6">Reservamo-nos o direito de alterar estes termos a qualquer momento. Recomendamos a leitura periódica deste documento para ciência de atualizações.</p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -687,6 +728,7 @@
                 'title': 'Telessaúde Missionária: Cuidado e Esperança',
                 'logo-title': 'Telessaúde Missionária',
                 'nav-about': 'Sobre',
+                'nav-pillars': 'Pilares',
                 'nav-services': 'Serviços',
                 'nav-how-to-help': 'Como Ajudar',
                 'nav-contact': 'Contato',
@@ -733,9 +775,6 @@
                 'service-1-p': 'Nossas equipes tratam uma ampla gama de necessidades médicas, desde orientação sobre doenças comuns até apoio em condições crônicas e emergências (dentro das limitações da telessaúde).',
                 'service-2-h3': 'Apoio Emocional e Espiritual',
                 'service-2-p': 'Oferecemos aconselhamento psicológico e suporte espiritual para lidar com os desafios únicos da vida missionária, como estresse, adaptação cultural e solidão.',
-                'missioncare-plus-h2': 'Conheça o MISSIONCARE PLUS',
-                'missioncare-plus-p': 'No campo missionário cada segundo e cada recurso contam. Acesse sua nova ferramenta de saúde.',
-                'missioncare-plus-btn': 'ACESSE AGORA: MissionCare Plus - Início',
                 'whatsapp-groups-h2': 'Conecte-se aos Nossos Grupos de Apoio',
                 'whatsapp-groups-p': 'Encontre sua comunidade! Selecione sua região ou grupo de interesse para acessar.',
                 'regional-groups-title': 'Grupos Regionais de Atendimento',
@@ -774,6 +813,8 @@
                 'faq-4-a': 'O missionário entra em contato através dos nossos grupos de WhatsApp, a equipe de enfermagem faz uma triagem e agenda uma consulta online com um profissional de saúde.',
                 'faq-5-q': '5. É gratuito?',
                 'faq-5-a': 'Sim, o serviço de teleorientação e aconselhamento é gratuito para os missionários, sustentado por doações e voluntariado.',
+                'disclaimer-title': 'AVISO IMPORTANTE:',
+                'disclaimer-text': 'Este serviço de telemedicina missionária tem caráter exclusivamente informativo e assistencial, não substituindo o atendimento presencial em casos de emergência médica, quadros graves ou situações que exijam exame físico detalhado. Ao utilizar esta plataforma, você declara estar ciente dos riscos tecnológicos inerentes ao ambiente digital, incluindo eventuais falhas de conexão e riscos mínimos de violação de dados, apesar dos protocolos de segurança adotados.',
                 'footer-logo-text': 'Telessaúde Missionária',
                 'footer-description': 'Levando saúde e esperança aos missionários nos lugares mais remotos.',
                 'footer-col1-title': 'A Telessaúde',
@@ -782,33 +823,42 @@
                 'footer-col1-link3': 'Nossos Serviços',
                 'footer-col1-link4': 'FAQ',
                 'footer-col2-title': 'Envolva-se',
+                'footer-link-mtc': 'Nosso Centro de Operações',
                 'footer-col2-link2': 'Seja Voluntário',
                 'footer-col2-link3': 'Doe Agora',
-                'footer-col3-title': 'Contato',
-                'footer-col3-info1-title': 'Informações Gerais:',
-                'footer-col3-info2-title': 'WhatsApp (Info):',
-                'footer-privacy-link': 'Política de Privacidade',
+                'footer-link-legacy': 'A Coroa do Sacrifício',
+                'footer-col3-title': 'Legal',
+                'footer-link-terms': 'Termos de Uso',
+                'footer-link-privacy': 'Política de Privacidade',
                 'footer-bottom': '© <span id="currentYear"></span> Telessaúde Missionária. Iniciativa da Missionary Medical Care. Todos os direitos reservados.',
-                'modal-h2': 'Política de Privacidade',
-                'modal-h3-version': 'Versão: 1.0',
-                'modal-h3-scope': '1. Âmbito',
-                'modal-p-scope': 'Esta política aplica-se a todos os profissionais, voluntários, parceiros e pacientes envolvidos no serviço de telessaúde da Telessaúde Missionária.',
-                'modal-h3-data-collection': '2. Coleta e Uso de Dados',
-                'modal-p-data-collection': 'Coletamos os seguintes dados: identificação pessoal, informações de saúde, dados de conexão e de uso da plataforma. Estes dados são utilizados para prestar atendimento, garantir a segurança clínica, cumprir obrigações legais e realizar melhorias de serviço (utilizando dados anonimizados).',
-                'modal-h3-consent': '3. Consentimento',
-                'modal-p-consent': 'Só iniciamos o atendimento após o consentimento livre e informado do paciente, que pode ser revogado a qualquer momento.',
-                'modal-h3-sharing': '4. Compartilhamento',
-                'modal-p-sharing': 'Os dados só são compartilhados com a equipe de saúde diretamente envolvida, fornecedores essenciais (sob confidencialidade), autoridades (se exigido por lei) e para pesquisas com dados anonimizados.',
-                'modal-h3-security': '5. Segurança e Armazenamento',
-                'modal-p-security': 'Utilizamos ambiente criptografado, acesso restrito, backups regulares e retenção de dados pelo tempo legal mínimo para garantir a segurança.',
-                'modal-h3-patient-rights': '6. Direitos dos Pacientes',
-                'modal-p-patient-rights': 'A qualquer momento, pacientes podem confirmar, acessar, corrigir, eliminar ou solicitar a portabilidade de seus dados, além de revogar o consentimento e ser informados sobre incidentes de segurança.',
-                'modal-h3-security-incidents': '7. Incidentes de Segurança',
-                'modal-p-security-incidents': 'Em caso de vazamento ou acesso indevido, realizaremos a contenção imediata, notificaremos o paciente e as autoridades, e adotaremos medidas corretivas.',
-                'modal-h3-responsibilities': '8. Responsabilidades',
-                'modal-p-responsibilities': 'Todos os envolvidos devem seguir esta política, sob risco de sanções administrativas e legais.',
-                'modal-h3-review': '9. Revisão',
-                'modal-p-review': 'Atualizamos esta política conforme mudanças legais ou operacionais, comunicando qualquer alteração a todos os envolvidos.'
+                'modal-title-privacy': 'Política de Privacidade',
+                'privacy-h3-1': '1. Coleta de dados',
+                'privacy-p-1': 'Coletamos apenas as informações essenciais para o atendimento (nome, contato, histórico médico, informações de saúde, dados de conexão).',
+                'privacy-h3-2': '2. Finalidade',
+                'privacy-p-2': 'Os dados são usados exclusivamente para prestação do serviço de telemedicina, orientações de saúde, acompanhamento do paciente e aprimoramento da plataforma.',
+                'privacy-h3-3': '3. Compartilhamento',
+                'privacy-p-3': 'As informações são compartilhadas somente com profissionais diretamente envolvidos no atendimento ou, quando exigido por lei, com autoridades de saúde. Não comercializamos ou repassamos seus dados a terceiros para fins não assistenciais.',
+                'privacy-h3-4': '4. Segurança',
+                'privacy-p-4': 'Adotamos protocolos de criptografia, autenticação e controle de acesso para proteger suas informações. É responsabilidade do usuário acessar a plataforma de local seguro, com dispositivo próprio, evitando redes públicas.',
+                'privacy-h3-5': '5. Direitos do titular',
+                'privacy-p-5': 'O usuário pode solicitar a exclusão, atualização, portabilidade ou acesso aos seus dados a qualquer momento, bastando enviar uma solicitação para missionarymedicalcare@gmail.com.',
+                'privacy-h3-6': '6. Consentimento',
+                'privacy-p-6': 'O uso da plataforma implica o aceite desta política de privacidade. O consentimento pode ser revogado a qualquer tempo mediante comunicação formal.',
+                'privacy-h3-7': '7. Dúvidas e contato',
+                'privacy-p-7': 'Para dúvidas sobre privacidade ou exercício de seus direitos, entre em contato pelo e-mail: missionarymedicalcare@gmail.com.',
+                'modal-title-terms': 'Termos de Uso',
+                'terms-h3-1': '1. Natureza do serviço',
+                'terms-p-1': 'A Telemedicina Missionária oferece consultas, orientações e suporte remoto a missionários e comunidades em áreas de difícil acesso, prestados por profissionais qualificados, voluntários e parceiros de saúde.',
+                'terms-h3-2': '2. Limites do serviço',
+                'terms-p-2': 'O atendimento realizado por meio desta plataforma não substitui a avaliação médica presencial quando necessária, nem se destina a casos de urgência/emergência. Em situações de risco iminente de vida, oriente-se a procurar o serviço de saúde mais próximo.',
+                'terms-h3-3': '3. Consentimento informado',
+                'terms-p-3': 'Ao iniciar a consulta, o paciente declara que compreende as limitações, riscos e benefícios do atendimento à distância, bem como as alternativas possíveis, e autoriza o uso da telemedicina para seu atendimento. O paciente pode revogar este consentimento a qualquer momento.',
+                'terms-h3-4': '4. Privacidade e segurança',
+                'terms-p-4': 'Os dados fornecidos são tratados conforme a Lei Geral de Proteção de Dados (LGPD), com uso de criptografia e demais medidas técnicas para proteção da confidencialidade, porém nenhum sistema é absolutamente infalível. Recomenda-se que o paciente também adote precauções ao acessar o serviço (ambiente privado, dispositivo próprio, conexão segura).',
+                'terms-h3-5': '5. Responsabilidade',
+                'terms-p-5': 'A organização e os profissionais não se responsabilizam por consequências advindas do uso inadequado das informações fornecidas na consulta remota, por limitações técnicas alheias ao seu controle (ex.: falhas de conexão, indisponibilidade do sistema) ou por decisões tomadas sem consulta a um profissional presencial quando indicado.',
+                'terms-h3-6': '6. Alterações dos termos',
+                'terms-p-6': 'Reservamo-nos o direito de alterar estes termos a qualquer momento. Recomendamos a leitura periódica deste documento para ciência de atualizações.'
             },
             'es': {
                 // Traduções em espanhol...
@@ -818,31 +868,38 @@
             }
         };
 
-        // Função para definir o idioma (sem alterações)
+        // Função para definir o idioma
         function setLanguage(lang) {
             document.documentElement.lang = lang;
-            document.querySelector('meta[name="description"]').setAttribute('content', translations[lang]['meta-description']);
-            document.querySelector('meta[property="og:title"]').setAttribute('content', translations[lang]['og-title']);
-            document.querySelector('meta[property="og:description"]').setAttribute('content', translations[lang]['og-description']);
-            document.querySelector('title').textContent = translations[lang]['title'];
+            const langTranslations = translations[lang] || translations['pt-BR'];
+
             document.querySelectorAll('[data-key]').forEach(element => {
                 const key = element.getAttribute('data-key');
-                if (translations[lang] && translations[lang][key]) {
-                    if (key.startsWith('principle-')) {
-                        element.innerHTML = translations[lang][key];
+                if (langTranslations[key]) {
+                    if (element.innerHTML.includes('<') && element.innerHTML.includes('>')) {
+                        // Preserva tags HTML internas, como <strong>
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = langTranslations[key];
+                        // Se o elemento tiver apenas um nó de texto, atualize-o
+                        if (element.firstChild && element.firstChild.nodeType === Node.TEXT_NODE) {
+                             element.firstChild.nodeValue = tempDiv.textContent || '';
+                        } else {
+                             element.innerHTML = langTranslations[key];
+                        }
                     } else {
-                        element.textContent = translations[lang][key];
+                        element.textContent = langTranslations[key];
                     }
                 }
             });
+
+            // Atualiza o ano no rodapé
             const footerBottomElement = document.querySelector('[data-key="footer-bottom"]');
-            if (footerBottomElement && translations[lang] && translations[lang]['footer-bottom']) {
+            if (footerBottomElement && langTranslations['footer-bottom']) {
                 const currentYear = new Date().getFullYear();
-                let translatedText = translations[lang]['footer-bottom'];
-                translatedText = translatedText.replace('<span id="currentYear"></span>', `<span id="currentYear">${currentYear}</span>`);
-                footerBottomElement.innerHTML = translatedText;
+                footerBottomElement.innerHTML = langTranslations['footer-bottom'].replace('<span id="currentYear"></span>', currentYear);
             }
         }
+
 
         document.addEventListener('DOMContentLoaded', function() {
             // Script do ano atual no rodapé
@@ -853,62 +910,66 @@
 
             // Script do FAQ Accordion
             const faqItems = document.querySelectorAll('.faq-item');
-            faqItems.forEach(function(item) {
+            faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
-                if (question) {
-                    question.addEventListener('click', function() {
-                        const isActive = item.classList.contains('active');
-                        faqItems.forEach(function(otherItem) {
-                            otherItem.classList.remove('active');
-                        });
-                        if (!isActive) {
-                            item.classList.add('active');
-                        }
-                    });
-                }
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    faqItems.forEach(otherItem => otherItem.classList.remove('active'));
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
             });
 
             // Script do Menu Mobile
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             const mainNav = document.querySelector('#main-nav');
             if (mobileMenuToggle && mainNav) {
-                mobileMenuToggle.addEventListener('click', function() {
+                mobileMenuToggle.addEventListener('click', () => {
                     document.body.classList.toggle('mobile-menu-open');
-                    const isExpanded = document.body.classList.contains('mobile-menu-open');
-                    mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
+                    mobileMenuToggle.setAttribute('aria-expanded', document.body.classList.contains('mobile-menu-open'));
                 });
-
-                mainNav.addEventListener('click', function(e) {
-                    if (e.target.tagName === 'A' && (e.target.href.includes('#') || e.target.id === 'open-privacy-nav-mobile')) {
+                mainNav.addEventListener('click', (e) => {
+                    if (e.target.tagName === 'A' && e.target.href.includes('#')) {
                         document.body.classList.remove('mobile-menu-open');
                         mobileMenuToggle.setAttribute('aria-expanded', 'false');
                     }
                 });
             }
 
-            // Script do Modal da Política de Privacidade
-            const modal = document.getElementById('privacy-modal');
-            const openFooter = document.getElementById('open-privacy-footer');
-            const closeBtn = modal ? modal.querySelector('.close-button') : null;
+            // Script do Modal Jurídico
+            const modal = document.getElementById('legal-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const privacyContent = document.getElementById('privacy-content');
+            const termsContent = document.getElementById('terms-content');
+            const openPrivacyFooter = document.getElementById('open-privacy-footer');
+            const openTermsFooter = document.getElementById('open-terms-footer');
+            const closeBtn = modal.querySelector('.close-button');
 
-            if(modal && openFooter && closeBtn) {
-                const openModal = (e) => { e.preventDefault(); modal.style.display = 'block'; };
-                const closeModal = () => { modal.style.display = 'none'; };
-                
-                openFooter.addEventListener('click', openModal);
+            function openModal(type) {
+                const lang = document.documentElement.lang || 'pt-BR';
+                const langTranslations = translations[lang] || translations['pt-BR'];
 
-                const openNavMobile = document.getElementById('open-privacy-nav-mobile');
-                if(openNavMobile) {
-                    openNavMobile.addEventListener('click', openModal);
+                if (type === 'privacy') {
+                    modalTitle.textContent = langTranslations['modal-title-privacy'];
+                    privacyContent.style.display = 'block';
+                    termsContent.style.display = 'none';
+                } else if (type === 'terms') {
+                    modalTitle.textContent = langTranslations['modal-title-terms'];
+                    termsContent.style.display = 'block';
+                    privacyContent.style.display = 'none';
                 }
-
-                closeBtn.addEventListener('click', closeModal);
-                window.addEventListener('click', (event) => {
-                    if (event.target === modal) {
-                        closeModal();
-                    }
-                });
+                modal.style.display = 'block';
             }
+
+            const closeModal = () => modal.style.display = 'none';
+
+            openPrivacyFooter.addEventListener('click', (e) => { e.preventDefault(); openModal('privacy'); });
+            openTermsFooter.addEventListener('click', (e) => { e.preventDefault(); openModal('terms'); });
+            closeBtn.addEventListener('click', closeModal);
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) closeModal();
+            });
 
             // Language Switcher functionality
             const langButtons = document.querySelectorAll('.lang-switcher button');
