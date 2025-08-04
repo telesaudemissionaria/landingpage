@@ -875,17 +875,11 @@
 
             document.querySelectorAll('[data-key]').forEach(element => {
                 const key = element.getAttribute('data-key');
-                if (langTranslations[key]) {
-                    if (element.innerHTML.includes('<') && element.innerHTML.includes('>')) {
-                        // Preserva tags HTML internas, como <strong>
-                        const tempDiv = document.createElement('div');
-                        tempDiv.innerHTML = langTranslations[key];
-                        // Se o elemento tiver apenas um nó de texto, atualize-o
-                        if (element.firstChild && element.firstChild.nodeType === Node.TEXT_NODE) {
-                             element.firstChild.nodeValue = tempDiv.textContent || '';
-                        } else {
-                             element.innerHTML = langTranslations[key];
-                        }
+                if (langTranslations[key] !== undefined) {
+                    // Keys known to contain HTML tags like <strong>
+                    const keysWithHtml = ['principle-1', 'principle-2', 'principle-3', 'principle-4', 'principle-5'];
+                    if (keysWithHtml.includes(key)) {
+                        element.innerHTML = langTranslations[key];
                     } else {
                         element.textContent = langTranslations[key];
                     }
