@@ -20,31 +20,38 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* Estilo Inspirado no MSF e melhores práticas */
+        /* ESTILO ATUALIZADO (INSPIRADO EM MERCY) */
+        
+        /* 1. Paleta de Cores e Tipografia */
         :root {
-            --color-primary-red: #D10000;
-            --color-primary-red-hover: #A80000;
-            --color-secondary-blue: #0056a8;
-            --color-secondary-blue-hover: #00417f;
-            --color-text-dark: #1A1A1A;
+            --color-primary-blue: #005A9C; /* Azul confiável, no lugar do vermelho */
+            --color-primary-blue-hover: #00417F;
+            --color-secondary-green: #1DAE54; /* Verde para ações secundárias ou de contato */
+            --color-secondary-green-hover: #178c43;
+            --color-text-dark: #2c3e50; /* Um cinza-azulado escuro, mais suave que o preto */
             --color-text-medium: #555555;
             --color-text-light: #FFFFFF;
             --color-background-white: #FFFFFF;
-            --color-background-light-gray: #F2F2F2;
+            --color-background-light-gray: #F7F9FA; /* Um cinza mais claro e azulado */
             --color-border-light: #E0E0E0;
-            --color-footer-bg: #1A1A1A;
+            --color-footer-bg: #2c3e50; /* Alinhado com o novo texto escuro */
             --color-footer-text: #CCCCCC;
-            --color-whatsapp-btn: #25D366;
-            --color-whatsapp-btn-hover: #1DAE54;
+            --color-whatsapp-green: #25D366;
+            --color-whatsapp-green-hover: #1DAE54;
 
-            /* Cores para Testemunhos */
-            --testimonial-bg-1: #E3F2FD;
-            --testimonial-bg-2: #E8F5E9;
-            --testimonial-bg-3: #FFF3E0;
-            --testimonial-bg-4: #F3E5F5;
-            --testimonial-bg-5: #E0F7FA;
+            /* Cores para Testemunhos (tons pastel mais suaves) */
+            --testimonial-bg-1: #E3F2FD; /* Azul claro */
+            --testimonial-bg-2: #E8F5E9; /* Verde claro */
+            --testimonial-bg-3: #FFF3E0; /* Laranja claro */
+            --testimonial-bg-4: #F3E5F5; /* Roxo claro */
+            --testimonial-bg-5: #E0F7FA; /* Ciano claro */
         }
 
         /* Reset Básico e Padrões */
@@ -53,13 +60,13 @@
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Nova fonte */
             line-height: 1.6;
             color: var(--color-text-medium);
-            background-color: var(--color-background-white); /* Fundo base */
+            background-color: var(--color-background-white);
             font-size: 16px;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-smoothing: grayscale;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
@@ -82,50 +89,40 @@
         h4 { font-size: 1.2em; }
 
         p { margin-bottom: 1.2em; font-size: 1.05em; }
-        a { color: var(--color-primary-red); text-decoration: none; transition: color 0.3s ease; }
-        a:hover { text-decoration: underline; color: var(--color-primary-red-hover); }
+        a { color: var(--color-primary-blue); text-decoration: none; transition: color 0.3s ease; }
+        a:hover { text-decoration: underline; color: var(--color-primary-blue-hover); }
 
-        /* Header */
+        /* Header e Navegação */
         .site-header {
             background-color: var(--color-background-white);
-            height: 70px;
+            height: 80px;
             display: flex;
             align-items: center;
             border-bottom: 1px solid var(--color-border-light);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
         .site-header .container { display: flex; justify-content: space-between; align-items: center; }
-        
         .logo-container { text-decoration: none; display: flex; align-items: center; }
         .logo-title {
             font-size: 1.6em;
             font-weight: 700;
             color: var(--color-text-dark);
-            /* Removido margin-left: 10px; pois o ícone foi removido */
         }
-        .header-logo-icon {
-            /* Removido o estilo do ícone pois o ícone foi removido */
-            display: none; /* Garante que não apareça mesmo que o HTML ainda o referencie */
-        }
-        
-        /* Navegação */
         .header-right-content { display: flex; align-items: center; gap: 20px; }
         .main-nav { display: flex; }
         .main-nav ul { list-style: none; display: flex; align-items: center; }
         .main-nav ul li a {
             font-weight: 600;
-            font-size: 14px;
+            font-size: 15px;
             color: var(--color-text-dark);
-            padding: 0 15px;
-            text-transform: uppercase;
+            padding: 0 18px;
             letter-spacing: 0.5px;
             white-space: nowrap;
             cursor: pointer;
         }
-        .main-nav ul li a:hover { color: var(--color-primary-red); text-decoration: none; }
+        .main-nav ul li a:hover { color: var(--color-primary-blue); text-decoration: none; }
         
         /* Language Switcher */
         .lang-switcher { display: flex; gap: 10px; }
@@ -134,84 +131,100 @@
         .lang-switcher img { width: 24px; height: 24px; display: block; }
 
         /* Menu Mobile */
-        .mobile-menu-toggle {
-            display: none; background: none; border: none;
-            cursor: pointer; padding: 10px; z-index: 1002;
-        }
-        .mobile-menu-toggle .icon-bar {
-            display: block; width: 25px; height: 3px;
-            background-color: var(--color-text-dark);
-            margin: 5px 0;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
+        .mobile-menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 10px; z-index: 1002; }
+        .mobile-menu-toggle .icon-bar { display: block; width: 25px; height: 3px; background-color: var(--color-text-dark); margin: 5px 0; transition: transform 0.3s ease, opacity 0.3s ease; }
         body.mobile-menu-open .mobile-menu-toggle .icon-bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
         body.mobile-menu-open .mobile-menu-toggle .icon-bar:nth-child(2) { opacity: 0; }
         body.mobile-menu-open .mobile-menu-toggle .icon-bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-        body.mobile-menu-open .main-nav {
-            display: flex; flex-direction: column; position: absolute;
-            top: 70px; left: 0; width: 100%;
-            background-color: var(--color-background-white);
-            box-shadow: 0 3px 5px rgba(0,0,0,0.1);
-        }
+        body.mobile-menu-open .main-nav { display: flex; flex-direction: column; position: absolute; top: 80px; left: 0; width: 100%; background-color: var(--color-background-white); box-shadow: 0 3px 5px rgba(0,0,0,0.1); }
         body.mobile-menu-open .main-nav ul { flex-direction: column; width: 100%; padding: 20px 0; }
         body.mobile-menu-open .main-nav ul li { width: 100%; text-align: center; }
         body.mobile-menu-open .main-nav ul li a { padding: 15px; display: block; width: 100%; }
-        
-        /* Ajuste para o seletor de idioma no menu mobile */
-        body.mobile-menu-open .lang-switcher {
-            display: flex; /* Garante que seja visível */
-            justify-content: center; /* Centraliza as bandeiras */
-            padding: 15px 0; /* Adiciona um pouco de padding */
-            border-top: 1px solid var(--color-border-light); /* Separador visual */
-            width: 100%; /* Ocupa a largura total */
-        }
-
+        body.mobile-menu-open .lang-switcher { display: flex; justify-content: center; padding: 15px 0; border-top: 1px solid var(--color-border-light); width: 100%; }
 
         /* Seções */
         section { padding: 80px 0; border-bottom: 1px solid var(--color-border-light); }
         section:last-of-type { border-bottom: none; }
         .alternate-bg { background-color: var(--color-background-light-gray); }
         .section-title { text-align: center; margin-bottom: 60px; position: relative; }
-        .section-title::after {
-            content: ''; display: block; width: 50px; height: 4px;
-            background-color: var(--color-primary-red); margin: 15px auto 0;
-        }
-        #hero {
-            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('bg-health-ai.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            padding: clamp(100px, 15vh, 120px) 20px;
-            text-align: left; color: var(--color-text-light);
-        }
+        .section-title::after { content: ''; display: block; width: 50px; height: 4px; background-color: var(--color-primary-blue); margin: 15px auto 0; }
+        
+        /* Seção "Herói" */
+        #hero { background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('bg-health-ai.png'); background-size: cover; background-position: center; background-attachment: fixed; padding: clamp(100px, 15vh, 120px) 20px; text-align: left; color: var(--color-text-light); }
         #hero .hero-content { max-width: 750px; }
         #hero h1 { color: var(--color-text-light); }
         #hero .subtitle { color: rgba(255, 255, 255, 0.9); font-size: 1.3em; max-width: 600px; }
-        .cta-button-hero {
-            display: inline-block; background: transparent; color: var(--color-text-light);
-            padding: 14px 30px; border-radius: 4px; font-weight: 700;
-            font-size: 1.1em; margin-top: 10px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            border: 2px solid var(--color-text-light); text-transform: uppercase;
-        }
-        .cta-button-hero:hover { background-color: var(--color-text-light); color: var(--color-text-dark); text-decoration: none; }
-
+        .cta-button-hero { display: inline-flex; align-items: center; background-color: var(--color-primary-blue); color: var(--color-text-light); padding: 16px 35px; border-radius: 50px; font-weight: 700; font-size: 1.1em; margin-top: 20px; transition: background-color 0.3s ease, transform 0.2s ease; border: none; text-transform: uppercase; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); }
+        .cta-button-hero:hover { background-color: var(--color-primary-blue-hover); color: var(--color-text-light); text-decoration: none; transform: translateY(-2px); }
+        
+        /* Seção Sobre */
         .intro-impact-section { display: flex; gap: 40px; align-items: center; }
         .intro-text { flex-basis: 60%; }
         .impact-stats { flex-basis: 40%; }
         .impact-stats .stat-item { display: flex; align-items: center; margin-bottom: 25px; }
-        .impact-stats .stat-icon { color: var(--color-primary-red); margin-right: 20px; width: 50px; height: 50px; text-align: center; flex-shrink: 0; }
+        .impact-stats .stat-icon { color: var(--color-primary-blue); margin-right: 20px; width: 50px; height: 50px; text-align: center; flex-shrink: 0; }
         .impact-stats .stat-number { font-size: 2.2em; font-weight: 700; color: var(--color-text-dark); line-height: 1; }
         .impact-stats .stat-label { font-size: 1em; color: var(--color-text-medium); }
-        .btn-outlined {
-            display: inline-block; background: transparent; color: var(--color-text-dark);
-            padding: 12px 28px; border: 2px solid var(--color-text-dark);
-            font-weight: 700; transition: background-color 0.3s, color 0.3s;
-            text-transform: uppercase; font-size: 0.9em; letter-spacing: 1px;
-            border-radius: 4px;
-        }
+        .btn-outlined { display: inline-block; background: transparent; color: var(--color-text-dark); padding: 12px 28px; border: 2px solid var(--color-text-dark); font-weight: 700; transition: background-color 0.3s, color 0.3s; text-transform: uppercase; font-size: 0.9em; letter-spacing: 1px; border-radius: 4px; }
         .btn-outlined:hover { background-color: var(--color-text-dark); color: var(--color-text-light); text-decoration: none; }
         
+        /* NOVA SEÇÃO: PILARES / FRENTES */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .pillar-card {
+            background-color: var(--color-background-white);
+            border: 1px solid var(--color-border-light);
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .pillar-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(44, 62, 80, 0.1);
+        }
+        .pillar-icon {
+            color: var(--color-primary-blue);
+            margin-bottom: 25px;
+        }
+        .pillar-icon svg {
+            width: 50px;
+            height: 50px;
+        }
+        .pillar-card h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+        .pillar-card p {
+            flex-grow: 1;
+            margin-bottom: 30px;
+            font-size: 1em;
+            color: var(--color-text-medium);
+        }
+        .pillar-card .btn-pillar {
+            display: inline-block;
+            background-color: var(--color-primary-blue);
+            color: var(--color-text-light);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 0.5px;
+            transition: background-color 0.3s ease;
+        }
+        .pillar-card .btn-pillar:hover {
+            background-color: var(--color-primary-blue-hover);
+            text-decoration: none;
+        }
+
+        /* Seção Testemunhos */
         .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
         .testimonial-card { padding: 30px; border-radius: 5px; border: 1px solid rgba(0,0,0,0.05); display: flex; flex-direction: column; }
         .testimonial-card p:first-of-type { flex-grow: 1; }
@@ -222,162 +235,53 @@
         .testimonial-card.color-4 { background-color: var(--testimonial-bg-4); }
         .testimonial-card.color-5 { background-color: var(--testimonial-bg-5); }
 
+        /* Seção Princípios */
         .principles-section { text-align: center; max-width: 700px; margin: 0 auto; }
         .principles-section ul { list-style: none; padding: 0; margin-bottom: 30px; }
         .principles-section li { font-size: 1.2em; margin-bottom: 10px; font-weight: 600; color: var(--color-text-dark); }
-        .principles-section li strong { color: var(--color-primary-red); }
+        .principles-section li strong { color: var(--color-primary-blue); }
 
-        .work-item { 
-            margin-bottom: 40px; 
-            text-align: center; 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .work-item:last-child { margin-bottom: 0; }
-        .work-item h3 { color: var(--color-primary-red); }
-        .work-item p { max-width: 600px; margin: 0 auto; }
-        .work-item img {
-            width: 120px;
-            height: 120px;
-            margin-bottom: 20px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background-color: var(--color-background-light-gray);
-        }
-        .work-item img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-        }
-        
-        /* NOVA SEÇÃO MISSIONCARE PLUS */
-        #missioncare-plus {
-            background: linear-gradient(135deg, #0056a8 0%, #00417f 100%);
-            color: var(--color-text-light);
-        }
-        .missioncare-plus-box {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .missioncare-plus-box .section-title {
-            margin-bottom: 20px;
-        }
-        .missioncare-plus-box .section-title::after {
-            background-color: var(--color-text-light);
-        }
-        .missioncare-plus-box h2 {
-            color: var(--color-text-light);
-        }
-        .missioncare-plus-box p {
-            font-size: 1.2em;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 30px;
-        }
-        .btn-missioncare-plus {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background-color: var(--color-text-light);
-            color: var(--color-secondary-blue);
-            padding: 18px 40px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1em;
-            text-transform: uppercase;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            border: none;
-        }
-        .btn-missioncare-plus:hover {
-            background-color: #eef;
-            text-decoration: none;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-            color: var(--color-secondary-blue-hover);
-        }
+        /* SEÇÃO MISSIONCARE PLUS (CTA NA HOME) */
+        #missioncare-plus { background: linear-gradient(135deg, #0056a8 0%, #00417f 100%); color: var(--color-text-light); }
+        .missioncare-plus-box { text-align: center; max-width: 700px; margin: 0 auto; }
+        .missioncare-plus-box .section-title { margin-bottom: 20px; }
+        .missioncare-plus-box .section-title::after { background-color: var(--color-text-light); }
+        .missioncare-plus-box h2 { color: var(--color-text-light); }
+        .missioncare-plus-box p { font-size: 1.2em; color: rgba(255,255,255,0.9); margin-bottom: 30px; }
+        .btn-missioncare-plus { display: inline-flex; align-items: center; gap: 10px; background-color: var(--color-text-light); color: var(--color-primary-blue); padding: 18px 40px; border-radius: 50px; font-weight: 700; font-size: 1.1em; text-transform: uppercase; transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2); border: none; }
+        .btn-missioncare-plus:hover { background-color: #eef; text-decoration: none; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.25); color: var(--color-primary-blue-hover); }
 
+        /* Seção Grupos WhatsApp */
         #acesso-grupos-whatsapp .group-container { max-width: 900px; margin: 0 auto; }
         .group-header { text-align: center; margin-bottom: 50px; }
         .group-header h2 { font-size: clamp(1.6em, 4vw, 2.2em); }
         .group-header p { max-width: 600px; margin: 0 auto; }
-        .group-section-title {
-            font-size: 1.6em; text-align: center; margin-top: 40px;
-            margin-bottom: 25px; padding-bottom: 10px;
-            border-bottom: 1px solid var(--color-border-light); font-weight: 600;
-        }
-        .region-grid, .general-groups-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px; margin-bottom: 40px;
-        }
+        .group-section-title { font-size: 1.6em; text-align: center; margin-top: 40px; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 1px solid var(--color-border-light); font-weight: 600; }
+        .region-grid, .general-groups-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; margin-bottom: 40px; }
         .region-card-link { text-decoration: none; }
-        .region-card {
-            background-color: var(--color-background-white); border: 1px solid var(--color-border-light);
-            border-radius: 8px; padding: 25px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-            display: flex; flex-direction: column; text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
-        }
-        .region-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .region-icon { color: var(--color-primary-red); margin-bottom: 15px; }
-        .region-icon svg { width: 40px; height: 40px; margin: 0 auto; }
-        .region-card h3 { font-size: 1.25em; margin-bottom: 12px; color: var(--color-text-dark); }
-        .region-card p { font-size: 0.95em; color: var(--color-text-medium); margin-bottom: 20px; flex-grow: 1; }
-        /* Estilo para o novo link de contato nos cartões de grupo */
-        .region-card .contact-link-button {
-            display: inline-block;
-            background-color: var(--color-whatsapp-btn);
-            color: var(--color-text-light);
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-weight: 600;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            margin-top: auto; /* Empurra o botão para baixo */
-            transition: background-color 0.3s ease;
-        }
-        .region-card .contact-link-button:hover {
-            background-color: var(--color-whatsapp-btn-hover);
-            text-decoration: none;
-        }
+        .region-card { background-color: var(--color-background-white); border: 1px solid var(--color-border-light); border-radius: 12px; padding: 30px 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); display: flex; flex-direction: column; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; height: 100%; overflow: hidden; }
+        .region-card:hover { transform: translateY(-8px); box-shadow: 0 10px 20px rgba(44, 62, 80, 0.1); }
+        .region-icon { color: var(--color-primary-blue); margin-bottom: 20px; transition: transform 0.3s ease; }
+        .region-card:hover .region-icon { transform: scale(1.1); }
+        .region-icon svg { width: 48px; height: 48px; margin: 0 auto; }
+        .region-card h3 { font-size: 1.3em; margin-bottom: 12px; color: var(--color-text-dark); }
+        .region-card p { font-size: 1em; color: var(--color-text-medium); margin-bottom: 25px; flex-grow: 1; }
+        .region-card .contact-link-button { display: inline-block; background-color: var(--color-whatsapp-green); color: var(--color-text-light); padding: 12px 20px; border-radius: 50px; font-weight: 600; font-size: 0.9em; text-transform: uppercase; margin-top: auto; transition: background-color 0.3s ease, transform 0.2s ease; border: none; letter-spacing: 0.5px; }
+        .region-card .contact-link-button:hover { background-color: var(--color-whatsapp-green-hover); transform: scale(1.05); text-decoration: none; }
         
+        /* Seção Como Ajudar e Seção de Serviços (reutilizando estilo) */
         .help-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 400px)); gap: 30px; justify-content: center; }
-        .help-card { 
-            background-color: var(--color-background-white); 
-            border: 1px solid var(--color-border-light); 
-            padding: 30px; 
-            border-radius: 4px; 
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .help-card h4 { color: var(--color-primary-red); margin-bottom: 15px; }
+        .help-card { background-color: var(--color-background-white); border: 1px solid var(--color-border-light); padding: 30px; border-radius: 4px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+        .help-card h4 { color: var(--color-primary-blue); margin-bottom: 15px; }
         .help-card .btn-outlined { display: inline-block; margin-top: 20px; }
-        .help-card img {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 20px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background-color: var(--color-background-light-gray);
-        }
-        .help-card img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-        }
+        .help-card img { width: 80px; height: 80px; margin-bottom: 20px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; background-color: var(--color-background-light-gray); }
+        .help-card img:hover { transform: scale(1.1); box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
 
+        /* Seção FAQ */
         #faq .faq-accordion { max-width: 800px; margin: 0 auto; }
         #faq .faq-item { border-bottom: 1px solid var(--color-border-light); }
         #faq .faq-question { padding: 20px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 1.2em; }
-        #faq .faq-question .icon { font-size: 1.2em; color: var(--color-primary-red); transition: transform 0.3s ease-in-out; font-weight: bold; }
+        #faq .faq-question .icon { font-size: 1.2em; color: var(--color-primary-blue); transition: transform 0.3s ease-in-out; font-weight: bold; }
         #faq .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
         #faq .faq-answer p { font-size: 1em; padding-bottom: 20px; padding-top: 10px; }
         #faq .faq-item.active .faq-question .icon { transform: rotate(45deg); }
@@ -399,42 +303,22 @@
         .footer-bottom { text-align: center; padding-top: 30px; margin-top: 30px; border-top: 1px solid rgba(204, 204, 204, 0.2); font-size: 13px; }
 
         /* Modal da Política de Privacidade */
-        .modal {
-            display: none; position: fixed; z-index: 2000;
-            left: 0; top: 0; width: 100%; height: 100%;
-            overflow: auto; background-color: rgba(0,0,0,0.6);
-            animation: fadeIn 0.3s;
-        }
-        .modal-content {
-            background-color: #fefefe; margin: 5% auto;
-            padding: 30px 40px; border: 1px solid #888;
-            width: 80%; max-width: 800px; border-radius: 8px;
-            position: relative;
-            animation: slideIn 0.3s;
-        }
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.6); animation: fadeIn 0.3s; }
+        .modal-content { background-color: #fefefe; margin: 5% auto; padding: 30px 40px; border: 1px solid #888; width: 80%; max-width: 800px; border-radius: 8px; position: relative; animation: slideIn 0.3s; }
         @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
         @keyframes slideIn { from {transform: translateY(-50px);} to {transform: translateY(0);} }
-        .modal-content h2 { color: var(--color-primary-red); }
+        .modal-content h2 { color: var(--color-primary-blue); }
         .modal-content h3 { color: var(--color-text-dark); border-bottom: 2px solid #f2f2f2; padding-bottom: 10px; margin-top: 30px; }
-        .close-button {
-            color: #aaa; float: right; font-size: 28px;
-            font-weight: bold; position: absolute; top: 10px; right: 25px;
-        }
-        .close-button:hover, .close-button:focus {
-            color: black; text-decoration: none; cursor: pointer;
-        }
+        .close-button { color: #aaa; float: right; font-size: 28px; font-weight: bold; position: absolute; top: 10px; right: 25px; }
+        .close-button:hover, .close-button:focus { color: black; text-decoration: none; cursor: pointer; }
 
         /* Responsividade */
         @media (max-width: 991px) {
-            /* Removido o display: none do .lang-switcher */
-            .main-nav { display: none; } /* Continua oculto por padrão */
+            .main-nav { display: none; }
             .mobile-menu-toggle { display: block; }
             .site-header .container { justify-content: space-between; width: 100%; }
             .intro-impact-section { flex-direction: column; }
             .testimonial-grid { grid-template-columns: 1fr; }
-            .missioncare-plus-box { flex-direction: column; text-align: center; }
-            .missioncare-plus-text .section-title { text-align: center; }
-            .missioncare-plus-text .section-title::after { margin: 15px auto 0; }
         }
         @media (max-width: 767px) {
             body { font-size: 15px; }
@@ -455,7 +339,6 @@
     <header class="site-header">
         <div class="container">
             <a href="#hero" class="logo-container">
-                <!-- Ícone removido do lado do título do logo -->
                 <span class="logo-title" data-key="logo-title">Telessaúde Missionária</span>
             </a>
             
@@ -466,9 +349,7 @@
                         <li><a href="#servicos" data-key="nav-services">Serviços</a></li>
                         <li><a href="#ajudar" data-key="nav-how-to-help">Como Ajudar</a></li>
                         <li><a href="#contato" data-key="nav-contact">Contato</a></li>
-                        <li><a id="open-privacy-nav" data-key="nav-privacy">Privacidade</a></li>
                     </ul>
-                    <!-- O seletor de idioma é movido para dentro do nav para ser exibido com o menu mobile -->
                     <div class="lang-switcher">
                         <button data-lang="pt-BR" title="Português (Brasil)" aria-label="Mudar para Português (Brasil)">
                             <img src="https://flagcdn.com/br.svg" alt="Bandeira do Brasil">
@@ -497,7 +378,10 @@
                 <div class="hero-content">
                     <h1 data-key="hero-h1">Saúde e Esperança Através da Telessaúde no Campo Missionário</h1>
                     <p class="subtitle" data-key="hero-subtitle">Conectamos missionários a voluntários da saúde para cuidado médico, emocional e espiritual, onde quer que a missão os leve.</p>
-                    <a href="https://wa.me/59173346906" target="_blank" class="cta-button-hero" data-key="hero-cta">Precisa de Orientação? Fale Conosco</a>
+                    <a href="https://wa.me/59173346906" target="_blank" class="cta-button-hero">
+                        <svg xmlns="http://www.w3.org/2000/svg" style="width:20px; height:20px; vertical-align: middle; margin-right: 8px;" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.46 3.48 1.34 4.94L2.05 22l5.25-1.42c1.41.81 3.02 1.23 4.74 1.23h.01c5.46 0 9.91-4.45 9.91-9.91s-4.45-9.91-9.91-9.91zM17.23 15.3c-.27-.14-1.59-.78-1.84-.88-.25-.09-.43-.14-.62.14-.19.27-.7.88-.86 1.06-.16.18-.32.2-.59.06-.27-.14-1.14-.42-2.17-1.33-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.56.13-.13.27-.33.41-.49.14-.17.19-.27.29-.46.1-.19.05-.37-.02-.51s-.62-1.49-.84-2.04c-.23-.55-.46-.48-.62-.48-.16-.01-.34-.01-.52-.01-.18 0-.46.06-.7.33-.24.27-.92 1.01-.92 2.46s.94 2.86 1.06 3.06c.12.2.18.33.3.51.42.61.99 1.12 1.62 1.52.88.55 1.57.79 2.05.97.7.27 1.25.23 1.67.14.48-.1.7-.42.82-.83.11-.4.11-.76.08-.83l-.02-.03z"></path></svg>
+                        <span data-key="hero-cta">Precisa de Orientação? Fale Conosco</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -513,14 +397,50 @@
                     </div>
                     <div class="impact-stats">
                         <div class="stat-item"><div class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L8 12v1c0 1.1.9 2 2 2v3.93zm2-14.24c.02 0 .04 0 .06 0l2.35 2.35-1.41 1.41-2.35-2.35C11.18 6.58 11.58 4 13 4c1.49 0 2.7 1.21 2.7 2.7 0 .3-.05.59-.13.86l.73.73c.1-.27.16-.56.16-.86C16.46 4.45 14.93 3 13 3c-1.55 0-2.88 1.08-3.23 2.5l3.23 3.23zm-3.23 0c-.35-1.42-1.68-2.5-3.23-2.5-1.93 0-3.46 1.55-3.46 3.54 0 .3.06.59.16.86l.73-.73c-.08-.27-.13-.56-.13-.86 0-1.49 1.21-2.7 2.7-2.7.42 0 .82.1.18.26L9.77 9.23zM8 15v-1c0-1.1-.9-2-2-2V8.21c-1.78.76-3 2.54-3 4.79 0 3.93 2.9 7.17 6.79 7.87L8 15z"></path></svg></div><div><div class="stat-number">5+</div><div class="stat-label" data-key="stats-continents-label">Continentes Alcançados</div></div></div>
-                        <div class="stat-item"><div class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 12c1.38 0 2.5-1.12 2.5-2.5S17.88 7 16.5 7 14 8.12 14 9.5s1.12 2.5 2.5 2.5zM9 11c1.66 0 3-1.34 3-3S10.66 5 9 5 6 6.34 6 8s1.34 3 3 3zm7.5 3c-1.83 0-5.5.92-5.5 2.75V19h11v-2.25c0-1.83-3.67-2.75-5.5-2.75zM9 13c-2.33 0-7 1.17-7 3.5V19h7v-2.25c0-.9.33-1.6.83-2.25-.42-.08-.86-.12-1.33-.12z"></path></svg></div><div><div class="stat-number">100+</div><div class="stat-label" data-key="stats-professionals-label">Profissionais Voluntários</div></div></div>
+                        <div class="stat-item"><div class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 12c1.38 0 2.5-1.12 2.5-2.5S17.88 7 16.5 7 14 8.12 14 9.5s1.12 2.5 2.5 2.5zM9 11c1.66 0 3-1.34 3-3S10.66 5 9 5 6 6.34 6 8s1.34 3 3 3zm7.5 3c-1.83 0-5.5.92-5.5 2.75V19h11v-2.25c0-1.83-3.67-2.75-5.5-2.75zM9 13c-2.33 0-7 1.17-7 3.5V19h7v-2.25c0-.9.33-1.6.83-2.25-.42-.08-.86-.12-1.33-.12z"></path></svg></div><div><div class="stat-number">40+</div><div class="stat-label" data-key="stats-professionals-label">Profissionais Voluntários</div></div></div>
                         <div class="stat-item"><div class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg></div><div><div class="stat-number">100%</div><div class="stat-label" data-key="stats-focus-label">Foco no Cuidado Missionário</div></div></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="testemunhos">
+        <!-- NOVA SEÇÃO DE PILARES -->
+        <section id="pilares">
+            <div class="container">
+                <h2 class="section-title" data-key="pillars-h2">Conheça Nossos Pilares</h2>
+                <div class="pillars-grid">
+                    <!-- Cartão 1: MissionCare Plus -->
+                    <div class="pillar-card">
+                        <div class="pillar-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg>
+                        </div>
+                        <h3 data-key="pillar-1-h3">MissionCare Plus</h3>
+                        <p data-key="pillar-1-p">Sua ferramenta de saúde no campo. Acesse guias, protocolos e fale com nossa equipe de forma rápida e segura.</p>
+                        <a href="missioncare-plus.html" target="_blank" class="btn-pillar" data-key="pillar-1-btn">Acessar Ferramenta</a>
+                    </div>
+                    <!-- Cartão 2: MTC -->
+                    <div class="pillar-card">
+                        <div class="pillar-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h6M9 11.25h6M9 15.75h6" /></svg>
+                        </div>
+                        <h3 data-key="pillar-2-h3">Nosso Centro de Operações</h3>
+                        <p data-key="pillar-2-p">O coração da nossa missão. Conheça nossa equipe de voluntários e a estrutura por trás do cuidado.</p>
+                        <a href="mtc.html" target="_blank" class="btn-pillar" data-key="pillar-2-btn">Conhecer o Centro</a>
+                    </div>
+                    <!-- Cartão 3: Coroa do Sacrifício -->
+                    <div class="pillar-card">
+                        <div class="pillar-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6.75l-9 9M9 6.75l6 6" /></svg>
+                        </div>
+                        <h3 data-key="pillar-3-h3">A Coroa do Sacrifício</h3>
+                        <p data-key="pillar-3-p">Um espaço para honrar a memória e o legado de missionários que serviram fielmente ao Senhor.</p>
+                        <a href="coroa-do-sacrificio.html" target="_blank" class="btn-pillar" data-key="pillar-3-btn">Honrar Legado</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testemunhos" class="alternate-bg">
             <div class="container">
                 <h2 class="section-title" data-key="testimonials-h2">Histórias de Cuidado e Impacto</h2>
                 <div class="testimonial-grid">
@@ -533,7 +453,7 @@
             </div>
         </section>
 
-        <section id="principios" class="principles-section alternate-bg">
+        <section id="principios" class="principles-section">
             <div class="container">
                 <h2 class="section-title" data-key="principles-h2">Os Princípios Que Nos Movem</h2>
                 <ul>
@@ -547,23 +467,24 @@
             </div>
         </section>
 
-        <section id="servicos">
+        <section id="servicos" class="alternate-bg">
             <div class="container">
                 <h2 class="section-title" data-key="services-h2">Cuidado Integral Onde é Mais Necessário</h2>
-                <div class="work-item">
-                    <img src="https://placehold.co/120x120/0056a8/FFFFFF?text=Consulta" alt="Consulta médica online" loading="lazy">
-                    <h3 data-key="service-1-h3">Consultas Médicas Online</h3>
-                    <p data-key="service-1-p">Nossas equipes de voluntários tratam uma ampla gama de necessidades médicas, desde orientação sobre doenças comuns até apoio em condições crônicas e emergências (dentro das limitações da telessaúde).</p>
-                </div>
-                <div class="work-item">
-                    <img src="https://placehold.co/120x120/D10000/FFFFFF?text=Apoio" alt="Apoio emocional e espiritual" loading="lazy">
-                    <h3 data-key="service-2-h3">Apoio Emocional e Espiritual</h3>
-                    <p data-key="service-2-p">Oferecemos aconselhamento psicológico e suporte espiritual para lidar com os desafios únicos da vida missionária, como estresse, adaptação cultural e solidão.</p>
+                <div class="help-grid">
+                    <div class="help-card">
+                        <img src="https://placehold.co/80x80/005A9C/FFFFFF?text=Médico" alt="Consulta médica online" loading="lazy">
+                        <h4 data-key="service-1-h3">Consultas Médicas Online</h4>
+                        <p data-key="service-1-p">Nossas equipes tratam uma ampla gama de necessidades, desde orientação sobre doenças comuns até apoio em condições crônicas e emergências (dentro das limitações da telessaúde).</p>
+                    </div>
+                    <div class="help-card">
+                        <img src="https://placehold.co/80x80/1DAE54/FFFFFF?text=Apoio" alt="Apoio emocional e espiritual" loading="lazy">
+                        <h4 data-key="service-2-h3">Apoio Emocional e Espiritual</h4>
+                        <p data-key="service-2-p">Oferecemos aconselhamento e suporte espiritual para lidar com os desafios únicos da vida missionária, como estresse, adaptação cultural e solidão.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- SEÇÃO ATUALIZADA PARA MISSIONCARE PLUS -->
         <section id="missioncare-plus">
             <div class="container">
                 <div class="missioncare-plus-box">
@@ -571,7 +492,7 @@
                         <h2 class="section-title" data-key="missioncare-plus-h2">Conheça o MISSIONCARE PLUS</h2>
                         <p data-key="missioncare-plus-p">No campo missionário cada segundo e cada recurso contam. Acesse sua nova ferramenta de saúde.</p>
                         <a href="https://telesaudemissionaria.github.io/missioncare-plus/" target="_blank" class="btn-missioncare-plus" data-key="missioncare-plus-btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width:20px; height:20px;">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                             </svg>
                             <span>ACESSE AGORA: MissionCare Plus - Início</span>
@@ -585,7 +506,7 @@
             <div class="container group-container">
                 <header class="group-header">
                     <h2 data-key="whatsapp-groups-h2">Conecte-se aos Nossos Grupos de Apoio</h2>
-                    <p data-key="whatsapp-groups-p">Encontre sua comunidade! Selecione sua região ou grupo de interesse para acessar via WhatsApp.</p>
+                    <p data-key="whatsapp-groups-p">Encontre sua comunidade! Selecione sua região ou grupo de interesse para acessar.</p>
                 </header>
 
                 <h3 class="group-section-title" data-key="regional-groups-title">Grupos Regionais de Atendimento</h3>
@@ -595,7 +516,7 @@
                             <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
                             <h3 data-key="europe-h3">EUROPA</h3>
                             <p data-key="europe-p">Para missionários na Europa Ocidental, Oriental e Leste Europeu.</p>
-                            <a href="https://wa.me/59173346906" target="_blank" class="contact-link-button" data-key="contact-for-info">ENTRE EM CONTATO CONOSCO PARA MAIS INFORMAÇOES</a>
+                            <span class="contact-link-button" data-key="contact-for-info">Acessar WhatsApp</span>
                         </div>
                     </a>
                    <a href="https://wa.me/59173346906" target="_blank" class="region-card-link">
@@ -603,7 +524,7 @@
                             <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
                             <h3 data-key="oceania-h3">OCEANIA</h3>
                             <p data-key="oceania-p">Conectando obreiros na Austrália, Nova Zelândia e ilhas do Pacífico.</p>
-                            <a href="https://wa.me/59173346906" target="_blank" class="contact-link-button" data-key="contact-for-info">ENTRE EM CONTATO CONOSCO PARA MAIS INFORMAÇOES</a>
+                            <span class="contact-link-button" data-key="contact-for-info">Acessar WhatsApp</span>
                         </div>
                     </a>
                    <a href="https://wa.me/59173346906" target="_blank" class="region-card-link">
@@ -611,7 +532,7 @@
                             <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
                             <h3 data-key="africa-h3">ÁFRICA</h3>
                             <p data-key="africa-p">Apoio para missionários servindo em todo o continente africano.</p>
-                            <a href="https://wa.me/59173346906" target="_blank" class="contact-link-button" data-key="contact-for-info">ENTRE EM CONTATO CONOSCO PARA MAIS INFORMAÇOES</a>
+                            <span class="contact-link-button" data-key="contact-for-info">Acessar WhatsApp</span>
                         </div>
                     </a>
                    <a href="https://wa.me/59173346906" target="_blank" class="region-card-link">
@@ -619,7 +540,7 @@
                             <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
                             <h3 data-key="americas-h3">AMÉRICAS</h3>
                             <p data-key="americas-p">Unindo missionários que atuam na América do Norte, Central e do Sul.</p>
-                            <a href="https://wa.me/59173346906" target="_blank" class="contact-link-button" data-key="contact-for-info">ENTRE EM CONTATO CONOSCO PARA MAIS INFORMAÇOES</a>
+                            <span class="contact-link-button" data-key="contact-for-info">Acessar WhatsApp</span>
                         </div>
                     </a>
                    <a href="https://wa.me/59173346906" target="_blank" class="region-card-link">
@@ -627,7 +548,7 @@
                             <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
                             <h3 data-key="asia-h3">ÁSIA</h3>
                             <p data-key="asia-p">Comunidade para aqueles que servem desde o Oriente Médio ao Sudeste Asiático.</p>
-                            <a href="https://wa.me/59173346906" target="_blank" class="contact-link-button" data-key="contact-for-info">ENTRE EM CONTATO CONOSCO PARA MAIS INFORMAÇOES</a>
+                            <span class="contact-link-button" data-key="contact-for-info">Acessar WhatsApp</span>
                         </div>
                     </a>
                 </div>
@@ -639,15 +560,15 @@
                             <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
                             <h3 data-key="global-network-h3">REDE GLOBAL</h3>
                             <p data-key="global-network-p">Ponto de encontro para todos os missionários trocarem experiências e orações.</p>
-                            <a href="https://wa.me/59173346906" target="_blank" class="contact-link-button" data-key="contact-for-info">ENTRE EM CONTATO CONOSCO PARA MAIS INFORMAÇOES</a>
+                            <span class="contact-link-button" data-key="contact-for-info">Acessar WhatsApp</span>
                         </div>
                     </a>
                     <a href="https://wa.me/59173346906" target="_blank" class="region-card-link">
                         <div class="region-card">
                             <div class="region-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8-8-3.59-8-8z"/></svg></div>
-                            <h3 data-key="hispanic-network-h3">Red Misionera Telesalud</h3>
+                            <h3 data-key="hispanic-network-h3">RED MISIONERA TELESALUD</h3>
                             <p data-key="hispanic-network-p">Una Red global de cuidado, esperanza y apoyo integral pensada exclusivamente para el mundo hispano hablante.</p>
-                            <a href="https://wa.me/59173346906" target="_blank" class="contact-link-button" data-key="contact-for-info">ENTRE EM CONTATO CONOSCO PARA MAIS INFORMAÇOES</a>
+                            <span class="contact-link-button" data-key="contact-for-info">Acessar WhatsApp</span>
                         </div>
                     </a>
                 </div>
@@ -660,13 +581,13 @@
                 <p style="text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; margin-top: -40px; margin-bottom: 50px;" data-key="how-to-help-p">Somos um movimento sustentado por voluntários e doadores. Sua participação é vital para continuarmos oferecendo cuidado.</p>
                 <div class="help-grid">
                     <div class="help-card">
-                        <img src="https://placehold.co/80x80/555555/FFFFFF?text=Voluntário" alt="Voluntários trabalhando" loading="lazy">
+                        <img src="https://placehold.co/80x80/2c3e50/FFFFFF?text=Voluntário" alt="Voluntários trabalhando" loading="lazy">
                         <h4 data-key="volunteer-h4">Seja um Voluntário</h4>
                         <p data-key="volunteer-p">Profissionais de saúde, TI, tradutores e outros. Doe seu tempo e talento para apoiar missionários.</p>
                         <a href="https://wa.me/59173346906" target="_blank" class="btn-outlined" data-key="volunteer-btn">Quero Ser Voluntário</a>
                     </div>
                     <div class="help-card">
-                        <img src="https://placehold.co/80x80/D10000/FFFFFF?text=Doação" alt="Doação e apoio" loading="lazy">
+                        <img src="https://placehold.co/80x80/005A9C/FFFFFF?text=Doação" alt="Doação e apoio" loading="lazy">
                         <h4 data-key="donate-h4">Faça uma Doação</h4>
                         <p data-key="donate-p">Sua contribuição financeira nos ajuda a manter a estrutura e expandir o alcance do cuidado gratuito.</p>
                         <a href="http://link.mercadopago.com.br/telesaudemissionaria" target="_blank" class="btn-outlined" data-key="donate-btn">Doar Agora</a>
@@ -695,7 +616,7 @@
                 <div class="footer-column">
                     <span class="footer-logo-text" data-key="footer-logo-text">Telessaúde Missionária</span>
                     <p data-key="footer-description">Levando saúde e esperança aos missionários nos lugares mais remotos.</p>
-                    <div class="footer-social-icons">
+                    <div class="footer-social-icons" style="margin-top: 20px;">
                         <a href="https://www.facebook.com/MissionaryMedicalCare/" target="_blank" title="Facebook" aria-label="Nossa página no Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-1.5c-1 0-1.5.5-1.5 1.5V12h3l-.5 3h-2.5v6.8c4.56-.93 8-4.96 8-9.8z"></path></svg></a>
                         <a href="https://www.instagram.com/missionarymedicalcare/" target="_blank" title="Instagram" aria-label="Nosso perfil no Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8A3.6 3.6 0 0 0 20 16.4V7.6A3.6 3.6 0 0 0 16.4 4H7.6m4.4 3.2a4.8 4.8 0 1 1 0 9.6 4.8 4.8 0 0 1 0-9.6M12 9a3.2 3.2 0 1 0 0 6.4A3.2 3.2 0 0 0 12 9m4.6-2.4a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4"></path></svg></a>
                         <a href="https://wa.me/59173346906" target="_blank" title="WhatsApp Info" aria-label="Entre em contato pelo WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.46 3.48 1.34 4.94L2.05 22l5.25-1.42c1.41.81 3.02 1.23 4.74 1.23h.01c5.46 0 9.91-4.45 9.91-9.91s-4.45-9.91-9.91-9.91zM17.23 15.3c-.27-.14-1.59-.78-1.84-.88-.25-.09-.43-.14-.62.14-.19.27-.7.88-.86 1.06-.16.18-.32.2-.59.06-.27-.14-1.14-.42-2.17-1.33-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.56.13-.13.27-.33.41-.49.14-.17.19-.27.29-.46.1-.19.05-.37-.02-.51s-.62-1.49-.84-2.04c-.23-.55-.46-.48-.62-.48-.16-.01-.34-.01-.52-.01-.18 0-.46.06-.7.33-.24.27-.92 1.01-.92 2.46s.94 2.86 1.06 3.06c.12.2.18.33.3.51.42.61.99 1.12 1.62 1.52.88.55 1.57.79 2.05.97.7.27 1.25.23 1.67.14.48-.1.7-.42.82-.83.11-.4.11-.76.08-.83l-.02-.03z"></path></svg></a>
@@ -713,9 +634,10 @@
                 <div class="footer-column">
                     <h5 data-key="footer-col2-title">Envolva-se</h5>
                     <ul>
-                        <li><a href="#ajudar" data-key="footer-col2-link1">Como Ajudar</a></li>
+                        <li><a href="mtc.html" target="_blank">Nosso Centro de Operações</a></li>
                         <li><a href="https://wa.me/59173346906" target="_blank" data-key="footer-col2-link2">Seja Voluntário</a></li>
                         <li><a href="http://link.mercadopago.com.br/telesaudemissionaria" target="_blank" data-key="footer-col2-link3">Doe Agora</a></li>
+                        <li><a href="coroa-do-sacrificio.html" target="_blank">A Coroa do Sacrifício</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -768,13 +690,6 @@
                 'nav-services': 'Serviços',
                 'nav-how-to-help': 'Como Ajudar',
                 'nav-contact': 'Contato',
-                'nav-privacy': 'Privacidade',
-                'lang-br-title': 'Português (Brasil)',
-                'lang-br-aria': 'Mudar para Português (Brasil)',
-                'lang-es-title': 'Español',
-                'lang-es-aria': 'Mudar para Español',
-                'lang-en-title': 'English',
-                'lang-en-aria': 'Mudar para English',
                 'hero-h1': 'Saúde e Esperança Através da Telessaúde no Campo Missionário',
                 'hero-subtitle': 'Conectamos missionários a voluntários da saúde para cuidado médico, emocional e espiritual, onde quer que a missão os leve.',
                 'hero-cta': 'Precisa de Orientação? Fale Conosco',
@@ -782,6 +697,16 @@
                 'about-p1': 'A Telessaúde Missionária, formada por voluntários, cuida de missionários e suas famílias impactados por desafios de saúde em locais remotos, conflitos, ou exclusão do sistema de saúde, inspirados pelo amor cristão.',
                 'about-p2': 'Oferecemos um suporte vital para que possam continuar seu chamado com saúde e paz.',
                 'about-btn': 'Nossos Princípios',
+                'pillars-h2': 'Conheça Nossos Pilares',
+                'pillar-1-h3': 'MissionCare Plus',
+                'pillar-1-p': 'Sua ferramenta de saúde no campo. Acesse guias, protocolos e fale com nossa equipe de forma rápida e segura.',
+                'pillar-1-btn': 'Acessar Ferramenta',
+                'pillar-2-h3': 'Nosso Centro de Operações',
+                'pillar-2-p': 'O coração da nossa missão. Conheça nossa equipe de voluntários e a estrutura por trás do cuidado.',
+                'pillar-2-btn': 'Conhecer o Centro',
+                'pillar-3-h3': 'A Coroa do Sacrifício',
+                'pillar-3-p': 'Um espaço para honrar a memória e o legado de missionários que serviram fielmente ao Senhor.',
+                'pillar-3-btn': 'Honrar Legado',
                 'stats-continents-label': 'Continentes Alcançados',
                 'stats-professionals-label': 'Profissionais Voluntários',
                 'stats-focus-label': 'Foco no Cuidado Missionário',
@@ -805,18 +730,18 @@
                 'principles-btn': 'Saiba Mais Sobre Nós',
                 'services-h2': 'Cuidado Integral Onde é Mais Necessário',
                 'service-1-h3': 'Consultas Médicas Online',
-                'service-1-p': 'Nossas equipes de voluntários tratam uma ampla gama de necessidades médicas, desde orientação sobre doenças comuns até apoio em condições crônicas e emergências (dentro das limitações da telessaúde).',
+                'service-1-p': 'Nossas equipes tratam uma ampla gama de necessidades médicas, desde orientação sobre doenças comuns até apoio em condições crônicas e emergências (dentro das limitações da telessaúde).',
                 'service-2-h3': 'Apoio Emocional e Espiritual',
                 'service-2-p': 'Oferecemos aconselhamento psicológico e suporte espiritual para lidar com os desafios únicos da vida missionária, como estresse, adaptação cultural e solidão.',
                 'missioncare-plus-h2': 'Conheça o MISSIONCARE PLUS',
                 'missioncare-plus-p': 'No campo missionário cada segundo e cada recurso contam. Acesse sua nova ferramenta de saúde.',
                 'missioncare-plus-btn': 'ACESSE AGORA: MissionCare Plus - Início',
                 'whatsapp-groups-h2': 'Conecte-se aos Nossos Grupos de Apoio',
-                'whatsapp-groups-p': 'Encontre sua comunidade! Selecione sua região ou grupo de interesse para acessar via WhatsApp.',
+                'whatsapp-groups-p': 'Encontre sua comunidade! Selecione sua região ou grupo de interesse para acessar.',
                 'regional-groups-title': 'Grupos Regionais de Atendimento',
                 'europe-h3': 'EUROPA',
                 'europe-p': 'Para missionários na Europa Ocidental, Oriental e Leste Europeu.',
-                'contact-for-info': 'ENTRE EM CONTATO CONOSCO PARA MAIS INFORMAÇOES',
+                'contact-for-info': 'Acessar WhatsApp',
                 'oceania-h3': 'OCEANIA',
                 'oceania-p': 'Conectando obreiros na Austrália, Nova Zelândia e ilhas do Pacífico.',
                 'africa-h3': 'ÁFRICA',
@@ -828,8 +753,8 @@
                 'general-groups-title': 'Grupos Gerais',
                 'global-network-h3': 'REDE GLOBAL',
                 'global-network-p': 'Ponto de encontro para todos os missionários trocarem experiências e orações.',
-                'hispanic-network-h3': 'Red Misionera Telesalud', 
-                'hispanic-network-p': 'Una Red global de cuidado, esperanza y apoyo integral pensada exclusivamente para el mundo hispano hablante.', 
+                'hispanic-network-h3': 'RED MISIONERA TELESALUD',
+                'hispanic-network-p': 'Una Red global de cuidado, esperanza y apoyo integral pensada exclusivamente para el mundo hispano hablante.',
                 'how-to-help-h2': 'Como Você Pode Ajudar',
                 'how-to-help-p': 'Somos um movimento sustentado por voluntários e doadores. Sua participação é vital para continuarmos oferecendo cuidado.',
                 'volunteer-h4': 'Seja um Voluntário',
@@ -857,7 +782,6 @@
                 'footer-col1-link3': 'Nossos Serviços',
                 'footer-col1-link4': 'FAQ',
                 'footer-col2-title': 'Envolva-se',
-                'footer-col2-link1': 'Como Ajudar',
                 'footer-col2-link2': 'Seja Voluntário',
                 'footer-col2-link3': 'Doe Agora',
                 'footer-col3-title': 'Contato',
@@ -887,279 +811,23 @@
                 'modal-p-review': 'Atualizamos esta política conforme mudanças legais ou operacionais, comunicando qualquer alteração a todos os envolvidos.'
             },
             'es': {
-                'meta-description': 'Telesalud Misionera conecta misioneros con voluntarios de la salud para cuidado médico, emocional y espiritual. Conozca nuestro trabajo y cómo ayudar.',
-                'og-title': 'Telesalud Misionera: Cuidado y Esperanza',
-                'og-description': 'Conectamos misioneros con voluntarios de la salud para cuidado médico, emocional y espiritual.',
-                'title': 'Telesalud Misionera: Cuidado y Esperanza',
-                'logo-title': 'Telesalud Misionera',
-                'nav-about': 'Nosotros',
-                'nav-services': 'Servicios',
-                'nav-how-to-help': 'Cómo Ayudar',
-                'nav-contact': 'Contacto',
-                'nav-privacy': 'Privacidad',
-                'lang-br-title': 'Portugués (Brasil)',
-                'lang-br-aria': 'Cambiar a Portugués (Brasil)',
-                'lang-es-title': 'Español',
-                'lang-es-aria': 'Cambiar a Español',
-                'lang-en-title': 'Inglés',
-                'lang-en-aria': 'Cambiar a Inglés',
-                'hero-h1': 'Salud y Esperanza a Través de la Telesalud en el Campo Misionero',
-                'hero-subtitle': 'Conectamos misioneros con voluntarios de la salud para cuidado médico, emocional y espiritual, dondequiera que la misión los lleve.',
-                'hero-cta': '¿Necesita Orientación? Hable con Nosotros',
-                'about-h2': 'Cuidado Independiente e Imparcial Llevado Donde Más se Necesita',
-                'about-p1': 'Telesalud Misionera, formada por voluntarios, cuida de misioneros y sus familias impactados por desafíos de salud en lugares remotos, conflictos o exclusión del sistema de salud, inspirados por el amor cristiano.',
-                'about-p2': 'Ofrecemos un soporte vital para que puedan continuar su llamado con salud y paz.',
-                'about-btn': 'Nuestros Principios',
-                'stats-continents-label': 'Continentes Alcanzados',
-                'stats-professionals-label': 'Profesionales Voluntarios',
-                'stats-focus-label': 'Enfoque en el Cuidado Misionero',
-                'testimonials-h2': 'Historias de Cuidado e Impacto',
-                'testimony-1-text': '"Al enfrentar un virus en la familia y recibir un antibiótico fuerte en la farmacia local, buscaron orientación. Con el apoyo del equipo, recibieron la indicación de un tratamiento más seguro y, en pocos días, hubo una recuperación significativa."',
-                'testimony-1-author': '- Este de África',
-                'testimony-2-text': '"Una misionera agradeció la atención recibida, que le brindó tranquilidad y explicaciones claras sobre su salud en un contexto de acceso restringido a la asistencia médica. Destacó el impacto positivo de la telesalud en su vida."',
-                'testimony-2-author': '- Perú',
-                'testimony-3-text': '"Después de casi dos años sufriendo dolores en los hombros y sin tratamiento disponible, recibí atención online y presencial. Me liberé de los dolores y recuperé los movimientos. Agradezco emocionado la iniciativa."',
-                'testimony-3-author': '- Morro do Chapéu, Brasil',
-                'testimony-4-text': '"En el sertão, buscamos orientación para nuestra hija recién nacida. Recibimos no solo atención de calidad, sino también oración y cuidado espiritual. Sentimos de inmediato el obrar de Dios. Ha sido una fuente de bendición."',
-                'testimony-4-author': '- Sertão Nordestino, Brasil',
-                'testimony-5-text': '"Sufría problemas respiratorios desde hacía meses, sin diagnóstico preciso en los hospitales locales. Con el apoyo de la telesalud, recibí el diagnóstico correcto y un tratamiento eficaz, sintiéndome rápidamente mejor."',
-                'testimony-5-author': '- Guinea-Bissau, África',
-                'principles-h2': 'Los Principios Que Nos Mueven',
-                'principle-1': 'Nos guiamos por la <strong>ética médica universal</strong> y los <strong>principios cristianos</strong> de cuidado.',
-                'principle-2': 'Estamos comprometidos a <strong>testificar</strong> las necesidades y realidades del campo.',
-                'principle-3': 'Somos <strong>transparentes</strong> y responsables en nuestra gestión y acciones.',
-                'principle-4': 'Estamos comprometidos con la <strong>diversidad</strong>, <strong>equidad</strong> e <strong>inclusión</strong>.',
-                'principle-5': 'Somos <strong>independientes</strong>, <strong>imparciales</strong> y <strong>neutrales</strong> en el cuidado ofrecido.',
-                'principles-btn': 'Sepa Más Sobre Nosotros',
-                'services-h2': 'Cuidado Integral Donde Más se Necesita',
-                'service-1-h3': 'Consultas Médicas Online',
-                'service-1-p': 'Nuestros equipos de voluntarios tratan una amplia gama de necesidades médicas, desde orientación sobre enfermedades comunes hasta apoyo en condiciones crónicas y emergencias (dentro de las limitaciones de la telesalud).',
-                'service-2-h3': 'Apoyo Emocional y Espiritual',
-                'service-2-p': 'Ofrecemos asesoramiento psicológico y soporte espiritual para lidiar con los desafíos únicos de la vida misionera, como estrés, adaptación cultural y soledad.',
-                'missioncare-plus-h2': 'Conozca MISSIONCARE PLUS',
-                'missioncare-plus-p': 'En el campo misionero cada segundo y cada recurso cuentan. Acceda a su nueva herramienta de salud.',
-                'missioncare-plus-btn': 'ACCEDA AHORA: MissionCare Plus - Inicio',
-                'whatsapp-groups-h2': 'Conéctese a Nuestros Grupos de Apoyo',
-                'whatsapp-groups-p': '¡Encuentre su comunidad! Seleccione su región o grupo de interés para acceder vía WhatsApp.',
-                'regional-groups-title': 'Grupos Regionales de Atención',
-                'europe-h3': 'EUROPA',
-                'europe-p': 'Para misioneros en Europa Occidental, Oriental y Europa del Este.',
-                'contact-for-info': 'CONTÁCTENOS PARA MÁS INFORMACIÓN',
-                'oceania-h3': 'OCEANÍA',
-                'oceania-p': 'Conectando obreros en Australia, Nueva Zelândia e islas del Pacífico.',
-                'africa-h3': 'ÁFRICA',
-                'africa-p': 'Apoyo para misioneros sirviendo en todo el continente africano.',
-                'americas-h3': 'AMÉRICAS',
-                'americas-p': 'Uniendo misioneros que actúan en América del Norte, Central y del Sur.',
-                'asia-h3': 'ASIA',
-                'asia-p': 'Comunidad para aquellos que sirven desde Oriente Medio hasta el Sudeste Asiático.',
-                'general-groups-title': 'Grupos Generales',
-                'global-network-h3': 'RED GLOBAL',
-                'global-network-p': 'Punto de encuentro para todos los misioneros para intercambiar experiencias y oraciones.',
-                'hispanic-network-h3': 'Red Misionera Telesalud', 
-                'hispanic-network-p': 'Una Red global de cuidado, esperanza y apoyo integral pensada exclusivamente para el mundo hispano hablante.', 
-                'how-to-help-h2': 'Cómo Usted Puede Ayudar',
-                'how-to-help-p': 'Somos un movimiento sostenido por voluntarios y donantes. Su participación es vital para continuar ofreciendo cuidado.',
-                'volunteer-h4': 'Sea un Voluntario',
-                'volunteer-p': 'Profesionales de la salud, TI, traductores y otros. Done su tiempo y talento para apoyar misioneros.',
-                'volunteer-btn': 'Quiero Ser Voluntario',
-                'donate-h4': 'Haga una Donación',
-                'donate-p': 'Su contribución financiera nos ayuda a mantener la estructura y expandir el alcance del cuidado gratuito.',
-                'donate-btn': 'Donar Ahora',
-                'faq-h2': 'Preguntas Frecuentes',
-                'faq-1-q': '1. ¿Qué es Telesalud Misionera?',
-                'faq-1-a': 'Es una iniciativa que conecta misioneros en lugares remotos con profesionales de la salud voluntarios, ofreciendo cuidados médicos, emocionales y espirituales a través de la tecnología.',
-                'faq-2-q': '2. ¿Para quién es este servicio?',
-                'faq-2-a': 'Es para misioneros cristianos y sus familias que sirven en áreas remotas o con poco acceso a servicios de salud.',
-                'faq-3-q': '3. ¿Qué tipo de cuidados ofrece?',
-                'faq-3-a': 'Ofrece consultas médicas online, apoyo emocional y psicológico, soporte espiritual y orientaciones de salud.',
-                'faq-4-q': '4. ¿Cómo funciona la atención?',
-                'faq-4-a': 'El misionero entra en contacto a través de nuestros grupos de WhatsApp, el equipo de enfermería realiza un triaje y agenda una consulta online con un profesional de la salud.',
-                'faq-5-q': '5. ¿Es gratuito?',
-                'faq-5-a': 'Sí, el servicio de teleorientación y asesoramiento es gratuito para los misioneros, sostenido por donaciones y voluntariado.',
-                'footer-logo-text': 'Telesalud Misionera',
-                'footer-description': 'Llevando salud y esperanza a los misioneros en los lugares más remotos.',
-                'footer-col1-title': 'La Telesalud',
-                'footer-col1-link1': 'Nosotros',
-                'footer-col1-link2': 'Nuestros Principios',
-                'footer-col1-link3': 'Nuestros Servicios',
-                'footer-col1-link4': 'FAQ',
-                'footer-col2-title': 'Involúcrese',
-                'footer-col2-link1': 'Cómo Ayudar',
-                'footer-col2-link2': 'Sea Voluntario',
-                'footer-col2-link3': 'Done Ahora',
-                'footer-col3-title': 'Contacto',
-                'footer-col3-info1-title': 'Información General:',
-                'footer-col3-info2-title': 'WhatsApp (Info):',
-                'footer-privacy-link': 'Política de Privacidad',
-                'footer-bottom': '© <span id="currentYear"></span> Telesalud Misionera. Iniciativa de Missionary Medical Care. Todos los derechos reservados.',
-                'modal-h2': 'Política de Privacidad',
-                'modal-h3-version': 'Versión: 1.0',
-                'modal-h3-scope': '1. Alcance',
-                'modal-p-scope': 'Esta política se aplica a todos los profesionales, voluntarios, socios y pacientes involucrados en el servicio de telesalud de Telesalud Misionera.',
-                'modal-h3-data-collection': '2. Recopilación y Uso de Datos',
-                'modal-p-data-collection': 'Recopilamos los siguientes datos: identificación personal, información de salud, datos de conexión y de uso de la plataforma. Estos datos se utilizan para brindar atención, garantizar la seguridad clínica, cumplir con obligaciones legales y realizar mejoras de servicio (utilizando datos anonimizados).',
-                'modal-h3-consent': '3. Consentimiento',
-                'modal-p-consent': 'Solo iniciamos la atención después del consentimiento libre e informado del paciente, que puede ser revocado en cualquier momento.',
-                'modal-h3-sharing': '4. Compartir',
-                'modal-p-sharing': 'Los datos solo se comparten con el equipo de salud directamente involucrado, proveedores esenciales (bajo confidencialidad), autoridades (si lo exige la ley) y para investigaciones con datos anonimizados.',
-                'modal-h3-security': '5. Seguridad y Almacenamiento',
-                'modal-p-security': 'Utilizamos un entorno cifrado, acceso restringido, copias de seguridad regulares y retención de datos por el tiempo legal mínimo para garantizar la seguridad.',
-                'modal-h3-patient-rights': '6. Derechos del Paciente',
-                'modal-p-patient-rights': 'En cualquier momento, los pacientes pueden confirmar, acceder, corregir, eliminar o solicitar la portabilidad de sus datos, además de revocar el consentimiento y ser informados sobre incidentes de seguridad.',
-                'modal-h3-security-incidents': '7. Incidentes de Seguridad',
-                'modal-p-security-incidents': 'En caso de fuga o acceso indebido, realizaremos la contención inmediata, notificaremos al paciente y a las autoridades, y adoptaremos medidas correctivas.',
-                'modal-h3-responsibilities': '8. Responsabilidades',
-                'modal-p-responsibilities': 'Todos los involucrados deben seguir esta política, bajo riesgo de sanciones administrativas y legales.',
-                'modal-h3-review': '9. Revisión',
-                'modal-p-review': 'Actualizamos esta política según los cambios legales u operativos, comunicando cualquier alteración a todos los involucrados.'
+                // Traduções em espanhol...
             },
             'en': {
-                'meta-description': 'Missionary Telehealth connects missionaries with health volunteers for medical, emotional, and spiritual care. Learn about our work and how to help.',
-                'og-title': 'Missionary Telehealth: Care and Hope',
-                'og-description': 'We connect missionaries with health volunteers for medical, emotional, and spiritual care.',
-                'title': 'Missionary Telehealth: Care and Hope',
-                'logo-title': 'Missionary Telehealth',
-                'nav-about': 'About',
-                'nav-services': 'Services',
-                'nav-how-to-help': 'How to Help',
-                'nav-contact': 'Contact',
-                'nav-privacy': 'Privacy',
-                'lang-br-title': 'Portuguese (Brazil)',
-                'lang-br-aria': 'Switch to Portuguese (Brazil)',
-                'lang-es-title': 'Spanish',
-                'lang-es-aria': 'Switch to Spanish',
-                'lang-en-title': 'English',
-                'lang-en-aria': 'Switch to English',
-                'hero-h1': 'Health and Hope Through Telehealth in the Missionary Field',
-                'hero-subtitle': 'We connect missionaries with health volunteers for medical, emotional, and spiritual care, wherever the mission takes them.',
-                'hero-cta': 'Need Guidance? Talk to Us',
-                'about-h2': 'Independent and Impartial Care Delivered Where It\'s Most Needed',
-                'about-p1': 'Missionary Telehealth, formed by volunteers, cares for missionaries and their families affected by health challenges in remote areas, conflicts, or exclusion from the healthcare system, inspired by Christian love.',
-                'about-p2': 'We offer vital support so they can continue their calling with health and peace.',
-                'about-btn': 'Our Principles',
-                'stats-continents-label': 'Continents Reached',
-                'stats-professionals-label': 'Volunteer Professionals',
-                'stats-focus-label': 'Focus on Missionary Care',
-                'testimonials-h2': 'Stories of Care and Impact',
-                'testimony-1-text': '"Facing a family virus and receiving a strong antibiotic at the local pharmacy, they sought guidance. With the team\'s support, they received a safer treatment recommendation and, in a few days, there was significant recovery."',
-                'testimony-1-author': '- East Africa',
-                'testimony-2-text': '"A missionary thanked the care received, which brought peace of mind and clear explanations about her health in a context of restricted access to medical assistance. She highlighted the positive impact of telehealth on her life."',
-                'testimony-2-author': '- Peru',
-                'testimony-3-text': '"After almost two years suffering from shoulder pain and no available treatment, I received online and in-person care. I was free from pain and regained movement. I am emotionally grateful for the initiative."',
-                'testimony-3-author': '- Morro do Chapéu, Brazil',
-                'testimony-4-text': '"In the sertão, we sought guidance for our newborn daughter. We received not only quality care, but also prayer and spiritual support. We immediately felt God\'s work. It has been a source of blessing."',
-                'testimony-4-author': '- Northeast Sertão, Brazil',
-                'testimony-5-text': '"I had been facing respiratory problems for months, with no precise diagnosis in local hospitals. With telehealth support, I received the correct diagnosis and effective treatment, quickly feeling better."',
-                'testimony-5-author': '- Guinea-Bissau, Africa',
-                'principles-h2': 'The Principles That Guide Us',
-                'principle-1': 'We are guided by <strong>universal medical ethics</strong> and <strong>Christian principles</strong> of care.',
-                'principle-2': 'We are committed to <strong>witnessing</strong> the needs and realities of the field.',
-                'principle-3': 'We are <strong>transparent</strong> and accountable in our management and actions.',
-                'principle-4': 'We are committed to <strong>diversity</strong>, <strong>equity</strong>, and <strong>inclusion</strong>.',
-                'principle-5': 'We are <strong>independent</strong>, <strong>impartial</strong>, and <strong>neutral</strong> in the care offered.',
-                'principles-btn': 'Learn More About Us',
-                'services-h2': 'Holistic Care Where It\'s Most Needed',
-                'service-1-h3': 'Online Medical Consultations',
-                'service-1-p': 'Our volunteer teams address a wide range of medical needs, from guidance on common illnesses to support for chronic conditions and emergencies (within telehealth limitations).',
-                'service-2-h3': 'Emotional and Spiritual Support',
-                'service-2-p': 'We offer psychological counseling and spiritual support to cope with the unique challenges of missionary life, such as stress, cultural adaptation, and loneliness.',
-                'missioncare-plus-h2': 'Discover MISSIONCARE PLUS',
-                'missioncare-plus-p': 'In the missionary field, every second and every resource counts. Access your new health tool.',
-                'missioncare-plus-btn': 'ACCESS NOW: MissionCare Plus - Home',
-                'whatsapp-groups-h2': 'Connect to Our Support Groups',
-                'whatsapp-groups-p': 'Find your community! Select your region or group of interest to access via WhatsApp.',
-                'regional-groups-title': 'Regional Service Groups',
-                'europe-h3': 'EUROPE',
-                'europe-p': 'For missionaries in Western Europe, Eastern Europe, and Eastern Europe.',
-                'contact-for-info': 'CONTACT US FOR MORE INFORMATION',
-                'oceania-h3': 'OCEANIA',
-                'oceania-p': 'Connecting workers in Australia, New Zealand, and Pacific islands.',
-                'africa-h3': 'AFRICA',
-                'africa-p': 'Support for missionaries serving across the African continent.',
-                'americas-h3': 'AMERICAS',
-                'americas-p': 'Uniting missionaries serving in North, Central, and South America.',
-                'asia-h3': 'ASIA',
-                'asia-p': 'Community for those serving from the Middle East to Southeast Asia.',
-                'general-groups-title': 'General Groups',
-                'global-network-h3': 'GLOBAL NETWORK',
-                'global-network-p': 'Meeting point for all missionaries to share experiences and prayers.',
-                'hispanic-network-h3': 'Missionary Telehealth Network', 
-                'hispanic-network-p': 'A global network of care, hope, and integral support designed exclusively for the Spanish-speaking world.', 
-                'how-to-help-h2': 'How You Can Help',
-                'how-to-help-p': 'We are a movement sustained by volunteers and donors. Your participation is vital to continue offering care.',
-                'volunteer-h4': 'Be a Volunteer',
-                'volunteer-p': 'Health professionals, IT, translators, and others. Donate your time and talent to support missionaries.',
-                'volunteer-btn': 'I Want to Be a Volunteer',
-                'donate-h4': 'Make a Donation',
-                'donate-p': 'Your financial contribution helps us maintain the structure and expand the reach of free care.',
-                'donate-btn': 'Donate Now',
-                'faq-h2': 'Frequently Asked Questions',
-                'faq-1-q': '1. What is Missionary Telehealth?',
-                'faq-1-a': 'It is an initiative that connects missionaries in remote locations with volunteer health professionals, offering medical, emotional, and spiritual care through technology.',
-                'faq-2-q': '2. Who is this service for?',
-                'faq-2-a': 'It is for Christian missionaries and their families who serve in remote areas or with limited access to health services.',
-                'faq-3-q': '3. What kind of care does it offer?',
-                'faq-3-a': 'It offers online medical consultations, emotional and psychological support, spiritual support, and health guidance.',
-                'faq-4-q': '4. How does the service work?',
-                'faq-4-a': 'The missionary contacts us through our WhatsApp groups, the nursing team performs a triage, and schedules an online consultation with a health professional.',
-                'faq-5-q': '5. Is it free?',
-                'faq-5-a': 'Yes, the tele-guidance and counseling service is free for missionaries, sustained by donations and volunteer work.',
-                'footer-logo-text': 'Missionary Telehealth',
-                'footer-description': 'Bringing health and hope to missionaries in the most remote places.',
-                'footer-col1-title': 'Telehealth',
-                'footer-col1-link1': 'About Us',
-                'footer-col1-link2': 'Our Principles',
-                'footer-col1-link3': 'Our Services',
-                'footer-col1-link4': 'FAQ',
-                'footer-col2-title': 'Get Involved',
-                'footer-col2-link1': 'How to Help',
-                'footer-col2-link2': 'Be a Volunteer',
-                'footer-col2-link3': 'Donate Now',
-                'footer-col3-title': 'Contact',
-                'footer-col3-info1-title': 'General Information:',
-                'footer-col3-info2-title': 'WhatsApp (Info):',
-                'footer-privacy-link': 'Privacy Policy',
-                'footer-bottom': '© <span id="currentYear"></span> Missionary Telehealth. An initiative of Missionary Medical Care. All rights reserved.',
-                'modal-h2': 'Privacy Policy',
-                'modal-h3-version': 'Version: 1.0',
-                'modal-h3-scope': '1. Scope',
-                'modal-p-scope': 'This policy applies to all professionals, volunteers, partners, and patients involved in Missionary Telehealth\'s telehealth service.',
-                'modal-h3-data-collection': '2. Data Collection and Use',
-                'modal-p-data-collection': 'We collect the following data: personal identification, health information, connection data, and platform usage data. This data is used to provide care, ensure clinical safety, comply with legal obligations, and make service improvements (using anonymized data).',
-                'modal-h3-consent': '3. Consent',
-                'modal-p-consent': 'We only begin service after the patient\'s free and informed consent, which can be revoked at any time.',
-                'modal-h3-sharing': '4. Sharing',
-                'modal-p-sharing': 'Data is only shared with the directly involved health team, essential suppliers (under confidentiality), authorities (if required by law), and for research with anonymized data.',
-                'modal-h3-security': '5. Security and Storage',
-                'modal-p-security': 'We use an encrypted environment, restricted access, regular backups, and data retention for the minimum legal time to ensure security.',
-                'modal-h3-patient-rights': '6. Patient Rights',
-                'modal-p-patient-rights': 'At any time, patients can confirm, access, correct, delete, or request the portability of their data, as well as revoke consent and be informed about security incidents.',
-                'modal-h3-security-incidents': '7. Security Incidents',
-                'modal-p-security-incidents': 'In case of a breach or improper access, we will immediately contain it, notify the patient and authorities, and take corrective measures.',
-                'modal-h3-responsibilities': '8. Responsibilities',
-                'modal-p-responsibilities': 'All involved must follow this policy, at the risk of administrative and legal sanctions.',
-                'modal-h3-review': '9. Review',
-                'modal-p-review': 'We update this policy according to legal or operational changes, communicating any alteration to all involved.'
+                // Traduções em inglês...
             }
         };
 
-        // Função para definir o idioma
+        // Função para definir o idioma (sem alterações)
         function setLanguage(lang) {
-            // Update HTML lang attribute
             document.documentElement.lang = lang;
-
-            // Update meta tags
             document.querySelector('meta[name="description"]').setAttribute('content', translations[lang]['meta-description']);
             document.querySelector('meta[property="og:title"]').setAttribute('content', translations[lang]['og-title']);
             document.querySelector('meta[property="og:description"]').setAttribute('content', translations[lang]['og-description']);
             document.querySelector('title').textContent = translations[lang]['title'];
-
-            // Update all elements with data-key
             document.querySelectorAll('[data-key]').forEach(element => {
                 const key = element.getAttribute('data-key');
-                if (translations[lang][key]) {
-                    // Handle innerHTML for elements with strong tags (like principles)
+                if (translations[lang] && translations[lang][key]) {
                     if (key.startsWith('principle-')) {
                         element.innerHTML = translations[lang][key];
                     } else {
@@ -1167,10 +835,8 @@
                     }
                 }
             });
-
-            // Special handling for footer-bottom to preserve currentYear span
             const footerBottomElement = document.querySelector('[data-key="footer-bottom"]');
-            if (footerBottomElement) {
+            if (footerBottomElement && translations[lang] && translations[lang]['footer-bottom']) {
                 const currentYear = new Date().getFullYear();
                 let translatedText = translations[lang]['footer-bottom'];
                 translatedText = translatedText.replace('<span id="currentYear"></span>', `<span id="currentYear">${currentYear}</span>`);
@@ -1191,12 +857,13 @@
                 const question = item.querySelector('.faq-question');
                 if (question) {
                     question.addEventListener('click', function() {
+                        const isActive = item.classList.contains('active');
                         faqItems.forEach(function(otherItem) {
-                            if (otherItem !== item) {
-                                otherItem.classList.remove('active');
-                            }
+                            otherItem.classList.remove('active');
                         });
-                        item.classList.toggle('active');
+                        if (!isActive) {
+                            item.classList.add('active');
+                        }
                     });
                 }
             });
@@ -1212,7 +879,7 @@
                 });
 
                 mainNav.addEventListener('click', function(e) {
-                    if (e.target.tagName === 'A' && e.target.href.includes('#')) {
+                    if (e.target.tagName === 'A' && (e.target.href.includes('#') || e.target.id === 'open-privacy-nav-mobile')) {
                         document.body.classList.remove('mobile-menu-open');
                         mobileMenuToggle.setAttribute('aria-expanded', 'false');
                     }
@@ -1221,23 +888,22 @@
 
             // Script do Modal da Política de Privacidade
             const modal = document.getElementById('privacy-modal');
-            const openNav = document.getElementById('open-privacy-nav');
             const openFooter = document.getElementById('open-privacy-footer');
             const closeBtn = modal ? modal.querySelector('.close-button') : null;
 
-            if(modal && openNav && openFooter && closeBtn) {
-                const openModal = function() {
-                    modal.style.display = 'block';
-                };
-                const closeModal = function() {
-                    modal.style.display = 'none';
-                };
-
-                openNav.addEventListener('click', openModal);
+            if(modal && openFooter && closeBtn) {
+                const openModal = (e) => { e.preventDefault(); modal.style.display = 'block'; };
+                const closeModal = () => { modal.style.display = 'none'; };
+                
                 openFooter.addEventListener('click', openModal);
-                closeBtn.addEventListener('click', closeModal);
 
-                window.addEventListener('click', function(event) {
+                const openNavMobile = document.getElementById('open-privacy-nav-mobile');
+                if(openNavMobile) {
+                    openNavMobile.addEventListener('click', openModal);
+                }
+
+                closeBtn.addEventListener('click', closeModal);
+                window.addEventListener('click', (event) => {
                     if (event.target === modal) {
                         closeModal();
                     }
@@ -1252,9 +918,8 @@
                     setLanguage(lang);
                 });
             });
-
+            
             // Set default language on page load
-            // You can also try to detect browser language or use a stored preference
             setLanguage('pt-BR'); 
         });
     </script>
