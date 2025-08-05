@@ -149,38 +149,48 @@
         .section-title { text-align: center; margin-bottom: 60px; position: relative; }
         .section-title::after { content: ''; display: block; width: 50px; height: 4px; background-color: var(--color-primary-blue); margin: 15px auto 0; }
         
-        /* Seção "Herói" - Ajustes para imagem central */
+        /* Seção "Herói" - Ajustes para cor sólida de fundo */
         #hero { 
-            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('bg-health-ai.png'); 
-            background-size: cover; 
-            background-position: center; 
-            background-attachment: fixed; 
+            background-color: var(--color-primary-blue); /* Cor sólida forte */
             padding: clamp(100px, 15vh, 120px) 20px; 
-            text-align: center; /* Centraliza o texto e o botão */
+            text-align: center; 
             color: var(--color-text-light); 
-            display: flex; /* Adicionado para centralizar conteúdo verticalmente */
-            align-items: center; /* Adicionado para centralizar conteúdo verticalmente */
-            justify-content: center; /* Adicionado para centralizar conteúdo horizontalmente */
-            flex-direction: column; /* Conteúdo em coluna para imagem e texto */
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            flex-direction: column; 
         }
         #hero .hero-content { 
             max-width: 750px; 
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centraliza o conteúdo dentro do hero-content */
-            text-align: center; /* Garante que o texto fique centralizado */
+            align-items: center; 
+            text-align: center; 
         }
-        #hero h1 { color: var(--color-text-light); margin-bottom: 0.5em; } /* Ajustado margem */
-        #hero .subtitle { color: rgba(255, 255, 255, 0.9); font-size: 1.3em; max-width: 600px; margin-bottom: 1.5em; } /* Ajustado margem */
-        .hero-image {
-            width: 200px; /* Tamanho da imagem */
-            height: 200px;
-            border-radius: 50%; /* Imagem circular */
-            object-fit: cover;
-            margin-bottom: 30px; /* Espaço abaixo da imagem */
-            border: 5px solid rgba(255, 255, 255, 0.3); /* Borda sutil */
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Sombra para destaque */
+        #hero h1 { 
+            color: var(--color-text-light); 
+            margin-bottom: 0.5em; 
+            text-shadow: none; /* Removido text-shadow para fundo sólido */
+        } 
+        #hero .subtitle { 
+            color: rgba(255, 255, 255, 0.9); 
+            font-size: 1.3em; 
+            max-width: 600px; 
+            margin-bottom: 1.5em; 
+            text-shadow: none; /* Removido text-shadow para fundo sólido */
+        } 
+        /* Estilo para o novo ícone de saúde digital */
+        .hero-digital-icon {
+            margin-bottom: 30px; 
+            color: var(--color-text-light); 
+            filter: drop-shadow(0 0 15px rgba(0, 100, 200, 0.7)); 
         }
+        .hero-digital-icon svg {
+            width: 100px; 
+            height: 100px;
+        }
+
+        /* Estilo do Botão de CTA Interativo */
         .cta-button-hero { 
             display: inline-flex; 
             align-items: center; 
@@ -191,12 +201,41 @@
             font-weight: 700; 
             font-size: 1.1em; 
             margin-top: 20px; 
-            transition: background-color 0.3s ease, transform 0.2s ease; 
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; 
             border: none; 
             text-transform: uppercase; 
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+            position: relative; 
+            overflow: hidden; 
+            z-index: 1; 
         }
-        .cta-button-hero:hover { background-color: var(--color-primary-blue-hover); color: var(--color-text-light); text-decoration: none; transform: translateY(-2px); }
+
+        .cta-button-hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%); 
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.4s ease-out, height 0.4s ease-out; 
+            z-index: -1; 
+        }
+
+        .cta-button-hero:hover::before {
+            width: 200%; 
+            height: 200%;
+        }
+
+        .cta-button-hero:hover { 
+            background-color: var(--color-primary-blue-hover); 
+            color: var(--color-text-light); 
+            text-decoration: none; 
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); 
+        }
         
         /* Seção Sobre */
         .intro-impact-section { display: flex; gap: 40px; align-items: center; }
@@ -259,7 +298,7 @@
             font-size: 0.9em;
             letter-spacing: 0.5px;
             transition: background-color 0.3s ease;
-            margin-top: auto; /* Garante que o botão fique na base */
+            margin-top: auto; 
         }
         .pillar-card .btn-pillar:hover {
             background-color: var(--color-primary-blue-hover);
@@ -268,26 +307,25 @@
 
         /* Aplicação de cores distintas aos Pillar Cards */
         .pillars-grid .pillar-card:nth-child(1) {
-            background-color: var(--testimonial-bg-1); /* Azul claro */
+            background-color: var(--testimonial-bg-1); 
         }
         .pillars-grid .pillar-card:nth-child(2) {
-            background-color: var(--testimonial-bg-2); /* Verde claro */
+            background-color: var(--testimonial-bg-2); 
         }
         .pillars-grid .pillar-card:nth-child(3) {
-            background-color: var(--testimonial-bg-3); /* Laranja claro */
+            background-color: var(--testimonial-bg-3); 
         }
         .pillars-grid .pillar-card:nth-child(4) {
-            background-color: var(--testimonial-bg-4); /* Roxo claro */
+            background-color: var(--testimonial-bg-4); 
         }
 
         /* Aplicação de cores distintas aos Help Cards (Serviços e Como Ajudar) */
         .help-grid .help-card:nth-child(1) {
-            background-color: var(--testimonial-bg-5); /* Ciano claro */
+            background-color: var(--testimonial-bg-5); 
         }
         .help-grid .help-card:nth-child(2) {
-            background-color: var(--testimonial-bg-1); /* Azul claro */
+            background-color: var(--testimonial-bg-1); 
         }
-        /* Se houver mais help-cards, adicione mais regras :nth-child() */
 
 
         /* Seção Testemunhos */
@@ -349,11 +387,11 @@
             color:#5d4037; 
             padding:15px; 
             text-align:center; 
-            font-size:1em; /* Ajustado para melhor leitura */
+            font-size:1em; 
             border-top:2px solid #f7ca18;
         }
         .disclaimer-banner strong {
-            color: #d35400; /* Cor de destaque para o título */
+            color: #d35400; 
         }
 
         /* Footer */
@@ -419,12 +457,8 @@
             .testimonial-grid { grid-template-columns: 1fr; }
             /* Ajustes para hero section em mobile */
             #hero {
-                background-attachment: scroll; /* Removido fixed para mobile */
-                padding: 80px 15px; /* Ajustado padding */
-            }
-            .hero-image {
-                width: 150px; /* Reduz o tamanho da imagem em mobile */
-                height: 150px;
+                background-attachment: scroll; 
+                padding: 80px 15px; 
             }
         }
         @media (max-width: 767px) {
@@ -483,10 +517,14 @@
         <section id="hero">
             <div class="container">
                 <div class="hero-content">
-                    <!-- Imagem central adicionada -->
-                    <img src="https://placehold.co/200x200/005A9C/FFFFFF?text=Dr.%20Missionário" alt="Médico Missionário" class="hero-image" loading="eager">
-                    <h1 data-key="hero-h1">Saúde e Esperança Através da Telessaúde no Campo Missionário</h1>
-                    <p class="subtitle" data-key="hero-subtitle">Conectamos missionários a voluntários da saúde para cuidado médico, emocional e espiritual, onde quer que a missão os leve.</p>
+                    <!-- Novo ícone de saúde digital -->
+                    <div class="hero-digital-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                    </div>
+                    <h1 data-key="hero-h1">TELESSAÚDE MISSIONÁRIA</h1>
+                    <p class="subtitle" data-key="hero-subtitle">Se Deus nos chamou para servir aos confins da terra, Ele também proverá os meios para cuidar de quem serve.</p>
                     <a href="https://wa.me/59173346906" target="_blank" class="cta-button-hero">
                         <svg xmlns="http://www.w3.org/2000/svg" style="width:20px; height:20px; vertical-align: middle; margin-right: 8px;" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.46 3.48 1.34 4.94L2.05 22l5.25-1.42c1.41.81 3.02 1.23 4.74 1.23h.01c5.46 0 9.91-4.45 9.91-9.91s-4.45-9.91-9.91-9.91zM17.23 15.3c-.27-.14-1.59-.78-1.84-.88-.25-.09-.43-.14-.62.14-.19.27-.7.88-.86 1.06-.16.18-.32.2-.59.06-.27-.14-1.14-.42-2.17-1.33-.81-.72-1.35-1.61-1.51-1.88-.16-.27-.02-.42.12-.56.13-.13.27-.33.41-.49.14-.17.19-.27.29-.46.1-.19.05-.37-.02-.51s-.62-1.49-.84-2.04c-.23-.55-.46-.48-.62-.48-.16-.01-.34-.01-.52-.01-.18 0-.46.06-.7.33-.24.27-.92 1.01-.92 2.46s.94 2.86 1.06 3.06c.12.2.18.33.3.51.42.61.99 1.12 1.62 1.52.88.55 1.57.79 2.05.97.7.27 1.25.23 1.67.14.48-.1.7-.42.82-.83.11-.4.11-.76.08-.83l-.02-.03z"></path></svg>
                         <span data-key="hero-cta">Precisa de Orientação? Fale Conosco</span>
@@ -567,11 +605,11 @@
             <div class="container">
                 <h2 class="section-title" data-key="testimonials-h2">Histórias de Cuidado e Impacto</h2>
                 <div class="testimonial-grid">
-                    <div class="testimonial-card color-1"><p data-key="testimony-1-text">"Ao enfrentarem uma virose na família e receberem um antibiótico forte na farmácia local, buscaram orientação. Com apoio da equipe, receberam indicação de um tratamento mais seguro e, em poucos dias, houve uma recuperação significativa."</p><p class="author" data-key="testimony-1-author">- Leste da África</p></div>
-                    <div class="testimonial-card color-2"><p data-key="testimony-2-text">"Uma missionária agradeceu o atendimento recebido, que trouxe tranquilidade e explicações claras sobre sua saúde em um contexto de acesso restrito à assistência médica. Destacou o impacto positivo da telessaúde em sua vida."</p><p class="author" data-key="testimony-2-author">- Peru</p></div>
-                    <div class="testimonial-card color-3"><p data-key="testimony-3-text">"Após quase dois anos sofrendo com dores nos ombros e sem tratamento disponível, recebi atendimento online e presencial. Fiquei livre das dores e recuperei os movimentos. Agradeço emocionado pela iniciativa."</p><p class="author" data-key="testimony-3-author">- Morro do Chapéu, Brasil</p></div>
-                    <div class="testimonial-card color-4"><p data-key="testimony-4-text">"No sertão, buscamos orientação para nossa filha recém-nascida. Recebemos não apenas atendimento de qualidade, mas também oração e cuidado espiritual. Sentimos de imediato o agir de Deus. Tem sido uma fonte de bênção."</p><p class="author" data-key="testimony-4-author">- Sertão Nordestino, Brasil</p></div>
-                    <div class="testimonial-card color-5"><p data-key="testimony-5-text">"Eu enfrentava problemas respiratórios há meses, sem diagnóstico preciso nos hospitais locais. Com o suporte da telessaúde, recebi o diagnóstico correto e tratamento eficaz, sentindo-me rapidamente melhor."</p><p class="author" data-key="testimony-5-author">- Guiné-Bissau, África</p></div>
+                    <div class="testimonial-card color-1"><p data-key="testimony-1-text"></p><p class="author" data-key="testimony-1-author"></p></div>
+                    <div class="testimonial-card color-2"><p data-key="testimony-2-text"></p><p class="author" data-key="testimony-2-author"></p></div>
+                    <div class="testimonial-card color-3"><p data-key="testimony-3-text"></p><p class="author" data-key="testimony-3-author"></p></div>
+                    <div class="testimonial-card color-4"><p data-key="testimony-4-text"></p><p class="author" data-key="testimony-4-author"></p></div>
+                    <div class="testimonial-card color-5"><p data-key="testimony-5-text"></p><p class="author" data-key="testimony-5-author"></p></div>
                 </div>
             </div>
         </section>
@@ -706,11 +744,11 @@
             <div class="container">
                 <h2 class="section-title" data-key="faq-h2">Perguntas Frequentes</h2>
                 <div class="faq-accordion">
-                    <div class="faq-item"><div class="faq-question" data-key="faq-1-q">1. O que é a Telessaúde Missionária? <span class="icon">+</span></div><div class="faq-answer"><p data-key="faq-1-a">É uma iniciativa que conecta missionários em locais remotos com profissionais de saúde voluntários, oferecendo cuidados médicos, emocionais e espirituais através da tecnologia.</p></div></div>
-                    <div class="faq-item"><div class="faq-question" data-key="faq-2-q">2. Para quem é este serviço? <span class="icon">+</span></div><div class="faq-answer"><p data-key="faq-2-a">É para missionários cristãos e suas famílias que servem em áreas remotas ou com pouco acesso a serviços de saúde.</p></div></div>
-                    <div class="faq-item"><div class="faq-question" data-key="faq-3-q">3. Que tipo de cuidados oferece? <span class="icon">+</span></div><div class="faq-answer"><p data-key="faq-3-a">Oferece consultas médicas online, apoio emocional e psicológico, suporte espiritual e orientações de saúde.</p></div></div>
-                    <div class="faq-item"><div class="faq-question" data-key="faq-4-q">4. Como funciona o atendimento? <span class="icon">+</span></div><div class="faq-answer"><p data-key="faq-4-a">O missionário entra em contato através dos nossos grupos de WhatsApp, a equipe de enfermagem faz uma triagem e agenda uma consulta online com um profissional de saúde.</p></div></div>
-                    <div class="faq-item"><div class="faq-question" data-key="faq-5-q">5. É gratuito? <span class="icon">+</span></div><div class="faq-answer"><p data-key="faq-5-a">Sim, o serviço de teleorientação e aconselhamento é gratuito para os missionários, sustentado por doações e voluntariado.</p></div></div>
+                    <div class="faq-item"><div class="faq-question" data-key="faq-1-q">1. O que é a Telessaúde Missionária? <span class="icon">+</span></div><div class="faq-answer"><p data-key="faq-1-a"></p></div></div>
+                    <div class="faq-item"><div class="faq-question" data-key="faq-2-q">2. Para quem é este serviço? <span class="icon">+</span></div><div class="faq-answer"><p data-key="faq-2-a"></p></div></div>
+                    <div class="faq-item"><div class="faq-question" data-key="faq-3-q">3. Que tipo de cuidados oferece? <span class="icon">+</span></div><div class="faq-answer"><p data-key="faq-3-a"></p></div></div>
+                    <div class="faq-item"><div class="faq-question" data-key="faq-4-q">4. Como funciona o atendimento? <span class="icon">+</span></div><div class="faq-answer"><p data-key="faq-4-a"></p></div></div>
+                    <div class="faq-item"><div class="faq-question" data-key="faq-5-q">5. É gratuito? <span class="icon">+</span></div><div class="faq-answer"><p data-key="faq-5-a"></p></div></div>
                 </div>
             </div>
         </section>
@@ -806,8 +844,8 @@
                 'title': 'Telessaúde Missionária: Cuidado e Esperança',
                 'logo-title': 'Telessaúde Missionária',
                 'nav-about': 'Sobre', 'nav-pillars': 'Pilares', 'nav-services': 'Serviços', 'nav-how-to-help': 'Como Ajudar', 'nav-contact': 'Contato',
-                'hero-h1': 'Saúde e Esperança Através da Telessaúde no Campo Missionário',
-                'hero-subtitle': 'Conectamos missionários a voluntários da saúde para cuidado médico, emocional e espiritual, onde quer que a missão os leve.',
+                'hero-h1': 'TELESSAÚDE MISSIONÁRIA',
+                'hero-subtitle': 'Se Deus nos chamou para servir aos confins da terra, Ele também proverá os meios para cuidar de quem serve.',
                 'hero-cta': 'Precisa de Orientação? Fale Conosco',
                 'about-h2': 'Cuidado Independente e Imparcial Levado Aonde é Mais Necessário',
                 'about-p1': 'A Telessaúde Missionária, formada por voluntários, cuida de missionários e suas famílias impactados por desafios de saúde em locais remotos, conflitos, ou exclusão do sistema de saúde, inspirados pelo amor cristão.',
@@ -828,11 +866,16 @@
                 'pillar-4-btn': 'Acessar Laboratório',
                 'stats-continents-label': 'Continentes Alcançados', 'stats-professionals-label': 'Profissionais Voluntários', 'stats-focus-label': 'Foco no Cuidado Missionário',
                 'testimonials-h2': 'Histórias de Cuidado e Impacto',
-                'testimony-1-text': '"Ao enfrentarem uma virose na família e receberem um antibiótico forte na farmácia local, buscaram orientação. Com apoio da equipe, receberam indicação de um tratamento mais seguro e, em poucos dias, houve uma recuperação significativa."', 'testimony-1-author': '- Leste da África',
-                'testimony-2-text': '"Uma missionária agradeceu o atendimento recebido, que trouxe tranquilidade e explicações claras sobre sua saúde em um contexto de acesso restrito à assistência médica. Destacou o impacto positivo da telessaúde em sua vida."', 'testimony-2-author': '- Peru',
-                'testimony-3-text': '"Após quase dois anos sofrendo com dores nos ombros e sem tratamento disponível, recebi atendimento online e presencial. Fiquei livre das dores e recuperei os movimentos. Agradeço emocionado pela iniciativa."', 'testimony-3-author': '- Morro do Chapéu, Brasil',
-                'testimony-4-text': '"No sertão, buscamos orientação para nossa filha recém-nascida. Recebemos não apenas atendimento de qualidade, mas também oração e cuidado espiritual. Sentimos de imediato o agir de Deus. Tem sido uma fonte de bênção."', 'testimony-4-author': '- Sertão Nordestino, Brasil',
-                'testimony-5-text': '"Eu enfrentava problemas respiratórios há meses, sem diagnóstico preciso nos hospitais locais. Com o suporte da telessaúde, recebi o diagnóstico correto e tratamento eficaz, sentindo-me rapidamente melhor."', 'testimony-5-author': '- Guiné-Bissau, África',
+                'testimony-1-text': 'Ao enfrentarem uma virose na família e receberem um antibiótico forte na farmácia local, buscaram orientação. Com apoio da equipe, receberam indicação de um tratamento mais seguro e, em poucos dias, houve uma recuperação significativa.',
+                'testimony-1-author': '- Leste da África',
+                'testimony-2-text': 'Uma missionária agradeceu o atendimento recebido, que trouxe tranquilidade e explicações claras sobre sua saúde em um contexto de acesso restrito à assistência médica. Destacou o impacto positivo da telessaúde em sua vida.',
+                'testimony-2-author': '- Peru',
+                'testimony-3-text': 'Após quase dois anos sofrendo com dores nos ombros e sem tratamento disponível, recebi atendimento online e presencial. Fiquei livre das dores e recuperei os movimentos. Agradeço emocionado pela iniciativa.',
+                'testimony-3-author': '- Morro do Chapéu, Brasil',
+                'testimony-4-text': 'No sertão, buscamos orientação para nossa filha recém-nascida. Recebemos não apenas atendimento de qualidade, mas também oração e cuidado espiritual. Sentimos de imediato o agir de Deus. Tem sido uma fonte de bênção.',
+                'testimony-4-author': '- Sertão Nordestino, Brasil',
+                'testimony-5-text': 'Eu enfrentava problemas respiratórios há meses, sem diagnóstico preciso nos hospitais locais. Com o suporte da telessaúde, recebi o diagnóstico correto e tratamento eficaz, sentindo-me rapidamente melhor.',
+                'testimony-5-author': '- Guiné-Bissau, África',
                 'principles-h2': 'Os Princípios Que Nos Movem',
                 'principle-1': 'Somos guiados pela <strong>ética médica universal</strong> e pelos <strong>princípios cristãos</strong> de cuidado.',
                 'principle-2': 'Somos comprometidos em <strong>testemunhar</strong> as necessidades e realidades do campo.',
@@ -856,7 +899,7 @@
                 'contact-for-info': 'Acessar WhatsApp',
                 'general-groups-title': 'Grupos Gerais',
                 'global-network-h3': 'REDE GLOBAL', 'global-network-p': 'Ponto de encontro para todos os missionários trocarem experiências e orações.',
-                'hispanic-network-h3': 'RED MISIONERA TELESALUD', 'hispanic-network-p': 'Una Red global de cuidado, esperanza y apoyo integral pensada exclusivamente para el mundo hispano falante.',
+                'hispanic-network-h3': 'RED MISIONERA TELESALUD', 'hispanic-network-p': 'Una Red global de cuidado, esperanza y apoyo integral pensada exclusivamente para el mundo hispano hablante.',
                 'how-to-help-h2': 'Como Você Pode Ajudar', 'how-to-help-p': 'Somos um movimento sustentado por voluntários e doadores. Sua participação é vital para continuarmos oferecendo cuidado.',
                 'volunteer-h4': 'Seja um Voluntário', 'volunteer-p': 'Profissionais de saúde, TI, tradutores e outros. Doe seu tempo e talento para apoiar missionários.', 'volunteer-btn': 'Quero Ser Voluntário',
                 'donate-h4': 'Faça uma Doação', 'donate-p': 'Sua contribuição financeira nos ajuda a manter a estrutura e expandir o alcance do cuidado gratuito.', 'donate-btn': 'Doar Agora',
@@ -884,8 +927,8 @@
                 'title': 'Telesalud Misionera: Cuidado y Esperanza',
                 'logo-title': 'Telesalud Misionera',
                 'nav-about': 'Sobre Nosotros', 'nav-pillars': 'Pilares', 'nav-services': 'Servicios', 'nav-how-to-help': 'Cómo Ayudar', 'nav-contact': 'Contacto',
-                'hero-h1': 'Salud y Esperanza a Través de la Telesalud en el Campo Misionero',
-                'hero-subtitle': 'Conectamos a misioneros con voluntarios de la salud para atención médica, emocional y espiritual, dondequiera que la misión los lleve.',
+                'hero-h1': 'TELESALUD MISIONERA', 
+                'hero-subtitle': 'Si Dios nos llamó a servir hasta los confines de la tierra, Él también proveerá los medios para cuidar a quienes sirven.', 
                 'hero-cta': '¿Necesita Orientación? Hable con Nosotros',
                 'about-h2': 'Cuidado Independiente e Imparcial Llevado Donde Más se Necesita',
                 'about-p1': 'Telesalud Misionera, formada por voluntarios, cuida a los misioneros y sus familias afectados por desafíos de salud en lugares remotos, conflictos o exclusión del sistema de salud, inspirados por el amor cristiano.',
@@ -906,11 +949,16 @@
                 'pillar-4-btn': 'Acceder al Laboratorio',
                 'stats-continents-label': 'Continentes Alcanzados', 'stats-professionals-label': 'Profesionales Voluntarios', 'stats-focus-label': 'Enfoque en el Cuidado Misionero',
                 'testimonials-h2': 'Historias de Cuidado e Impacto',
-                'testimony-1-text': '"Al enfrentar un virus en la familia y recibir un antibiótico fuerte en la farmacia local, buscaron orientación. Con el apoyo del equipo, recibieron una indicación de un tratamiento más seguro y, en pocos días, hubo una recuperación significativa."', 'testimony-1-author': '- Este de África',
-                'testimony-2-text': '"Una misionera agradeció la atención recibida, que le brindó tranquilidad y explicaciones claras sobre su salud en un contexto de acceso restringido a la atención médica. Destacó el impacto positivo de la telesalud en su vida."', 'testimony-2-author': '- Perú',
-                'testimony-3-text': '"Después de casi dos años sufriendo dolores en los hombros y sin tratamiento disponible, recibí atención en línea y presencial. Me liberé de los dolores y recuperé los movimientos. Agradezco emocionado la iniciativa."', 'testimony-3-author': '- Morro do Chapéu, Brasil',
-                'testimony-4-text': '"En el sertão, buscamos orientación para nuestra hija recién nacida. Recibimos no solo atención de calidad, sino también oración y cuidado espiritual. Sentimos de inmediato la acción de Dios. Ha sido una fuente de bendición."', 'testimony-4-author': '- Sertão Nordestino, Brasil',
-                'testimony-5-text': '"Enfrentaba problemas respiratorios durante meses, sin un diagnóstico preciso en los hospitales locales. Con el apoyo de la telesalud, recibí el diagnóstico correcto y un tratamiento eficaz, sintiéndome mejor rápidamente."', 'testimony-5-author': '- Guinea-Bisáu, África',
+                'testimony-1-text': 'Al enfrentar un virus en la familia y recibir un antibiótico fuerte en la farmacia local, buscaron orientación. Con el apoyo del equipo, recibieron una indicación de un tratamiento más seguro y, en pocos días, hubo una recuperación significativa.',
+                'testimony-1-author': '- Este de África',
+                'testimony-2-text': 'Una misionera agradeció la atención recibida, que le brindó tranquilidad y explicaciones claras sobre su salud en un contexto de acceso restringido a la atención médica. Destacó el impacto positivo de la telesalud en su vida.',
+                'testimony-2-author': '- Perú',
+                'testimony-3-text': 'Después de casi dos años sufriendo dolores en los hombros y sin tratamiento disponible, recibí atención en línea y presencial. Me liberé de los dolores y recuperé los movimientos. Agradezco emocionado la iniciativa.',
+                'testimony-3-author': '- Morro do Chapéu, Brasil',
+                'testimony-4-text': 'En el sertão, buscamos orientación para nuestra hija recién nacida. Recibimos no solo atención de calidad, sino también oración y cuidado espiritual. Sentimos de inmediato la acción de Dios. Ha sido una fuente de bendición.',
+                'testimony-4-author': '- Sertão Nordestino, Brasil',
+                'testimony-5-text': 'Enfrentaba problemas respiratorios durante meses, sin un diagnóstico preciso en los hospitales locales. Con el apoyo de la telesalud, recibí el diagnóstico correcto y un tratamiento eficaz, sintiéndome mejor rápidamente.',
+                'testimony-5-author': '- Guinea-Bisáu, África',
                 'principles-h2': 'Los Principios Que Nos Mueven',
                 'principle-1': 'Nos guiamos por la <strong>ética médica universal</strong> y los <strong>principios cristianos</strong> de cuidado.',
                 'principle-2': 'Estamos comprometidos a <strong>testimoniar</strong> las necesidades y realidades del campo.',
@@ -960,8 +1008,8 @@
                 'title': 'Missionary Telehealth: Care and Hope',
                 'logo-title': 'Missionary Telehealth',
                 'nav-about': 'About', 'nav-pillars': 'Pillars', 'nav-services': 'Services', 'nav-how-to-help': 'How to Help', 'nav-contact': 'Contact',
-                'hero-h1': 'Health and Hope Through Telehealth in the Mission Field',
-                'hero-subtitle': 'We connect missionaries to health volunteers for medical, emotional, and spiritual care, wherever the mission takes them.',
+                'hero-h1': 'MISSIONARY TELEHEALTH', 
+                'hero-subtitle': 'If God called us to serve to the ends of the earth, He will also provide the means to care for those who serve.', 
                 'hero-cta': 'Need Guidance? Talk to Us',
                 'about-h2': 'Independent and Impartial Care Delivered Where It Is Most Needed',
                 'about-p1': 'Missionary Telehealth, formed by volunteers, cares for missionaries and their families impacted by health challenges in remote locations, conflicts, or exclusion from the healthcare system, inspired by Christian love.',
@@ -982,11 +1030,16 @@
                 'pillar-4-btn': 'Access Lab',
                 'stats-continents-label': 'Continents Reached', 'stats-professionals-label': 'Volunteer Professionals', 'stats-focus-label': 'Focus on Missionary Care',
                 'testimonials-h2': 'Stories of Care and Impact',
-                'testimony-1-text': '"When facing a family virus and receiving a strong antibiotic from the local pharmacy, they sought guidance. With the team\'s support, they received a recommendation for a safer treatment, and within a few days, there was a significant recovery."', 'testimony-1-author': '- East Africa',
-                'testimony-2-text': '"A missionary expressed her gratitude for the care received, which brought her peace of mind and clear explanations about her health in a context of restricted access to medical care. She highlighted the positive impact of telehealth on her life."', 'testimony-2-author': '- Peru',
-                'testimony-3-text': '"After almost two years of suffering from shoulder pain with no available treatment, I received online and in-person care. I am now free from pain and have regained my movement. I am emotionally grateful for this initiative."', 'testimony-3-author': '- Morro do Chapéu, Brazil',
-                'testimony-4-text': '"In the backlands, we sought guidance for our newborn daughter. We received not only quality care but also prayer and spiritual support. We immediately felt God\'s work. It has been a source of blessing."', 'testimony-4-author': '- Northeast Brazil',
-                'testimony-5-text': '"I had been struggling with respiratory problems for months, with no accurate diagnosis from local hospitals. With telehealth support, I received the correct diagnosis and effective treatment, feeling better quickly."', 'testimony-5-author': '- Guinea-Bissau, Africa',
+                'testimony-1-text': 'When facing a family virus and receiving a strong antibiotic from the local pharmacy, they sought guidance. With the team\'s support, they received a recommendation for a safer treatment, and within a few days, there was a significant recovery.',
+                'testimony-1-author': '- East Africa',
+                'testimony-2-text': 'A missionary expressed her gratitude for the care received, which brought her peace of mind and clear explanations about her health in a context of restricted access to medical care. She highlighted the positive impact of telehealth on her life.',
+                'testimony-2-author': '- Peru',
+                'testimony-3-text': 'After almost two years of suffering from shoulder pain with no available treatment, I received online and in-person care. I am now free from pain and have regained my movement. I am emotionally grateful for this initiative.',
+                'testimony-3-author': '- Morro do Chapéu, Brazil',
+                'testimony-4-text': 'In the backlands, we sought guidance for our newborn daughter. We received not only quality care but also prayer and spiritual support. We immediately felt God\'s work. It has been a source of blessing.',
+                'testimony-4-author': '- Northeast Brazil',
+                'testimony-5-text': 'I had been struggling with respiratory problems for months, with no accurate diagnosis from local hospitals. With telehealth support, I received the correct diagnosis and effective treatment, feeling better quickly.',
+                'testimony-5-author': '- Guinea-Bissau, Africa',
                 'principles-h2': 'The Principles That Move Us',
                 'principle-1': 'We are guided by <strong>universal medical ethics</strong> and <strong>Christian principles</strong> of care.',
                 'principle-2': 'We are committed to <strong>bearing witness</strong> to the needs and realities of the field.',
